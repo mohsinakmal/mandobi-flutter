@@ -1,0 +1,68 @@
+name: mandobi_mobile_app
+description: Mandobi Mobile Application
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  # for state management
+  stacked: ^3.0.0
+  # for page animations
+  page_transition: ^2.0.9
+  # service locator
+  get_it: ^7.2.0
+  # for svg images:
+  flutter_svg: ^1.1.5
+  # for providing stack services
+  stacked_services: ^0.9.5
+  # for json serialization:
+  json_annotation: ^4.7.0
+  # code generator for get_it:
+  injectable: ^1.5.3
+  # for storing local data:
+  shared_preferences: ^2.0.15
+  # for network images and caching:
+  cached_network_image: ^3.2.2
+  # for restarting and losing states:
+  flutter_phoenix: ^1.1.0
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  build_runner: ^2.3.0
+  json_serializable: ^6.5.1
+
+
+flutter:
+
+
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+
+  fonts:
+    - family: PoppinsBold
+      fonts:
+        - asset: assets/fonts/poppins_bold.ttf
+
+    - family: PoppinsMedium
+      fonts:
+        - asset: assets/fonts/poppins_medium.ttf
+
+    - family: PoppinsRegular
+      fonts:
+        - asset: assets/fonts/poppins_regular.ttf

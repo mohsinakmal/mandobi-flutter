@@ -16,6 +16,7 @@ class OnBoardingTwo extends StatelessWidget {
       top: false,
       bottom: false,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Container(
           margin: EdgeInsets.symmetric(horizontal: 9.w),
           child: Column(

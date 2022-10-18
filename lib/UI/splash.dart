@@ -36,6 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         top: false,
         bottom: false,
         child: Scaffold(
+          backgroundColor: Colors.white,
           body: Stack(
             children: [
               Align(

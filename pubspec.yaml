@@ -33,6 +33,18 @@ dependencies:
   cached_network_image: ^3.2.2
   # for restarting and losing states:
   flutter_phoenix: ^1.1.0
+  #image picker
+  image_picker: ^0.8.6
+  #phone country code picker
+  intl_phone_field: ^3.1.0
+  #for date picking
+  intl: ^0.17.0
+  #for pin code
+  pin_code_text_field: ^1.8.0
+
+
+
+
 
 
 

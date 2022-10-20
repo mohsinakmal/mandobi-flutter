@@ -61,4 +61,16 @@ class UserMainViewModel extends BaseViewModel{
 
   int? selectedServiceIndex;
 
+  // Selected Agent Details
+
+  List<String> agentPlace = [
+    "TAS-HEEL",
+    "TAW-JEEH",
+  ];
+
+  List<String> agentExperienceYears = [
+    "2020-2021",
+    "2016-2020",
+  ];
+
 }

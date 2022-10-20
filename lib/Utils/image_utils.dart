@@ -41,4 +41,5 @@ class ImageUtils{
   static String plainEmailIcon = "assets/images/plain_email_icon.svg";
   static String bluePhoneIcon = "assets/images/blue_phone_icon.svg";
   static String blueBriefCase = "assets/images/briefcase.svg";
+  static String ratingsGroup = "assets/images/ratings_group.png";
 }

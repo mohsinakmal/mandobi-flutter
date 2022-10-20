@@ -8,6 +8,7 @@ import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
+import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:stacked/stacked.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -36,9 +37,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Scaffold(
                 backgroundColor: Colors.white,
                 body: SingleChildScrollView(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 9.w),
-                    child: Column(
+                  child: HorizontalMargin(
+                    widget: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: 12.h,),
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 0.22.h,
                               fontFamily: FontUtils.poppinsRegular,
                               fontSize: 2.75.t,
-                              color: ColorUtils.DarkBlue
+                              color: ColorUtils.darkBlue
                           ),
                         ),
                         SizedBox(height: 6.h,),

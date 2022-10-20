@@ -1,6 +1,6 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
@@ -14,14 +14,9 @@ import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:stacked/stacked.dart';
 
-class EditProfile extends StatefulWidget {
-  const EditProfile({Key? key}) : super(key: key);
+class MyProfile extends StatelessWidget {
+  const MyProfile({Key? key}) : super(key: key);
 
-  @override
-  State<EditProfile> createState() => _EditProfileState();
-}
-
-class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<UserRegistrationModel>.reactive(
@@ -149,7 +144,7 @@ class _EditProfileState extends State<EditProfile> {
                         suffixRequired: false,
                         hintText: "Full Name",
                         textInputType: TextInputType.name,
-                        controller: model.editProfileNameController,
+                        controller: model.profileNameController,
                       ),
                       SizedBox(height: 2.5.h,),
                       CustomTextField(
@@ -157,18 +152,29 @@ class _EditProfileState extends State<EditProfile> {
                         suffixRequired: false,
                         hintText: "User Name",
                         textInputType: TextInputType.name,
-                        controller: model.editProfileUserNameController,
+                        controller: model.profileUserNameController,
                       ),
                       SizedBox(height: 2.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: true,
                         hintText: "Date of Birth",
-                        svgImage: ImageUtils.calenderIcon,
+                        svgImage: ImageUtils.profileBlueCalender,
                         suffixImageWidth: 10.i,
                         suffixImageHeight: 10.i,
                         textInputType: TextInputType.name,
                         //controller: model.editProfileUserNameController,
+                      ),
+                      SizedBox(height: 2.5.h,),
+                      CustomTextField(
+                        prefixRequired: false,
+                        suffixRequired: true,
+                        hintText: "Email",
+                        svgImage: ImageUtils.profileBlueEmail,
+                        suffixImageWidth: 10.i,
+                        suffixImageHeight: 10.i,
+                        textInputType: TextInputType.name,
+                        controller: model.profileEmailController,
                       ),
                       SizedBox(height: 2.5.h,),
                       IntlPhoneField(
@@ -192,7 +198,7 @@ class _EditProfileState extends State<EditProfile> {
                       SizedBox(height:10.h,),
                       CustomButtonOne(
                         onButtonPressed: (){},
-                        textValue: "Continue",
+                        textValue: "Edit",
                       )
                       /*InkWell(
                         onTap: (){

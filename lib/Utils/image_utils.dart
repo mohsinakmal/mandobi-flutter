@@ -18,4 +18,27 @@ class ImageUtils{
   static String sms = "assets/images/sms_icon.svg";
   static String email = "assets/images/email_icon.svg";
   static String emailBlue = "assets/images/email_blue.png";
+  static String profileBlueCalender = "assets/images/calender_blue.svg";
+  static String profileBlueEmail = "assets/images/profile_email_blue.svg";
+  static String userPic = "assets/images/user_pic.png";
+  static String locationPin = "assets/images/location_pin.svg";
+  static String notificationIcon = "assets/images/notification_icon.svg";
+  static String welcomeDubai = "assets/images/welcome_dubai.png";
+  static String immigration = "assets/images/immigration.png";
+  static String rtaServices = "assets/images/rta_services.png";
+  static String embassy = "assets/images/embassy.png";
+  static String visa = "assets/images/visa.png";
+  static String agentOne = "assets/images/agentOne.png";
+  static String agentTwo = "assets/images/agentTwo.png";
+  static String agentThree = "assets/images/agentThree.png";
+  static String agentFour = "assets/images/agentFour.png";
+  static String ratingStar = "assets/images/ratingStar.svg";
+  static String clockIcon = "assets/images/clock_icon.svg";
+  static String tasHeel = "assets/images/tas_heel.png";
+  static String searchMenu = "assets/images/search_menu.svg";
+  static String bookMark = "assets/images/bookMark.png";
+  static String plainSearchIcon = "assets/images/plain_search_icon.svg";
+  static String plainEmailIcon = "assets/images/plain_email_icon.svg";
+  static String bluePhoneIcon = "assets/images/blue_phone_icon.svg";
+  static String blueBriefCase = "assets/images/briefcase.svg";
 }

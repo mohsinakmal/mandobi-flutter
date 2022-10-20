@@ -7,6 +7,8 @@ import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
+import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 import 'package:stacked/stacked.dart';
 
@@ -28,17 +30,14 @@ class ForgotPasswordOtp extends StatelessWidget {
             child: Scaffold(
               backgroundColor: Colors.white,
               body: SingleChildScrollView(
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 9.w),
-                  child: Column(
+                child: HorizontalMargin(
+                  widget: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
                         height: context.getPadding().top,
                       ),
-                      SizedBox(
-                        height: 3.h,
-                      ),
+                      TopMargin(),
                       Row(
                         children: [
                           Container(
@@ -49,13 +48,13 @@ class ForgotPasswordOtp extends StatelessWidget {
                               padding: EdgeInsets.all(16),
                               child: SvgPicture.asset(ImageUtils.blueArrow)
                           ),
-                          SizedBox(width: 6.w,),
+                          SizedBox(width: 16.w,),
                           Text("Forgot Password",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: FontUtils.poppinsRegular,
                                 fontSize: 2.t,
-                                color: ColorUtils.DarkBlue
+                                color: ColorUtils.darkBlue
                             ),
                           ),
                         ],

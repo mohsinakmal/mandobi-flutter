@@ -65,11 +65,23 @@ class UserRegistrationModel extends BaseViewModel{
 //######################################################################## Edit Profile ###############################################################################//
 /////////////////////////////////////////////////////////////////////////    Start    ///////////////////////////////////////////////////////////////////////////////////
 
+  // Edit Profile
   XFile? editPickedFile;
   File? editProfileFileImage;
   TextEditingController editProfileNameController = TextEditingController();
   TextEditingController editProfileUserNameController = TextEditingController();
   DateTime selectedDate = DateTime.now();
+
+  // User Profile
+  TextEditingController profileNameController = TextEditingController();
+  TextEditingController profileUserNameController = TextEditingController();
+  TextEditingController profileEmailController = TextEditingController();
+
+  // Create New Password
+  TextEditingController createNewPasswordController = TextEditingController();
+  TextEditingController createNewConfirmPasswordController = TextEditingController();
+
+
 
   Future<bool> editProfileOpenCamera() async {
     ImagePicker picker = ImagePicker();

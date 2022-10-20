@@ -11,6 +11,8 @@ import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_two.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
+import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:stacked/stacked.dart';
 
 class RegisterAccount extends StatefulWidget {
@@ -40,13 +42,12 @@ class _RegisterAccountState extends State<RegisterAccount> {
               child: Scaffold(
                 backgroundColor: Colors.white,
                 body: SingleChildScrollView(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 9.w),
-                    child: Column(
+                  child: HorizontalMargin(
+                    widget: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: context.getPadding().top,),
-                        SizedBox(height: 3.h,),
+                        TopMargin(),
                         Row(
                           children: [
                             Container(
@@ -63,7 +64,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                               style: TextStyle(
                                   fontFamily: FontUtils.poppinsRegular,
                                   fontSize: 2.t,
-                                  color: ColorUtils.DarkBlue
+                                  color: ColorUtils.darkBlue
                               ),
                             ),
                           ],
@@ -80,7 +81,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 height: 32.i,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  border: Border.all(color: ColorUtils.DarkBlue),
+                                  border: Border.all(color: ColorUtils.darkBlue),
                                 ),
                                 child: ClipOval(
                                     child:

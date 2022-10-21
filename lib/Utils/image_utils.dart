@@ -42,4 +42,10 @@ class ImageUtils{
   static String bluePhoneIcon = "assets/images/blue_phone_icon.svg";
   static String blueBriefCase = "assets/images/briefcase.svg";
   static String ratingsGroup = "assets/images/ratings_group.png";
+  static String searchIcon = "assets/images/search_icon.svg";
+  static String arrowForward = "assets/images/arrow_forward.svg";
+  static String doc = "assets/images/doc.png";
+  static String man = "assets/images/man.png";
+  static String laptop = "assets/images/laptop.png";
+  static String redCross = "assets/images/red_cross.svg";
 }

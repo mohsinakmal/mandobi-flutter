@@ -5,6 +5,7 @@ import 'package:mandobi_mobile_app/UI/Home/agent.dart';
 import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/Home/tas_heel.dart';
 import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
+import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
 import 'package:mandobi_mobile_app/UI/Menu/menu.dart';
 import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
 import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
@@ -125,7 +126,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           body =  Agents();
           break;
         case 3:
-          body =  Menu();
+          body =  Disputes();
           break;
       }
     });

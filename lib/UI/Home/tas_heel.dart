@@ -9,6 +9,7 @@ import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_mainViewModel.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:stacked/stacked.dart';
@@ -47,19 +48,8 @@ class _TasheelState extends State<Tasheel> {
                             height: context.getPadding().top,
                           ),
                           TopMargin(),
-                          Row(
-                            children: [
-                              BackButton(),
-                              SizedBox(width: 20.w,),
-                              Text("Tas-Heel",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontFamily: FontUtils.poppinsRegular,
-                                    fontSize: 2.t,
-                                    color: ColorUtils.darkBlue
-                                ),
-                              ),
-                            ],
+                          AppBarTwoItems(
+                            text: "Tas-Heel",
                           ),
                           SizedBox(height: 2.h,),
                           Image.asset(ImageUtils.tasHeel),

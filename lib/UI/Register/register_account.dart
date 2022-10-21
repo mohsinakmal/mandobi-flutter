@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Register/otp_verification.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_two.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class RegisterAccount extends StatefulWidget {
@@ -48,7 +51,10 @@ class _RegisterAccountState extends State<RegisterAccount> {
                       children: [
                         SizedBox(height: context.getPadding().top,),
                         TopMargin(),
-                        Row(
+                        AppBarTwoItems(
+                          text: "Register Your Account",
+                        ),
+                       /* Row(
                           children: [
                             Container(
                                 decoration: BoxDecoration(
@@ -68,7 +74,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                               ),
                             ),
                           ],
-                        ),
+                        ),*/
                         SizedBox(height: 5.h,),
                         Container(
                           //alignment: Alignment.topCenter,
@@ -269,7 +275,10 @@ class _RegisterAccountState extends State<RegisterAccount> {
                         ),
                         SizedBox(height: 5.h,),
                         CustomButtonOne(
-                          onButtonPressed: (){},
+                          onButtonPressed: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:OTPVerification()));
+                          },
                           textValue: "Continue",
                         ),
                         SizedBox(height: 2.h,),

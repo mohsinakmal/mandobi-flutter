@@ -8,6 +8,7 @@ import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
@@ -44,26 +45,8 @@ class _EditProfileState extends State<EditProfile> {
                     children: [
                       SizedBox(height: context.getPadding().top,),
                       TopMargin(),
-                      Row(
-                        children: [
-                          Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: ColorUtils.lightBlue.withOpacity(0.1),
-                              ),
-                              padding: EdgeInsets.all(16),
-                              child: SvgPicture.asset(ImageUtils.blueArrow)
-                          ),
-                          SizedBox(width: 20.w,),
-                          Text("Edit Profile",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: FontUtils.poppinsRegular,
-                                fontSize: 2.t,
-                                color: ColorUtils.darkBlue
-                            ),
-                          ),
-                        ],
+                      AppBarTwoItems(
+                        text: "Edit Profile",
                       ),
                       SizedBox(height: 5.h,),
                       Container(

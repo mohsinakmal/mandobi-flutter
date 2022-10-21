@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
-import 'package:mandobi_mobile_app/UI/Register/create_new_password.dart';
+import 'package:mandobi_mobile_app/UI/Register/login.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
-import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
@@ -15,8 +14,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 import 'package:stacked/stacked.dart';
 
-class ForgotPasswordOtp extends StatelessWidget {
-  const ForgotPasswordOtp({Key? key}) : super(key: key);
+class OTPVerification extends StatelessWidget {
+  const OTPVerification({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +40,26 @@ class ForgotPasswordOtp extends StatelessWidget {
                         height: context.getPadding().top,
                       ),
                       TopMargin(),
-                      AppBarTwoItems(
-                        text: "Forgot Password",
+                      Row(
+                        children: [
+                          Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: ColorUtils.lightBlue.withOpacity(0.1),
+                              ),
+                              padding: EdgeInsets.all(16),
+                              child: SvgPicture.asset(ImageUtils.blueArrow)
+                          ),
+                          SizedBox(width: 16.w,),
+                          Text("OTP Verification",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: FontUtils.poppinsRegular,
+                                fontSize: 2.t,
+                                color: ColorUtils.darkBlue
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 5.h,
@@ -69,7 +86,7 @@ class ForgotPasswordOtp extends StatelessWidget {
 
                         },*/
                         pinBoxOuterPadding: EdgeInsets.symmetric(horizontal: 1.5.w),
-                        controller: model.forgotPasswordController,
+                        //controller: model.forgotPasswordController,
                         pinTextAnimatedSwitcherTransition:
                         ProvidedPinBoxTextAnimation.scalingTransition,
                         pinTextAnimatedSwitcherDuration:
@@ -134,7 +151,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                         textValue: "Submit",
                         onButtonPressed: (){
                           Navigator.push(context,
-                              PageTransition(type: PageTransitionType.fade, child:  CreateNewPassword()));
+                              PageTransition(type: PageTransitionType.fade, child:LoginScreen()));
                         },
                       ),
                     ],

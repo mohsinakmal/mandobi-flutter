@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
+import 'package:mandobi_mobile_app/UI/Menu/dispute/dispute_details.dart';
+import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
 import 'package:mandobi_mobile_app/UI/OnBoarding/onBoarding_one.dart';
 import 'package:mandobi_mobile_app/UI/OnBoarding/onBoarding_two.dart';
 import 'package:mandobi_mobile_app/UI/Profile/edit_profile.dart';
@@ -31,7 +33,6 @@ void main() async{
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         return OrientationBuilder(
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
-            return SplashScreen();
+            return MyBottomNavBar();
           },
         );
       },

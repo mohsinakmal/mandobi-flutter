@@ -73,4 +73,19 @@ class UserMainViewModel extends BaseViewModel{
     "2016-2020",
   ];
 
+  // Disputes
+  List<String> disputesStatus = [
+    "Pending",
+    "In Process",
+    "Resolved",
+    "Cancelled",
+  ];
+
+  // Dispute Details
+  List<String> documents = [
+    ImageUtils.doc,
+    ImageUtils.man,
+    ImageUtils.laptop,
+  ];
+
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mandobi_mobile_app/UI/Register/login.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
@@ -7,6 +8,7 @@ import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_two.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:page_transition/page_transition.dart';
 
 class OnBoardingTwo extends StatelessWidget {
   const OnBoardingTwo({Key? key}) : super(key: key);
@@ -55,14 +57,16 @@ class OnBoardingTwo extends StatelessWidget {
               SizedBox(height: 8.h,),
               CustomButtonOne(
                 onButtonPressed: () {
-
+                  Navigator.push(context,
+                      PageTransition(type: PageTransitionType.fade, child:  LoginScreen()));
                 },
                 textValue: "Next",
               ),
               SizedBox(height: 3.h,),
               CustomButtonTwo(
                 onButtonPressed: () {
-
+                  Navigator.push(context,
+                      PageTransition(type: PageTransitionType.fade, child:  LoginScreen()));
                 },
                 textValue: "Skip",
               )

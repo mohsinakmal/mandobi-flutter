@@ -4,7 +4,10 @@ import 'package:mandobi_mobile_app/UI/Agents/agents.dart';
 import 'package:mandobi_mobile_app/UI/Home/agent.dart';
 import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/Home/tas_heel.dart';
+import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
 import 'package:mandobi_mobile_app/UI/Menu/menu.dart';
+import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
+import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
 import 'package:mandobi_mobile_app/UI/MyBooking/my_bookings.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
@@ -122,11 +125,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           body =  Agents();
           break;
         case 3:
-          body =  Menu(
-            // userId: model.usersModel.user_id,
-            // userName: model.usersModel.user_name,
-            // userImage: model.usersModel.user_image,
-          );
+          body =  Menu();
           break;
       }
     });

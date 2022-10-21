@@ -6,22 +6,25 @@ import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
-class CreateNewPassword extends StatefulWidget {
-  const CreateNewPassword({Key? key}) : super(key: key);
+class ChangePassword extends StatefulWidget {
+  const ChangePassword({Key? key}) : super(key: key);
 
   @override
-  State<CreateNewPassword> createState() => _CreateNewPasswordState();
+  State<ChangePassword> createState() => _ChangePasswordState();
 }
 
-class _CreateNewPasswordState extends State<CreateNewPassword> {
+class _ChangePasswordState extends State<ChangePassword> {
 
-  bool createNewPasswordIsVisible = true;
-  bool createNewConfirmPasswordIsVisible = true;
+  bool changePassOldPass = true;
+  bool changePassNewPass = true;
+  bool changePassConfirmPass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -42,26 +45,15 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                   Expanded(
                     child: HorizontalMargin(
                       widget: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             children: [
                               SizedBox(
                                 height: context.getPadding().top,
                               ),
-                              SizedBox(
-                                height: 3.h,
-                              ),
-                              Center(
-                                child: Text("Create New Password",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsRegular,
-                                      fontSize: 2.t,
-                                      color: ColorUtils.darkBlue
-                                  ),
-                                ),
-                              ),
+                              TopMargin(),
+                              AppBarTwoItems(text: "Change Password",),
                               SizedBox(
                                 height: 5.h,
                               ),
@@ -70,7 +62,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                                 height: 50.i,
                               ),
                               SizedBox(
-                                height: 5.h,
+                                height: 0.h,
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -79,10 +71,10 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                                   ),
                                 ),
                                 child: TextField(
-                                  controller: model.createNewPasswordController,
+                                  //controller: model.createNewPasswordController,
                                   style: const TextStyle(color: Colors.black),
                                   keyboardType: TextInputType.visiblePassword,
-                                  obscureText: createNewPasswordIsVisible,
+                                  obscureText: changePassOldPass,
                                   decoration: InputDecoration(
                                     contentPadding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.5.h),
                                     enabledBorder: OutlineInputBorder(
@@ -93,14 +85,14 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                       borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
                                     ),
-                                    hintText: "New Password",
+                                    hintText: "Old Password",
                                     hintStyle:  TextStyle(color: ColorUtils.black.withOpacity(0.5)),
                                     suffixIcon: IconButton(
-                                      icon: createNewPasswordIsVisible ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
+                                      icon: changePassOldPass ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
                                       color: const Color(0xFFDEDEDE),
                                       onPressed: () {
                                         setState(() {
-                                          createNewPasswordIsVisible = !createNewPasswordIsVisible;
+                                          changePassOldPass = !changePassOldPass;
                                         });
                                       },
                                       splashColor: Colors.transparent,
@@ -118,10 +110,49 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                                   ),
                                 ),
                                 child: TextField(
-                                  controller: model.createNewConfirmPasswordController,
+                                  //controller: model.createNewConfirmPasswordController,
                                   style: const TextStyle(color: Colors.black),
                                   keyboardType: TextInputType.visiblePassword,
-                                  obscureText: createNewConfirmPasswordIsVisible,
+                                  obscureText: changePassNewPass,
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.5.h),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
+                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                    ),
+                                    focusedBorder:  OutlineInputBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                      borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
+                                    ),
+                                    hintText: "New Password",
+                                    hintStyle:  TextStyle(color: ColorUtils.black.withOpacity(0.5)),
+                                    suffixIcon: IconButton(
+                                      icon: changePassNewPass ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
+                                      color: const Color(0xFFDEDEDE),
+                                      onPressed: () {
+                                        setState(() {
+                                          changePassNewPass = !changePassNewPass;
+                                        });
+                                      },
+                                      splashColor: Colors.transparent,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 2.5.h,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  ),
+                                ),
+                                child: TextField(
+                                  //controller: model.createNewConfirmPasswordController,
+                                  style: const TextStyle(color: Colors.black),
+                                  keyboardType: TextInputType.visiblePassword,
+                                  obscureText: changePassConfirmPass,
                                   decoration: InputDecoration(
                                     contentPadding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.5.h),
                                     enabledBorder: OutlineInputBorder(
@@ -135,11 +166,11 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                                     hintText: "Confirm Password",
                                     hintStyle:  TextStyle(color: ColorUtils.black.withOpacity(0.5)),
                                     suffixIcon: IconButton(
-                                      icon: createNewConfirmPasswordIsVisible ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
+                                      icon: changePassConfirmPass ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
                                       color: const Color(0xFFDEDEDE),
                                       onPressed: () {
                                         setState(() {
-                                          createNewConfirmPasswordIsVisible = !createNewConfirmPasswordIsVisible;
+                                          changePassConfirmPass = !changePassConfirmPass;
                                         });
                                       },
                                       splashColor: Colors.transparent,
@@ -163,7 +194,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                       textValue: "Update",
                     ),
                   ),
-                  SizedBox(height: 6.h,),
+                  SizedBox(height: 1.h,),
                 ],
               ),
             ),

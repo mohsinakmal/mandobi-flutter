@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Register/forgot_password_otp.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
@@ -9,6 +10,7 @@ import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -173,7 +175,10 @@ class ForgotPassword extends StatelessWidget {
                         ),
                         SizedBox(height: 6.h,),
                         CustomButtonOne(
-                          onButtonPressed: (){},
+                          onButtonPressed: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:  ForgotPasswordOtp()));
+                          },
                           textValue: "Continue",
                         ),
                         SizedBox(height: 4.h,),

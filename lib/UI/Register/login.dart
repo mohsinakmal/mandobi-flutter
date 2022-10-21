@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Register/forgot_password.dart';
+import 'package:mandobi_mobile_app/UI/Register/register_account.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/bottom_navigation_bar.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -109,19 +113,28 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         SizedBox(height: 4.h,),
                         CustomButtonOne(
-                          onButtonPressed: (){},
+                          onButtonPressed: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                          },
                           textValue: "Login",
                         ),
                         SizedBox(height: 1.5.h,),
-                        Container(
-                          margin: EdgeInsets.only(right: 5.w),
-                          child: Align(
-                            alignment: Alignment.centerRight,
-                            child: Text("Forgot Password",
-                              style: TextStyle(
-                                  fontFamily: FontUtils.poppinsRegular,
-                                  fontSize: 1.6.t,
-                                  color: ColorUtils.blue2
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:  ForgotPassword()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(right: 5.w),
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Text("Forgot Password",
+                                style: TextStyle(
+                                    fontFamily: FontUtils.poppinsRegular,
+                                    fontSize: 1.6.t,
+                                    color: ColorUtils.blue2
+                                ),
                               ),
                             ),
                           ),
@@ -194,12 +207,18 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                             SizedBox(width: 1.w,),
-                            Text("Sign Up",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontFamily: FontUtils.poppinsBold,
-                                  fontSize: 1.8.t,
-                                  color: ColorUtils.blue2
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                    PageTransition(type: PageTransitionType.fade, child:  RegisterAccount()));
+                              },
+                              child: Text("Sign Up",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: FontUtils.poppinsBold,
+                                    fontSize: 1.8.t,
+                                    color: ColorUtils.blue2
+                                ),
                               ),
                             ),
                           ],

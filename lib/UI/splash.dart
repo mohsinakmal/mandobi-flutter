@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(
-      Duration(seconds: 920),
+      Duration(seconds: 3),
       () => Navigator.pushReplacement(
           context,
           PageTransition(

@@ -23,6 +23,9 @@ class AboutAgent extends StatefulWidget {
 
 class _AboutAgentState extends State<AboutAgent> with SingleTickerProviderStateMixin {
 
+  /*bool servicesSelected = true;
+  bool ratingSelectd = false;*/
+
   final List<Tab> myTabs = <Tab>[
     Tab(text: 'LEFT'),
     Tab(text: 'RIGHT'),

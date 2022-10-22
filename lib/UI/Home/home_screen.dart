@@ -204,7 +204,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 3.h,),
                     SizedBox(
                       height: 11.h,
                       child: ListView.separated(

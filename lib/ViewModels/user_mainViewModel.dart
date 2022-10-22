@@ -88,4 +88,7 @@ class UserMainViewModel extends BaseViewModel{
     ImageUtils.laptop,
   ];
 
+  // My Booking
+int? myBookingStatus;
+
 }

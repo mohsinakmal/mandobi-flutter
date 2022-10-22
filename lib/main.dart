@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/Menu/dispute/dispute_details.dart';
 import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
+import 'package:mandobi_mobile_app/UI/MyBooking/booking_details.dart';
 import 'package:mandobi_mobile_app/UI/OnBoarding/onBoarding_one.dart';
 import 'package:mandobi_mobile_app/UI/OnBoarding/onBoarding_two.dart';
 import 'package:mandobi_mobile_app/UI/Profile/edit_profile.dart';

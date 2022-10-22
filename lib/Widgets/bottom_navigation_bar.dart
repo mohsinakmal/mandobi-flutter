@@ -117,7 +117,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       currentIndex = selectedIndex;
       switch(currentIndex){
         case 0:
-          body =  AboutAgent();
+          body =  HomeScreen();
           break;
         case 1:
           body = MyBookings();

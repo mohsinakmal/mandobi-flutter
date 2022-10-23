@@ -86,98 +86,93 @@ class Disputes extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: model.popularAgentNames.length,
                         itemBuilder: (context, index) {
-                          return Stack(
-                            //alignment: Alignment.bottomCenter,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.all(4),
-                                height:
-                                    MediaQuery.of(context).size.height * 0.10,
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
-                                  color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden1:
-                                  model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue3:
-                                  model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1:
-                                  ColorUtils.red,
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(context,
-                                      PageTransition(type: PageTransitionType.fade, child:  DisputeDetails(passportStatus: model.disputesStatus[index])));
-                                },
-                                child: Card(
-                                  elevation: 5,
-                                  child: Container(
-                                    margin: EdgeInsets.symmetric(
-                                        horizontal: 5.w, vertical: 2.h),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: <Widget>[
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  "Passport Renewal",
-                                                  style: TextStyle(
-                                                      fontFamily: FontUtils
-                                                          .poppinsRegular,
-                                                      fontSize:
-                                                          Fontsizes.size13,
-                                                      color: ColorUtils.black),
-                                                ),
-                                                Text(
-                                                  "ID #4564",
-                                                  style: TextStyle(
-                                                      fontFamily: FontUtils
-                                                          .poppinsSemiBold,
-                                                      fontSize:
-                                                          Fontsizes.size14,
-                                                      color: ColorUtils.black),
-                                                ),
-                                              ],
+                          return Container(
+                            //margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(6)),
+                              color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden1:
+                              model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue3:
+                              model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1:
+                              ColorUtils.red,
+                            ),
+                            padding: EdgeInsets.only(bottom: 0.5.h,),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(context,
+                                    PageTransition(type: PageTransitionType.fade, child:  DisputeDetails(passportStatus: model.disputesStatus[index])));
+                              },
+                              child: Card(
+                                margin: EdgeInsets.zero,
+                                elevation: 5,
+                                child: Container(
+                                  margin: EdgeInsets.symmetric(
+                                      horizontal: 5.w, vertical: 2.h),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Passport Renewal",
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils
+                                                        .poppinsRegular,
+                                                    fontSize:
+                                                    Fontsizes.size13,
+                                                    color: ColorUtils.black),
+                                              ),
+                                              Text(
+                                                "ID #4564",
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils
+                                                        .poppinsSemiBold,
+                                                    fontSize:
+                                                    Fontsizes.size14,
+                                                    color: ColorUtils.black),
+                                              ),
+                                            ],
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.rectangle,
+                                              borderRadius: BorderRadius.circular(13),
+                                              color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden:
+                                              model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue1.withOpacity(0.13):
+                                              model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1.withOpacity(0.2):
+                                              ColorUtils.red.withOpacity(0.2),
                                             ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.rectangle,
-                                                borderRadius: BorderRadius.circular(13),
-                                                color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden:
-                                                model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue1.withOpacity(0.13):
-                                                model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1.withOpacity(0.2):
-                                                ColorUtils.red.withOpacity(0.2),
-                                              ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 2.5.w,
-                                                      vertical: 0.5.h),
-                                                  child: Text(
-                                                    model.disputesStatus[index],
-                                                    style: TextStyle(
-                                                        fontFamily: FontUtils
-                                                            .poppinsRegular,
-                                                        fontSize: 1.6.t,
-                                                        color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden1:
-                                                        model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue3:
-                                                        model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1:
-                                                        ColorUtils.red,
-                                                    ),
-                                                  ),
+                                            child: Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 2.5.w,
+                                                  vertical: 0.5.h),
+                                              child: Text(
+                                                model.disputesStatus[index],
+                                                style: TextStyle(
+                                                  fontFamily: FontUtils
+                                                      .poppinsRegular,
+                                                  fontSize: 1.6.t,
+                                                  color: model.disputesStatus[index]=="Pending" ? ColorUtils.golden1:
+                                                  model.disputesStatus[index]=="In Process" ? ColorUtils.lightBlue3:
+                                                  model.disputesStatus[index]=="Resolved" ? ColorUtils.lightGreen1:
+                                                  ColorUtils.red,
                                                 ),
                                               ),
-                                      ],
-                                    ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                              )
-                            ],
+                            ),
                           );
                         },
                       ),

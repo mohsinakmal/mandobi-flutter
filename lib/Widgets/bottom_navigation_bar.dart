@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Agents/agents.dart';
-import 'package:mandobi_mobile_app/UI/Home/agent.dart';
+import 'package:mandobi_mobile_app/UI/Home/about_agent.dart';
 import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/Home/tas_heel.dart';
 import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
@@ -126,7 +126,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           body =  Agents();
           break;
         case 3:
-          body =  Disputes();
+          body =  Menu();
           break;
       }
     });

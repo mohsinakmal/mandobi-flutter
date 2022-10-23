@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
+import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
+import 'package:mandobi_mobile_app/UI/Menu/payment/payment_details.dart';
 import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
 import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
+import 'package:mandobi_mobile_app/UI/Register/login.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -135,20 +138,26 @@ class Menu extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 4.h,),
-                                  Row(
-                                    children: [
-                                      Icon(Icons.chat_outlined,
-                                      color: ColorUtils.lightBlue,
-                                      ),
-                                      SizedBox(width: 3.w,),
-                                      Text("Dispute",
-                                        style: TextStyle(
-                                            fontFamily: FontUtils.poppinsRegular,
-                                            fontSize: Fontsizes.size16,
-                                            color: ColorUtils.black
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          PageTransition(type: PageTransitionType.fade, child:  Disputes()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.chat_outlined,
+                                        color: ColorUtils.lightBlue,
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(width: 3.w,),
+                                        Text("Dispute",
+                                          style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size16,
+                                              color: ColorUtils.black
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   SizedBox(height: 4.h,),
                                   InkWell(
@@ -195,36 +204,48 @@ class Menu extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 4.h,),
-                                  Row(
-                                    children: [
-                                      Icon(Icons.payments_outlined,
-                                        color: ColorUtils.lightBlue,
-                                      ),
-                                      SizedBox(width: 3.w,),
-                                      Text("Payment Details",
-                                        style: TextStyle(
-                                            fontFamily: FontUtils.poppinsRegular,
-                                            fontSize: Fontsizes.size16,
-                                            color: ColorUtils.black
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          PageTransition(type: PageTransitionType.fade, child:  PaymentDetails()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.payments_outlined,
+                                          color: ColorUtils.lightBlue,
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(width: 3.w,),
+                                        Text("Payment Details",
+                                          style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size16,
+                                              color: ColorUtils.black
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   SizedBox(height: 4.h,),
-                                  Row(
-                                    children: [
-                                      Icon(Icons.logout,
-                                        color: ColorUtils.lightBlue,
-                                      ),
-                                      SizedBox(width: 3.w,),
-                                      Text("Logout",
-                                        style: TextStyle(
-                                            fontFamily: FontUtils.poppinsRegular,
-                                            fontSize: Fontsizes.size16,
-                                            color: ColorUtils.black
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          PageTransition(type: PageTransitionType.fade, child:  LoginScreen()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.logout,
+                                          color: ColorUtils.lightBlue,
                                         ),
-                                      ),
-                                    ],
+                                        SizedBox(width: 3.w,),
+                                        Text("Logout",
+                                          style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size16,
+                                              color: ColorUtils.black
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),

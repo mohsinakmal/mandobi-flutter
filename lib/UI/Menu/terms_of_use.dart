@@ -18,30 +18,43 @@ class TermsOfUse extends StatelessWidget {
       bottom: false,
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: HorizontalMargin(
-            widget: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: context.getPadding().top,
-                ),
-                TopMargin(),
-                AppBarTwoItems(text: "Terms Of Use",),
-                SizedBox(height: 2.h,),
-                Text(
-                  "Welcome to Mandobi",
-                  style: TextStyle(
-                      fontFamily:
-                      FontUtils.poppinsMedium,
-                      fontSize: Fontsizes.size17,
-                      color: ColorUtils.black),
-                ),
-                SizedBox(height: 4.h,),
-                TermsOfUseText(),
-              ],
+        body: Column(
+          children: [
+            HorizontalMargin(
+              widget: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: context.getPadding().top,
+                  ),
+                  TopMargin(),
+                  AppBarTwoItems(text: "Terms Of Use",),
+                ],
+              ),
             ),
-          ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: HorizontalMargin(
+                  widget: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 2.h,),
+                      Text(
+                        "Welcome to Mandobi",
+                        style: TextStyle(
+                            fontFamily:
+                            FontUtils.poppinsMedium,
+                            fontSize: Fontsizes.size17,
+                            color: ColorUtils.black),
+                      ),
+                      SizedBox(height: 4.h,),
+                      TermsOfUseText(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

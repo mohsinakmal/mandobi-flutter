@@ -8,13 +8,18 @@ class BackArrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: ColorUtils.lightBlue.withOpacity(0.1),
-        ),
-        padding: EdgeInsets.all(16),
-        child: SvgPicture.asset(ImageUtils.blueArrow)
+    return InkWell(
+      onTap: (){
+        Navigator.pop(context);
+      },
+      child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: ColorUtils.lightBlue.withOpacity(0.1),
+          ),
+          padding: EdgeInsets.all(16),
+          child: SvgPicture.asset(ImageUtils.blueArrow)
+      ),
     );
   }
 }

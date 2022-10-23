@@ -14,13 +14,17 @@ import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:stacked/stacked.dart';
 
 class BookingDetails extends StatefulWidget {
-  const BookingDetails({Key? key}) : super(key: key);
+
+  String? currentBookingValue;
+
+  BookingDetails({this.currentBookingValue, Key? key}) : super(key: key);
 
   @override
   State<BookingDetails> createState() => _BookingDetailsState();
 }
 
 class _BookingDetailsState extends State<BookingDetails> {
+
   bool detailsSelected = true;
   bool milestonesSelected = false;
 
@@ -197,32 +201,17 @@ class _BookingDetailsState extends State<BookingDetails> {
                               shape: BoxShape.rectangle,
                               borderRadius: BorderRadius.circular(13),
                               color: ColorUtils.golden,
-                              // widget.passportStatus == "Pending"
-                              //     ? ColorUtils.golden
-                              //     : widget.passportStatus == "In Process"
-                              //     ? ColorUtils.lightBlue1.withOpacity(0.13)
-                              //     : widget.passportStatus == "Resolved"
-                              //     ? ColorUtils.lightGreen1
-                              //     .withOpacity(0.2)
-                              //     : ColorUtils.red.withOpacity(0.2),
                             ),
                             child: Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 2.5.w, vertical: 0.5.h),
                               child: Text(
-                                "Pending",
+                                widget.currentBookingValue!,
                                 //widget.passportStatus!,
                                 style: TextStyle(
                                   fontFamily: FontUtils.poppinsRegular,
                                   fontSize: 1.6.t,
-                                  color: ColorUtils.golden1,
-                                  // widget.passportStatus == "Pending"
-                                  //     ? ColorUtils.golden1
-                                  //     : widget.passportStatus == "In Process"
-                                  //     ? ColorUtils.lightBlue3
-                                  //     : widget.passportStatus == "Resolved"
-                                  //     ? ColorUtils.lightGreen1
-                                  //     : ColorUtils.red,
+                                  color: ColorUtils.white,
                                 ),
                               ),
                             ),

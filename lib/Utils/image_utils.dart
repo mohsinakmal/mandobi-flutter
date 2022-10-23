@@ -55,4 +55,12 @@ class ImageUtils{
   static String circleGrey2 = "assets/images/circlegrey2Whitebg.png";
   static String circleGrey3 = "assets/images/circlegrey3Whitebg.png";
   static String paymentCurve = "assets/images/payment_curve.png";
+  static String masterCard = "assets/images/masterCard.png";
+  static String visaCard = "assets/images/visadCard.png";
+  static String passportService = "assets/images/passport_service.png";
+  static String oldPassport = "assets/images/old_passport.png";
+  static String emiratedId = "assets/images/emirated_id.png";
+  static String cardPayment = "assets/images/card_payment.png";
+  static String appleBlackLogo = "assets/images/apple_black.png";
+  static String chatIcon = "assets/images/chat_icon.svg";
 }

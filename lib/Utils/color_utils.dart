@@ -31,4 +31,10 @@ class ColorUtils{
   static Color darkBlue1 =  Color (0xFF040D2A);
   static Color lightGreen3 =  Color (0xFF78D8C8);
   static Color golder1 =  Color (0xFFE9C273);
+  static Color silver4 =  Color (0xFFEBEBEB);
+  static Color grey3 =  Color (0xFF464749);
+  static Color lightBlue4 =  Color (0xFF1CBEB8);
+  static Color silver5 =  Color (0xFFF6F6F6);
+  static Color lightBlue5 =  Color (0xFFEBF8FB);
+  static Color silver6 =  Color (0xFFCCCCCC);
 }

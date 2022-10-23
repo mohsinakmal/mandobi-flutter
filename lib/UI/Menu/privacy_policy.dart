@@ -18,21 +18,33 @@ class PrivacyPolicy extends StatelessWidget {
       bottom: false,
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: HorizontalMargin(
-            widget: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: context.getPadding().top,
-                ),
-                TopMargin(),
-                AppBarTwoItems(text: "Privacy Policy",),
-                SizedBox(height: 4.h,),
-                PrivacyPolicyText(),
-              ],
+        body: Column(
+          children: [
+            HorizontalMargin(
+              widget: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: context.getPadding().top,
+                  ),
+                  TopMargin(),
+                  AppBarTwoItems(text: "Privacy Policy",),
+                ],
+              ),
             ),
-          ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: HorizontalMargin(
+                  widget: Column(
+                    children: [
+                      SizedBox(height: 4.h,),
+                      PrivacyPolicyText(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

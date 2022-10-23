@@ -1,8 +1,7 @@
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:stacked/stacked.dart';
 
-class UserMainViewModel extends BaseViewModel{
-
+class UserMainViewModel extends BaseViewModel {
   //######################################################################## Home Screen ###############################################################################//
 /////////////////////////////////////////////////////////////////////////    Starts    ///////////////////////////////////////////////////////////////////////////////////
 
@@ -81,6 +80,7 @@ class UserMainViewModel extends BaseViewModel{
     "Cancelled",
   ];
 
+
   // Dispute Details
   List<String> documents = [
     ImageUtils.doc,
@@ -89,6 +89,36 @@ class UserMainViewModel extends BaseViewModel{
   ];
 
   // My Booking
-int? myBookingStatus;
+  int? myBookingStatus;
+
+  List<String> bookingsStatus = [
+    "Pending",
+    "Process",
+    "Completed",
+    "Cancel",
+  ];
+
+  String? bookingValue;
+
+  // Notifications
+  List<String> notificationsText = [
+    "Send documents as proof",
+    "Dispute Request has been resolved successfully",
+  ];
+
+  // Service Details
+  List<String> documentImages = [
+    ImageUtils.oldPassport,
+    ImageUtils.emiratedId,
+    ImageUtils.oldPassport,
+    ImageUtils.emiratedId,
+  ];
+
+  List<String> documentNames = [
+    "Old Passport",
+    "Emirates Id",
+    "Old Passport",
+    "Emirates Id",
+  ];
 
 }

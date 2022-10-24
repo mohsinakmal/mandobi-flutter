@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Menu/payment/add_payment_method.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -9,6 +10,7 @@ import 'package:mandobi_mobile_app/ViewModels/user_mainViewModel.dart';
 import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class CardDetails extends StatelessWidget {
@@ -95,6 +97,28 @@ class CardDetails extends StatelessWidget {
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                        SizedBox(height: 2.h,),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:  AddPaymentMethod()));
+                          },
+                          child: Row(
+                            children: [
+                              Icon(Icons.add,
+                              color: ColorUtils.lightBlue,
+                                size: 4.i,
+                              ),
+                              Text("Payment Method",
+                                style: TextStyle(
+                                  fontFamily: FontUtils.poppinsSemiBold,
+                                  fontSize: Fontsizes.size14,
+                                  color: ColorUtils.lightBlue6,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],

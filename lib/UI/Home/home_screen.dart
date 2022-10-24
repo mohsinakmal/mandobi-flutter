@@ -122,28 +122,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: 2.h,),
-                          Image.asset(ImageUtils.welcomeDubai),
+                          HorizontalMargin(widget: Image.asset(ImageUtils.welcomeDubai)),
                           SizedBox(height: 2.h,),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Categories",
-                                style: TextStyle(
-                                    fontFamily: FontUtils.poppinsSemiBold,
-                                    fontSize: 1.7.t,
-                                    color: ColorUtils.black
+                          HorizontalMargin(
+                            widget: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("Categories",
+                                  style: TextStyle(
+                                      fontFamily: FontUtils.poppinsSemiBold,
+                                      fontSize: 1.7.t,
+                                      color: ColorUtils.black
+                                  ),
                                 ),
-                              ),
-                              Text("View All",
-                                style: TextStyle(
-                                    fontFamily: FontUtils.poppinsRegular,
-                                    fontSize: 1.4.t,
-                                    color: ColorUtils.grey2
+                                Text("View All",
+                                  style: TextStyle(
+                                      fontFamily: FontUtils.poppinsRegular,
+                                      fontSize: 1.4.t,
+                                      color: ColorUtils.grey2
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          SizedBox(height: 2.h,),
+                          SizedBox(height: 0.5.h,),
                           SizedBox(
                             height: 25.h,
                             child: ListView.separated(

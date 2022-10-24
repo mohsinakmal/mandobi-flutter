@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         return OrientationBuilder(
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
-            return MyBookings();
+            return SplashScreen();
           },
         );
       },

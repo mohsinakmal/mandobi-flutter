@@ -79,6 +79,7 @@ class _AboutAgentState extends State<AboutAgent>
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5.w),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(
                                   height: 4.h,

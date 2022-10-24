@@ -103,7 +103,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           )),
                                     ),
                                     Container(
-                                      margin: EdgeInsets.only(bottom: 2.h),
+                                      margin: EdgeInsets.only(bottom: 4.h),
                                       child: Align(
                                         alignment: Alignment.bottomRight,
                                         child: PopupMenuButton(
@@ -141,7 +141,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 8.h,),
+                              SizedBox(height: 4.h,),
                               CustomTextField(
                                 prefixRequired: false,
                                 suffixRequired: false,

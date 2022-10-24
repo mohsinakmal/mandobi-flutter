@@ -54,7 +54,7 @@ class OnBoardingOne extends StatelessWidget {
                     color: ColorUtils.grey
                 ),
               ),
-              SizedBox(height: 8.h,),
+              SizedBox(height: 12.h,),
               SvgPicture.asset(ImageUtils.indicators),
               SizedBox(height: 8.h,),
               CustomButtonOne(
@@ -64,7 +64,7 @@ class OnBoardingOne extends StatelessWidget {
                 },
                 textValue: "Next",
               ),
-              SizedBox(height: 3.h,),
+              SizedBox(height: 1.5.h,),
               CustomButtonTwo(
                 onButtonPressed: () {
                   Navigator.push(context,

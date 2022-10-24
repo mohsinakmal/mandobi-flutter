@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     widget: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 12.h,),
+                        SizedBox(height: 6.h,),
                         Align(
                           alignment: Alignment.center,
                           child: Image.asset(ImageUtils.loginLogo,
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           prefixRequired: true,
                           prefixIconData: Icons.email_outlined,
                         ),
-                        SizedBox(height: 3.h,),
+                        SizedBox(height: 1.5.h,),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: const BorderRadius.all(
@@ -167,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 //color: ColorUtils.black.withOpacity(0.5),
                               ),
                               child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),
+                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.8.h),
                                   child: SvgPicture.asset(ImageUtils.facebookLogo)),
                             ),
                             Container(
@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 //color: ColorUtils.black.withOpacity(0.5),
                               ),
                               child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),
+                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
                                   child: SvgPicture.asset(ImageUtils.googleLogo)),
                             ),
                             Container(
@@ -189,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 //color: ColorUtils.black.withOpacity(0.5),
                               ),
                               child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),
+                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
                                   child: SvgPicture.asset(ImageUtils.appleLogo)),
                             ),
                           ],

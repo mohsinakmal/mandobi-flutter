@@ -115,7 +115,7 @@ class ForgotPasswordOtp extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: FontUtils.poppinsRegular,
                                 fontSize: 2.t,
-                                color: ColorUtils.blue3,
+                                color: ColorUtils.lightBlue,
                               ),
                             ),
                             TextSpan(

@@ -54,7 +54,7 @@ class OnBoardingTwo extends StatelessWidget {
               ),
               SizedBox(height: 8.h,),
               SvgPicture.asset(ImageUtils.indicators),
-              SizedBox(height: 8.h,),
+              SizedBox(height: 12.h,),
               CustomButtonOne(
                 onButtonPressed: () {
                   Navigator.push(context,
@@ -62,7 +62,7 @@ class OnBoardingTwo extends StatelessWidget {
                 },
                 textValue: "Next",
               ),
-              SizedBox(height: 3.h,),
+              SizedBox(height: 1.5.h,),
               CustomButtonTwo(
                 onButtonPressed: () {
                   Navigator.push(context,

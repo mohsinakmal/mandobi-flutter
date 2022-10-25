@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/MyBooking/booking_details.dart';
+import 'package:mandobi_mobile_app/UI/MyBooking/chat.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -391,25 +392,31 @@ class MyBookings extends StatelessWidget {
                                                       SizedBox(
                                                         width: 8.w,
                                                       ),
-                                                      Container(
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            color: ColorUtils
-                                                                .lightBlue
-                                                                .withOpacity(
-                                                                    0.1),
-                                                          ),
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  16),
-                                                          child:
-                                                              SvgPicture.asset(
-                                                            ImageUtils.chatIcon,
-                                                            width: 4.i,
-                                                            height: 4.i,
-                                                          ))
+                                                      InkWell(
+                                                        onTap: (){
+                                                          Navigator.push(context,
+                                                              PageTransition(type: PageTransitionType.fade, child: ChatScreen()));
+                                                        },
+                                                        child: Container(
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              shape:
+                                                                  BoxShape.circle,
+                                                              color: ColorUtils
+                                                                  .lightBlue
+                                                                  .withOpacity(
+                                                                      0.1),
+                                                            ),
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    16),
+                                                            child:
+                                                                SvgPicture.asset(
+                                                              ImageUtils.chatIcon,
+                                                              width: 4.i,
+                                                              height: 4.i,
+                                                            )),
+                                                      )
                                                     ],
                                                   ),
                                               ],

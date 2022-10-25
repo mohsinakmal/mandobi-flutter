@@ -16,7 +16,10 @@ import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class PassportRenewal extends StatelessWidget {
-  const PassportRenewal({Key? key}) : super(key: key);
+
+  String? screenTitle;
+
+  PassportRenewal({this.screenTitle, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,7 @@ class PassportRenewal extends StatelessWidget {
                         ),
                         TopMargin(),
                         AppBarTwoItems(
-                          text: "Passport Renewal",
+                          text: screenTitle != "File a Dispute" ? "Passport Renewal" : "File a Dispute",
                         ),
                       ],
                     ),
@@ -53,7 +56,7 @@ class PassportRenewal extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          SizedBox(height: 3.h,),
+                          SizedBox(height: 1.h,),
                           Image.asset(ImageUtils.passportService),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5.w),
@@ -67,21 +70,23 @@ class PassportRenewal extends StatelessWidget {
                                   prefixRequired: false,
                                   hintText: "Ahmed Saud",
                                 ),
-                                SizedBox(height: 2.5.h,),
+                                if(screenTitle != "File a Dispute" )
+                                SizedBox(height: 1.5.h,),
+                                if(screenTitle != "File a Dispute" )
                                 CustomTextField(
                                   textInputType: TextInputType.text,
                                   suffixRequired: false,
                                   prefixRequired: false,
                                   hintText: "Emara DB 1254 north area",
                                 ),
-                                SizedBox(height: 2.5.h,),
+                                SizedBox(height: 1.5.h,),
                                 CustomTextField(
                                   textInputType: TextInputType.text,
                                   suffixRequired: false,
                                   prefixRequired: false,
                                   hintText: "Ali Raza - Agent",
                                 ),
-                                SizedBox(height: 2.5.h,),
+                                SizedBox(height: 1.5.h,),
                                 Row(
                                   children: [
                                     Expanded(
@@ -131,7 +136,7 @@ class PassportRenewal extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 2.5.h,),
+                                SizedBox(height: 1.5.h,),
                                 TextField(
                                   maxLines: 5,
                                   style:  TextStyle(color: ColorUtils.black),
@@ -145,7 +150,7 @@ class PassportRenewal extends StatelessWidget {
                                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
                                       borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
                                     ),
-                                    hintText: "Note: Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply",
+                                    hintText: "Note",
                                     hintStyle: TextStyle(
                                       height: 0.2.h,
                                         color: ColorUtils.black.withOpacity(0.5)
@@ -160,6 +165,7 @@ class PassportRenewal extends StatelessWidget {
                                   },
                                   textValue: "Submit",
                                 ),
+                                SizedBox(height: 1.h,),
                               ],
                             ),
                           ),

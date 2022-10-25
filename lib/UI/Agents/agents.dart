@@ -80,27 +80,14 @@ class Agents extends StatelessWidget {
                           SizedBox(height: 2.h,),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5.w),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text("Categories",
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsSemiBold,
-                                      fontSize: 1.7.t,
-                                      color: ColorUtils.black
-                                  ),
-                                ),
-                                Text("View All",
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsRegular,
-                                      fontSize: 1.4.t,
-                                      color: ColorUtils.grey2
-                                  ),
-                                ),
-                              ],
+                            child: Text("Categories",
+                              style: TextStyle(
+                                  fontFamily: FontUtils.poppinsSemiBold,
+                                  fontSize: 1.7.t,
+                                  color: ColorUtils.black
+                              ),
                             ),
                           ),
-                          SizedBox(height: 2.h,),
                           SizedBox(
                             height: 25.h,
                             child: ListView.separated(

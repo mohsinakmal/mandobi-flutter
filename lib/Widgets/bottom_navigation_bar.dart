@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Agents/agents.dart';
 import 'package:mandobi_mobile_app/UI/Home/about_agent.dart';
@@ -11,6 +12,7 @@ import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
 import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
 import 'package:mandobi_mobile_app/UI/MyBooking/my_bookings.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
+import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
 import 'package:stacked/stacked.dart';
 
@@ -53,40 +55,27 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
               backgroundColor: ColorUtils.darkBlue,
               type: BottomNavigationBarType.fixed,
               items:  <BottomNavigationBarItem>[
-                const BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home_outlined,
-                    size: 30,
-                  ),
+                 BottomNavigationBarItem(
+                   icon: SvgPicture.asset(ImageUtils.bottomHome,
+                   color: currentIndex == 0 ? ColorUtils.lightBlue : ColorUtils.white,
+                   ),
                   label: "Home",
                 ),
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Icon(
-                        Icons.calendar_today,
-                    ),
+                  icon: SvgPicture.asset(ImageUtils.bottomBooking,
+                    color: currentIndex == 1 ? ColorUtils.lightBlue : ColorUtils.white,
                   ),
                   label: 'My Booking',
                 ),
                 BottomNavigationBarItem(
-                  icon: SizedBox(
-                    width: 30,
-                    height: 30,
-                    child: Icon(
-                        Icons.people_outline
-                    ),
+                  icon: SvgPicture.asset(ImageUtils.bottomAgent,
+                    color: currentIndex == 2 ? ColorUtils.lightBlue : ColorUtils.white,
                   ),
                   label: 'Agents',
                 ),
                 BottomNavigationBarItem(
-                  icon: Container(
-                    width: 30,
-                    height: 30,
-                    child: Icon(
-                        Icons.menu
-                    ),
+                  icon: SvgPicture.asset(ImageUtils.bottomMenu,
+                    color: currentIndex == 3 ? ColorUtils.lightBlue : ColorUtils.white,
                   ),
                   label: 'Menu',
                 ),

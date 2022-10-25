@@ -134,7 +134,7 @@ class _EditProfileState extends State<EditProfile> {
                         textInputType: TextInputType.name,
                         controller: model.editProfileNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: false,
@@ -142,7 +142,7 @@ class _EditProfileState extends State<EditProfile> {
                         textInputType: TextInputType.name,
                         controller: model.editProfileUserNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: true,
@@ -153,7 +153,7 @@ class _EditProfileState extends State<EditProfile> {
                         textInputType: TextInputType.name,
                         //controller: model.editProfileUserNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       IntlPhoneField(
                         decoration: InputDecoration(
                           counter: Text(""),
@@ -172,7 +172,7 @@ class _EditProfileState extends State<EditProfile> {
                           print(phone.completeNumber);
                         },
                       ),
-                      SizedBox(height:10.h,),
+                      SizedBox(height:6.h,),
                       CustomButtonOne(
                         onButtonPressed: (){},
                         textValue: "Continue",

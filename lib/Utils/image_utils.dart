@@ -63,4 +63,10 @@ class ImageUtils{
   static String cardPayment = "assets/images/card_payment.png";
   static String appleBlackLogo = "assets/images/apple_black.png";
   static String chatIcon = "assets/images/chat_icon.svg";
+  static String fiveStars = "assets/images/five_stars.svg";
+  static String chats = "assets/images/chats.png";
+  static String bottomHome = "assets/images/bottom_home.svg";
+  static String bottomBooking = "assets/images/bottom_booking.svg";
+  static String bottomAgent = "assets/images/bottom_agent.svg";
+  static String bottomMenu = "assets/images/bottom_menu.svg";
 }

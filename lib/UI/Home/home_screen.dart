@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Home/about_agent.dart';
 import 'package:mandobi_mobile_app/UI/Home/notifications.dart';
+import 'package:mandobi_mobile_app/UI/Profile/my_profile.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -49,69 +50,75 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: context.getPadding().top,
                         ),
                         TopMargin(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: ColorUtils.lightBlue)
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(6.0),
-                                    child: Image.asset(ImageUtils.userPic,
-                                    height: 15.i,
-                                      width: 15.i,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child: MyProfile()));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: ColorUtils.lightBlue)
                                     ),
-                                  ),
-                                ),
-                                SizedBox(width: 2.w,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Ahmed Saud",
-                                      style: TextStyle(
-                                          fontFamily: FontUtils.poppinsMedium,
-                                          fontSize: 2.t,
-                                          color: ColorUtils.black
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(6.0),
+                                      child: Image.asset(ImageUtils.userPic,
+                                      height: 15.i,
+                                        width: 15.i,
                                       ),
                                     ),
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(ImageUtils.locationPin),
-                                        SizedBox(width: 1.w,),
-                                        Text("Emara DB 1254 north area",
-                                          style: TextStyle(
-                                              fontFamily: FontUtils.poppinsRegular,
-                                              fontSize: 1.6.t,
-                                              color: ColorUtils.grey1
-                                          ),
+                                  ),
+                                  SizedBox(width: 2.w,),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Ahmed Saud",
+                                        style: TextStyle(
+                                            fontFamily: FontUtils.poppinsMedium,
+                                            fontSize: 2.t,
+                                            color: ColorUtils.black
                                         ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            InkWell(
-                              onTap: (){
-                                Navigator.push(context,
-                                    PageTransition(type: PageTransitionType.fade, child:  NotificationsScreen()));
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: ColorUtils.lightBlue.withOpacity(0.1),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: SvgPicture.asset(ImageUtils.notificationIcon),
+                                      ),
+                                      Row(
+                                        children: [
+                                          SvgPicture.asset(ImageUtils.locationPin),
+                                          SizedBox(width: 1.w,),
+                                          Text("Emara DB 1254 north area",
+                                            style: TextStyle(
+                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontSize: 1.6.t,
+                                                color: ColorUtils.grey1
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.push(context,
+                                      PageTransition(type: PageTransitionType.fade, child:  NotificationsScreen()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: ColorUtils.lightBlue.withOpacity(0.1),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: SvgPicture.asset(ImageUtils.notificationIcon),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),

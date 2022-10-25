@@ -103,7 +103,7 @@ class CardDetails extends StatelessWidget {
                         GestureDetector(
                           onTap: (){
                             Navigator.push(context,
-                                PageTransition(type: PageTransitionType.fade, child:  AddPaymentMethod()));
+                                PageTransition(type: PageTransitionType.fade, child:  AddPaymentMethod(paymentScreenTitle: "",)));
                           },
                           child: Row(
                             children: [

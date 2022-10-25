@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Home/passport_Renewal.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -9,8 +10,10 @@ import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_mainViewModel.dart';
 import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
+import 'package:mandobi_mobile_app/Widgets/dialogBox.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class BookingDetails extends StatefulWidget {
@@ -68,8 +71,12 @@ class _BookingDetailsState extends State<BookingDetails> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.rectangle,
                                   borderRadius:
-                                  BorderRadius.all(Radius.circular(30.0)),
-                                  border: Border.all(color: ColorUtils.lightBlue)),
+                                  BorderRadius.all(Radius.circular(27.0),),
+                                  border: Border.all(
+                                      color: ColorUtils.lightBlue,
+                                    width: 1.5
+                                  )
+                              ),
                               child: Row(
                                 children: [
                                   Expanded(
@@ -77,7 +84,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.rectangle,
                                         borderRadius:
-                                        BorderRadius.all(Radius.circular(30.0)),
+                                        BorderRadius.all(Radius.circular(25.0)),
                                       ),
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 400),
@@ -118,7 +125,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       decoration: const BoxDecoration(
                                         shape: BoxShape.rectangle,
                                         borderRadius:
-                                        BorderRadius.all(Radius.circular(30.0)),
+                                        BorderRadius.all(Radius.circular(25.0)),
                                       ),
                                       child: AnimatedContainer(
                                         duration: const Duration(milliseconds: 400),
@@ -436,7 +443,103 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                       padding: EdgeInsets.zero,
                                                       shape: RoundedRectangleBorder(
                                                           borderRadius: BorderRadius.circular(25)),
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        showDialog(context: context,
+                                                            builder: (context) {
+                                                              return MyCustomDialog(
+                                                                childWidget: Column(
+                                                                  children: [
+                                                                    Text(
+                                                                      "Leave a Review",
+                                                                      textAlign: TextAlign.center,
+                                                                      style: TextStyle(
+                                                                          fontFamily: FontUtils
+                                                                              .poppinsMedium,
+                                                                          fontSize:
+                                                                          Fontsizes.size22,
+                                                                          color: ColorUtils.black),
+                                                                    ),
+                                                                    //SizedBox(height: 2.h,),
+                                                                    Padding(
+                                                                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                                                      child: Text(
+                                                                        "Please share your valuable comment",
+                                                                        textAlign: TextAlign.center,
+                                                                        style: TextStyle(
+                                                                            height: 0.25.h,
+                                                                            fontFamily: FontUtils
+                                                                                .poppinsRegular,
+                                                                            fontSize:
+                                                                            Fontsizes.size10,
+                                                                            color: ColorUtils.silver1),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(height: 1.h,),
+                                                                    SvgPicture.asset(ImageUtils.fiveStars,
+                                                                    ),
+                                                                    SizedBox(height: 3.h,),
+                                                                    Container(
+                                                                      margin: EdgeInsets.symmetric(horizontal: 8.w),
+                                                                      child: TextField(
+                                                                        style:  TextStyle(color: ColorUtils.black),
+                                                                        maxLines: 5,
+                                                                        keyboardType: TextInputType.text,
+                                                                        decoration:  InputDecoration(
+                                                                          //isDense: true,
+                                                                          contentPadding: EdgeInsets.only(left: 5.w,top: 2.5.h, right: 2.w, bottom: 2.5.h),
+                                                                          enabledBorder: OutlineInputBorder(
+                                                                            borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
+                                                                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                                          ),
+                                                                          focusedBorder: OutlineInputBorder(
+                                                                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                                            borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
+                                                                          ),
+                                                                          hintText: "Type",
+                                                                          hintStyle: TextStyle(color: ColorUtils.black.withOpacity(0.5)),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(height: 2.h,),
+                                                                    Container(
+                                                                      decoration: const BoxDecoration(
+                                                                        shape: BoxShape.rectangle,
+                                                                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                                                                      ),
+                                                                      child: AnimatedContainer(
+                                                                        duration: const Duration(milliseconds: 400),
+                                                                        height: 6.5.h,
+                                                                        //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                                        decoration: BoxDecoration(
+                                                                          borderRadius: BorderRadius.circular(25),
+                                                                          color: ColorUtils.lightBlue,
+                                                                        ),
+                                                                        child: MaterialButton(
+                                                                          padding: EdgeInsets.zero,
+                                                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                                          onPressed: (){
+                                                                            Navigator.pop(context);
+                                                                          },
+                                                                          child: Padding(
+                                                                            padding: EdgeInsets.symmetric(horizontal: 12.w),
+                                                                            child: Text(
+                                                                              "Submit",
+                                                                              style: TextStyle(
+                                                                                  fontFamily: FontUtils.poppinsRegular,
+                                                                                  fontSize: Fontsizes.size14,
+                                                                                  color: ColorUtils.white),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    SizedBox(height: 2.h,),
+                                                                  ],
+                                                                ),
+                                                              );
+                                                            },
+                                                        );
+                                                      },
                                                       child: Text(
                                                         "Leave a Review",
                                                         style: TextStyle(
@@ -470,7 +573,11 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                       padding: EdgeInsets.zero,
                                                       shape: RoundedRectangleBorder(
                                                           borderRadius: BorderRadius.circular(25)),
-                                                      onPressed: () {},
+                                                      onPressed: () {
+
+                                                        Navigator.push(context,
+                                                            PageTransition(type: PageTransitionType.fade, child:  PassportRenewal(screenTitle: "File a Dispute",)));
+                                                      },
                                                       child: Text(
                                                         "File A Dispute",
                                                         style: TextStyle(

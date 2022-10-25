@@ -173,7 +173,7 @@ class ServiceDetails extends StatelessWidget {
                             child: CustomButtonOne(
                               onButtonPressed: (){
                                 Navigator.push(context,
-                                    PageTransition(type: PageTransitionType.fade, child:  PassportRenewal()));
+                                    PageTransition(type: PageTransitionType.fade, child:  PassportRenewal(screenTitle: "Service Details",)));
                               },
                               textValue: "Book Now",
                             ),

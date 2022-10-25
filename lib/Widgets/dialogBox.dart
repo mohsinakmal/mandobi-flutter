@@ -21,9 +21,6 @@ class MyCustomDialog extends StatelessWidget {
           borderRadius: BorderRadius.all(
               Radius.circular(3.i))),
       children: [
-        SizedBox(
-          height: 2.h,
-        ),
         Container(
           width: MediaQuery.of(context)
               .size
@@ -34,24 +31,26 @@ class MyCustomDialog extends StatelessWidget {
               Align(
                 alignment:
                 Alignment.centerRight,
-                child: InkWell(
-                  onTap: (){
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(
-                        right: 2.w),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: ColorUtils.red
-                          .withOpacity(0.1),
-                    ),
-                    child: Padding(
-                      padding:
-                      const EdgeInsets.all(
-                          10.0),
-                      child: SvgPicture.asset(
-                          ImageUtils.redCross),
+                child: Container(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          right: 2.w),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: ColorUtils.red
+                            .withOpacity(0.1),
+                      ),
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.all(
+                            10.0),
+                        child: SvgPicture.asset(
+                            ImageUtils.redCross),
+                      ),
                     ),
                   ),
                 ),

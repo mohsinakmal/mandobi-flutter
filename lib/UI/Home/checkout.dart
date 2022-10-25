@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Menu/payment/add_payment_method.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_mainViewModel.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/bottom_navigation_bar.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/dialogBox.dart';
@@ -42,13 +44,8 @@ class Checkout extends StatelessWidget {
                           height: context.getPadding().top,
                         ),
                         TopMargin(),
-                        Text(
-                          "Checkout",
-                          style: TextStyle(
-                              fontFamily: FontUtils.poppinsRegular,
-                              fontSize: 2.t,
-                              color: ColorUtils.darkBlue
-                          ),
+                        AppBarTwoItems(
+                          text: "Checkout",
                         ),
                         SizedBox(
                           height: 3.h,
@@ -335,7 +332,31 @@ class Checkout extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              height: 2.5.h,
+                              height: 1.h,
+                            ),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                    PageTransition(type: PageTransitionType.fade, child:  AddPaymentMethod(paymentScreenTitle: "Checkout",)));
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(Icons.add,
+                                    color: ColorUtils.lightBlue,
+                                    size: 4.i,
+                                  ),
+                                  Text("Payment Method",
+                                    style: TextStyle(
+                                      fontFamily: FontUtils.poppinsSemiBold,
+                                      fontSize: Fontsizes.size14,
+                                      color: ColorUtils.lightBlue6,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 1.h,
                             ),
                             Text(
                               "Booking Summary",
@@ -376,7 +397,7 @@ class Checkout extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "First Mile Stone Amount",
+                                  "First Milestone Amount",
                                   style: TextStyle(
                                     fontFamily: FontUtils.poppinsRegular,
                                     fontSize: Fontsizes.size13,

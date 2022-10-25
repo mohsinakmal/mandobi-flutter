@@ -6,6 +6,7 @@ import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:page_transition/page_transition.dart';
@@ -52,15 +53,8 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                               SizedBox(
                                 height: 3.h,
                               ),
-                              Center(
-                                child: Text("Create New Password",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsRegular,
-                                      fontSize: 2.t,
-                                      color: ColorUtils.darkBlue
-                                  ),
-                                ),
+                              AppBarTwoItems(
+                                text: "Create New Password",
                               ),
                               SizedBox(
                                 height: 5.h,

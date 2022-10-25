@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/Register/login.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
@@ -151,7 +152,7 @@ class OTPVerification extends StatelessWidget {
                         textValue: "Submit",
                         onButtonPressed: (){
                           Navigator.push(context,
-                              PageTransition(type: PageTransitionType.fade, child:LoginScreen()));
+                              PageTransition(type: PageTransitionType.fade, child:HomeScreen()));
                         },
                       ),
                     ],

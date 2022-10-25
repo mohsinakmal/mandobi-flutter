@@ -9,7 +9,8 @@ class TermsOfUseText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("""
+    return Text(
+      """
 "These terms and conditions of use ("Terms") cover your use and access to Mandobi Application and its associated services and content (collectively "Application"), provided by Mandobi and any of our affiliates. By accessing and using the Application you agree to be bound by these Terms as well as our Privacy Policy.
     You may use the Application only if you have the right and legal capacity to enter into this agreement and to adhere to the Terms. You warrant that you are a human individual that is the legal age of majority in your state of residence (but not less than 18 years of age) and that you are not a bot, script or other computer or machine, excluding search engine spiders that comply with the Application’s robots.txt file.  You warrant that you are not prohibited from assenting to this agreement by any preexisting agreement. If you are using the Application on behalf of the third party including but not limited to a business entity, you warrant that you are the authorized and have the authority to bind that third party to the Terms.
     The Application is not a legal service provider.
@@ -85,8 +86,7 @@ class TermsOfUseText extends StatelessWidget {
     Mandobi
     """,
       style: TextStyle(
-          fontFamily:
-          FontUtils.poppinsRegular,
+          fontFamily: FontUtils.poppinsRegular,
           fontSize: Fontsizes.size10,
           color: ColorUtils.black),
     );

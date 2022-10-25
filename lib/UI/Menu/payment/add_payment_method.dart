@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Home/checkout.dart';
 import 'package:mandobi_mobile_app/UI/Menu/payment/card_details.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
@@ -16,7 +17,10 @@ import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class AddPaymentMethod extends StatelessWidget {
-  const AddPaymentMethod({Key? key}) : super(key: key);
+
+  String? paymentScreenTitle;
+
+  AddPaymentMethod({this.paymentScreenTitle, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +57,7 @@ class AddPaymentMethod extends StatelessWidget {
                           suffixRequired: false,
                           textInputType: TextInputType.number,
                         ),
-                        SizedBox(height: 6.h,),
+                        SizedBox(height: 2.5.h,),
                         Row(
                           children: [
                             Expanded(
@@ -75,14 +79,14 @@ class AddPaymentMethod extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 6.h,),
+                        SizedBox(height: 2.5.h,),
                         CustomTextField(
                           hintText: "Card Holder Name",
                           prefixRequired: false,
                           suffixRequired: false,
                           textInputType: TextInputType.name,
                         ),
-                        SizedBox(height: 4.h,),
+                        SizedBox(height: 2.5.h,),
                         Row(
                           children: [
                             Container(
@@ -113,8 +117,14 @@ class AddPaymentMethod extends StatelessWidget {
                         CustomButtonOne(
                           textValue: "Save",
                           onButtonPressed: (){
-                            Navigator.push(context,
-                                PageTransition(type: PageTransitionType.fade, child:  CardDetails()));
+                            if(paymentScreenTitle == "Checkout"){
+                              Navigator.push(context,
+                                  PageTransition(type: PageTransitionType.fade, child:  Checkout()));
+                            }
+                            else{
+                              Navigator.push(context,
+                                  PageTransition(type: PageTransitionType.fade, child:  CardDetails()));
+                            }
                           },
                         ),
                       ],

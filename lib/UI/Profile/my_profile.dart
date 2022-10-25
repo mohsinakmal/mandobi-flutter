@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Profile/edit_profile.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
@@ -13,6 +14,7 @@ import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_text_field.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class MyProfile extends StatelessWidget {
@@ -41,7 +43,7 @@ class MyProfile extends StatelessWidget {
                       SizedBox(height: context.getPadding().top,),
                       TopMargin(),
                       AppBarTwoItems(
-                        text: "Edit Profile",
+                        text: "My Profile",
                       ),
                       SizedBox(height: 5.h,),
                       Container(
@@ -129,7 +131,7 @@ class MyProfile extends StatelessWidget {
                         textInputType: TextInputType.name,
                         controller: model.profileNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: false,
@@ -137,7 +139,7 @@ class MyProfile extends StatelessWidget {
                         textInputType: TextInputType.name,
                         controller: model.profileUserNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: true,
@@ -148,7 +150,7 @@ class MyProfile extends StatelessWidget {
                         textInputType: TextInputType.name,
                         //controller: model.editProfileUserNameController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       CustomTextField(
                         prefixRequired: false,
                         suffixRequired: true,
@@ -159,7 +161,7 @@ class MyProfile extends StatelessWidget {
                         textInputType: TextInputType.name,
                         controller: model.profileEmailController,
                       ),
-                      SizedBox(height: 2.5.h,),
+                      SizedBox(height: 1.5.h,),
                       IntlPhoneField(
                         decoration: InputDecoration(
                           counter: Text(""),
@@ -178,9 +180,12 @@ class MyProfile extends StatelessWidget {
                           print(phone.completeNumber);
                         },
                       ),
-                      SizedBox(height:10.h,),
+                      SizedBox(height:5.h,),
                       CustomButtonOne(
-                        onButtonPressed: (){},
+                        onButtonPressed: (){
+                          Navigator.push(context,
+                              PageTransition(type: PageTransitionType.fade, child: EditProfile()));
+                        },
                         textValue: "Edit",
                       )
                       /*InkWell(

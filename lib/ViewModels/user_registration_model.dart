@@ -28,21 +28,17 @@ class UserRegistrationModel extends BaseViewModel{
 
 
   Future<bool> registrationProfileOpenCamera() async {
-    ImagePicker picker = ImagePicker();
-    var image = await picker.pickImage(source: ImageSource.camera, maxWidth: 1800, maxHeight: 1800, imageQuality: 75);
-    registrationPickedFile = image;
-    registrationProfileFileImage = File(registrationPickedFile!.path);
-    // editProfileFileImage = enterDetailsProfileFileImage;
-    // enterDetailsProfilePic = enterDetailsProfileFileImage.toString();
-    notifyListeners();
-    final bytes = (await registrationPickedFile!.readAsBytes()).lengthInBytes;
-    print(bytes);
+      ImagePicker picker = ImagePicker();
+      var image = await picker.pickImage(source: ImageSource.camera, maxWidth: 1800, maxHeight: 1800, imageQuality: 75);
+      registrationPickedFile = image;
+      registrationProfileFileImage = await File(registrationPickedFile!.path);
     if (registrationProfileFileImage == null) {
       return false;
     } else {
       notifyListeners();
       return true;
     }
+    notifyListeners();
   }
 
   Future<bool> registrationProfileGetImage() async {

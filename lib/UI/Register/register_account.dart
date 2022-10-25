@@ -123,15 +123,15 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                             new PopupMenuItem<String>(
                                               child: new Text('Camera'),
                                               value: 'Camera',
-                                              onTap: () {
-                                                model.registrationProfileOpenCamera();
+                                              onTap: () async{
+                                                await model.registrationProfileOpenCamera();
                                               },
                                             ),
                                             new PopupMenuItem<String>(
                                               child: new Text('Gallery'),
                                               value: 'Gallery',
-                                              onTap: () {
-                                                model.registrationProfileGetImage();
+                                              onTap: () async{
+                                                await model.registrationProfileGetImage();
                                               },
                                             ),
                                           ],

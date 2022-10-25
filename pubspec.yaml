@@ -41,6 +41,10 @@ dependencies:
   intl: ^0.17.0
   #for pin code
   pin_code_text_field: ^1.8.0
+  #for path provider
+  path_provider: ^2.0.11
+
+
 
 
 

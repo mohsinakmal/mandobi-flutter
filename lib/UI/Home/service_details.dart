@@ -167,7 +167,7 @@ class ServiceDetails extends StatelessWidget {
                                 );
                               },),
                           ),
-                          SizedBox(height: 6.h,),
+                          SizedBox(height: 3.h,),
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 5.w),
                             child: CustomButtonOne(
@@ -178,6 +178,7 @@ class ServiceDetails extends StatelessWidget {
                               textValue: "Book Now",
                             ),
                           ),
+                          SizedBox(height: 3.h,),
                         ],
                       ),
                     ),

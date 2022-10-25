@@ -372,7 +372,7 @@ class _AboutAgentState extends State<AboutAgent>
                                   decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
                                       borderRadius:
-                                      BorderRadius.all(Radius.circular(30.0)),
+                                      BorderRadius.all(Radius.circular(25.0)),
                                       border:
                                       Border.all(color: ColorUtils.lightBlue)),
                                   child: Row(
@@ -382,7 +382,7 @@ class _AboutAgentState extends State<AboutAgent>
                                           decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius: BorderRadius.all(
-                                                Radius.circular(30.0)),
+                                                Radius.circular(25.0)),
                                           ),
                                           child: AnimatedContainer(
                                             duration: Duration(milliseconds: 400),
@@ -424,7 +424,7 @@ class _AboutAgentState extends State<AboutAgent>
                                           decoration: const BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius: BorderRadius.all(
-                                                Radius.circular(30.0)),
+                                                Radius.circular(25.0)),
                                           ),
                                           child: AnimatedContainer(
                                             duration:

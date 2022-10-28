@@ -75,12 +75,6 @@ class NotificationsScreen extends StatelessWidget {
                                     color: ColorUtils.white,
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(6)),
-                                    border: Border.all(
-                                        color:
-                                        model.selectedCategoryIndex ==
-                                            index
-                                            ? ColorUtils.lightBlue
-                                            : Colors.white),
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.grey
@@ -95,6 +89,7 @@ class NotificationsScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
+                                      flex: 4,
                                       child: Row(
                                         children: [
                                           Container(
@@ -105,8 +100,8 @@ class NotificationsScreen extends StatelessWidget {
                                             child: Padding(
                                               padding: const EdgeInsets.all(6.0),
                                               child: Image.asset(ImageUtils.userPic,
-                                                height: 15.i,
-                                                width: 15.i,
+                                                height: 12.i,
+                                                width: 12.i,
                                               ),
                                             ),
                                           ),
@@ -123,50 +118,29 @@ class NotificationsScreen extends StatelessWidget {
                                                   ),
                                                 ),
                                                 if(model.notificationsText[index] == "Send documents as proof")
-                                                RichText(
-                                                  text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                        text: "Send",
-                                                        style: TextStyle(
-                                                          fontFamily: FontUtils.poppinsMedium,
-                                                          fontSize: Fontsizes.size10,
-                                                          color: ColorUtils.grey1,
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: ' documents',
-                                                        style: TextStyle(
-                                                          fontFamily: FontUtils.poppinsMedium,
-                                                          fontSize: Fontsizes.size10,
-                                                          color: ColorUtils.golden1,
-                                                        ),
-                                                      ),
-                                                      TextSpan(
-                                                        text: ' as proof',
-                                                        style: TextStyle(
-                                                          fontFamily: FontUtils.poppinsMedium,
-                                                          fontSize: Fontsizes.size10,
-                                                          color: ColorUtils.grey1,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                if(model.notificationsText[index] == "Dispute Request has been resolved successfully")
-                                                  RichText(
+                                                Container(
+                                                  margin: EdgeInsets.only(top: 0.5.h),
+                                                  child: RichText(
                                                     text: TextSpan(
                                                       children: [
                                                         TextSpan(
-                                                          text: "Dispute Request",
+                                                          text: "Send",
                                                           style: TextStyle(
                                                             fontFamily: FontUtils.poppinsMedium,
                                                             fontSize: Fontsizes.size10,
-                                                            color: ColorUtils.lightBlue4,
+                                                            color: ColorUtils.grey1,
                                                           ),
                                                         ),
                                                         TextSpan(
-                                                          text: ' has been resolved successfully',
+                                                          text: ' documents',
+                                                          style: TextStyle(
+                                                            fontFamily: FontUtils.poppinsMedium,
+                                                            fontSize: Fontsizes.size10,
+                                                            color: ColorUtils.golden1,
+                                                          ),
+                                                        ),
+                                                        TextSpan(
+                                                          text: ' as proof',
                                                           style: TextStyle(
                                                             fontFamily: FontUtils.poppinsMedium,
                                                             fontSize: Fontsizes.size10,
@@ -176,6 +150,33 @@ class NotificationsScreen extends StatelessWidget {
                                                       ],
                                                     ),
                                                   ),
+                                                ),
+                                                if(model.notificationsText[index] == "Dispute Request has been resolved successfully")
+                                                  Container(
+                                                    margin: EdgeInsets.only(top: 0.5.h),
+                                                    child: RichText(
+                                                      text: TextSpan(
+                                                        children: [
+                                                          TextSpan(
+                                                            text: "Dispute Request",
+                                                            style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsMedium,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.lightBlue4,
+                                                            ),
+                                                          ),
+                                                          TextSpan(
+                                                            text: ' has been resolved successfully',
+                                                            style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsMedium,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.grey1,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
                                               ],
                                             ),
                                           ),
@@ -183,6 +184,7 @@ class NotificationsScreen extends StatelessWidget {
                                       ),
                                     ),
                                     Expanded(
+                                      flex: 2,
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.end,
                                         children: [
@@ -190,7 +192,7 @@ class NotificationsScreen extends StatelessWidget {
                                             "Passport Renewal",
                                             style: TextStyle(
                                                 fontFamily: FontUtils.poppinsRegular,
-                                                fontSize: Fontsizes.size13,
+                                                fontSize: Fontsizes.size10,
                                                 color: ColorUtils.black),
                                           ),
                                           SizedBox(height: 0.5.h,),

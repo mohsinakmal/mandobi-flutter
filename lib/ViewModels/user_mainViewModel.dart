@@ -18,7 +18,7 @@ class UserMainViewModel extends BaseViewModel {
 
   List<String> categoriesText = [
     "Immigration",
-    "RTA Services",
+    "RTA \nServices",
     "Embassy",
     "Visa"
   ];

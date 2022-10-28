@@ -15,12 +15,12 @@ class CustomButtonTwo extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        borderRadius: BorderRadius.all(Radius.circular(25.0)),
       ),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 400),
         width: MediaQuery.of(context).size.width / 1,
-        height: 6.5.h,
+        height: 6.35.h,
         //margin: EdgeInsets.symmetric(horizontal: 5.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),

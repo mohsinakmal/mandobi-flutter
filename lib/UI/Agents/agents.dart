@@ -108,7 +108,10 @@ class Agents extends StatelessWidget {
                                     children: [
                                       SizedBox(height: 2.h,),
                                       Container(
+                                        width: 30.w,
+                                        height: 18.h,
                                         margin: EdgeInsets.only(left: 3.5.w),
+                                        padding: EdgeInsets.only(top: 3.h),
                                         decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -123,27 +126,23 @@ class Agents extends StatelessWidget {
                                             ]
                                         ),
                                         //margin: EdgeInsets.symmetric(horizontal: 2.w),
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 5.h),
-                                          child: Center(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Image.asset(model.categoriesImages[index],
-                                                  height: 10.i,
-                                                  width: 10.i,
-                                                ),
-                                                SizedBox(height: 2.h,),
-                                                Text(model.categoriesText[index],
-                                                  style: TextStyle(
-                                                      fontFamily: FontUtils.poppinsRegular,
-                                                      fontSize: 1.6.t,
-                                                      color: ColorUtils.black
-                                                  ),
-                                                ),
-                                              ],
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Image.asset(model.categoriesImages[index],
+                                              height: 10.i,
+                                              width: 10.i,
                                             ),
-                                          ),
+                                            SizedBox(height: 2.h,),
+                                            Text(model.categoriesText[index],
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  fontFamily: FontUtils.poppinsRegular,
+                                                  fontSize: 1.6.t,
+                                                  color: ColorUtils.black
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],

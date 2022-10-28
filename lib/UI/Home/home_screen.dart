@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/Agents/agents.dart';
 import 'package:mandobi_mobile_app/UI/Home/about_agent.dart';
 import 'package:mandobi_mobile_app/UI/Home/notifications.dart';
 import 'package:mandobi_mobile_app/UI/Profile/my_profile.dart';
@@ -142,11 +143,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: ColorUtils.black
                                   ),
                                 ),
-                                Text("View All",
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsRegular,
-                                      fontSize: 1.4.t,
-                                      color: ColorUtils.grey2
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context,
+                                        PageTransition(type: PageTransitionType.fade, child: AboutAgent()));
+                                  },
+                                  child: Text("View All",
+                                    style: TextStyle(
+                                        fontFamily: FontUtils.poppinsRegular,
+                                        fontSize: 1.4.t,
+                                        color: ColorUtils.grey2
+                                    ),
                                   ),
                                 ),
                               ],
@@ -168,12 +175,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                   onTap: (){
                                     model.selectedCategoryIndex = index;
                                     model.notifyListeners();
+                                    Navigator.push(context,
+                                        PageTransition(type: PageTransitionType.fade, child: AboutAgent()));
                                   },
                                   child: Column(
                                     children: [
                                       SizedBox(height: 2.h,),
                                       Container(
+                                        width: 30.w,
+                                        height: 18.h,
                                         margin: EdgeInsets.only(left: 3.5.w),
+                                        padding: EdgeInsets.only(top: 3.h),
                                         decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -188,27 +200,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ]
                                         ),
                                         //margin: EdgeInsets.symmetric(horizontal: 2.w),
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 5.w,vertical: 5.h),
-                                          child: Center(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Image.asset(model.categoriesImages[index],
-                                                  height: 10.i,
-                                                  width: 10.i,
-                                                ),
-                                                SizedBox(height: 2.h,),
-                                                Text(model.categoriesText[index],
-                                                  style: TextStyle(
-                                                      fontFamily: FontUtils.poppinsRegular,
-                                                      fontSize: 1.6.t,
-                                                      color: ColorUtils.black
-                                                  ),
-                                                ),
-                                              ],
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Image.asset(model.categoriesImages[index],
+                                              height: 10.i,
+                                              width: 10.i,
                                             ),
-                                          ),
+                                            SizedBox(height: 2.h,),
+                                            Text(model.categoriesText[index],
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  fontFamily: FontUtils.poppinsRegular,
+                                                  fontSize: 1.6.t,
+                                                  color: ColorUtils.black
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ],
@@ -253,7 +261,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                             borderRadius: BorderRadius.all(Radius.circular(6)),
                                             border: Border.all(
                                                 width: 2.5,
-                                                color: model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen : Colors.primaries[Random().nextInt(Colors.primaries.length)]),
+                                                color:
+                                                model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen
+                                                    : index == 0 ?
+                                                //Colors.primaries[Random().nextInt(Colors.primaries.length)]
+                                              ColorUtils.lightGreen2
+                                                    : index == 1 ?
+                                                ColorUtils.lightGreen5
+                                                    : ColorUtils.lightYellow
+                                            ),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.grey.withOpacity(0.5),

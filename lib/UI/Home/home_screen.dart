@@ -260,7 +260,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             color: model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen : Colors.white,
                                             borderRadius: BorderRadius.all(Radius.circular(6)),
                                             border: Border.all(
-                                                width: 2.5,
+                                                width: 2,
                                                 color:
                                                 model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen
                                                     : index == 0 ?
@@ -281,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                         child: Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 2.h),
+                                          padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 1.25.h),
                                           child: Center(
                                             child: Text(model.popularServicesAndAgents[index],
                                               style: TextStyle(

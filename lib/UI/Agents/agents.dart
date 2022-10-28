@@ -186,8 +186,16 @@ class Agents extends StatelessWidget {
                                             color: model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen : Colors.white,
                                             borderRadius: BorderRadius.all(Radius.circular(6)),
                                             border: Border.all(
-                                                width: 2.5,
-                                                color: model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen : Colors.primaries[Random().nextInt(Colors.primaries.length)]),
+                                                width: 2,
+                                                color:
+                                                model.selectedPopularServiceIndex == index ? ColorUtils.lightGreen
+                                                    : index == 0 ?
+                                                //Colors.primaries[Random().nextInt(Colors.primaries.length)]
+                                                ColorUtils.lightGreen2
+                                                    : index == 1 ?
+                                                ColorUtils.lightGreen5
+                                                    : ColorUtils.lightYellow
+                                            ),
                                             boxShadow: [
                                               BoxShadow(
                                                 color: Colors.grey.withOpacity(0.5),
@@ -199,7 +207,7 @@ class Agents extends StatelessWidget {
                                         ),
                                         //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                         child: Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 2.h),
+                                          padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 1.25.h),
                                           child: Center(
                                             child: Text(model.popularServicesAndAgents[index],
                                               style: TextStyle(

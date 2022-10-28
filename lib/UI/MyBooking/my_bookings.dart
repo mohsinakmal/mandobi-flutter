@@ -88,13 +88,13 @@ class MyBookings extends StatelessWidget {
                             height: 3.h,
                           ),
                           SizedBox(
-                            height: 4.5.h,
+                            height: 3.5.h,
                             child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               physics: BouncingScrollPhysics(),
                               separatorBuilder: (context, index) {
                                 return SizedBox(
-                                  width: 3.w,
+                                  width: 0.w,
                                 );
                               },
                               shrinkWrap: true,
@@ -118,7 +118,8 @@ class MyBookings extends StatelessWidget {
                                     model.notifyListeners();
                                   },
                                   child: Container(
-                                    margin: EdgeInsets.only(left: 4.w,right: 2.w),
+                                    margin:
+                                        EdgeInsets.only(left: 4.w, right: 0.w),
                                     decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
                                       borderRadius: BorderRadius.circular(5),
@@ -290,6 +291,7 @@ class MyBookings extends StatelessWidget {
                                             SizedBox(
                                               height: 2.5.h,
                                             ),
+                                            if (model.bookingValue != "Process")
                                             Row(
                                               children: [
                                                 Container(
@@ -385,334 +387,437 @@ class MyBookings extends StatelessWidget {
                                                     ),
                                                   ],
                                                 ),
-                                                if (model.bookingValue ==
-                                                    "Process")
-                                                  Row(
+                                              ],
+                                            ),
+                                            if (model.bookingValue == "Process")
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Row(
                                                     children: [
-                                                      SizedBox(
-                                                        width: 8.w,
+                                                      Container(
+                                                        decoration: BoxDecoration(
+                                                            shape: BoxShape.circle,
+                                                            border: Border.all(
+                                                                color: ColorUtils
+                                                                    .lightBlue)),
+                                                        child: Padding(
+                                                          padding:
+                                                          const EdgeInsets.all(
+                                                              6.0),
+                                                          child: Image.asset(
+                                                            ImageUtils.userPic,
+                                                            height: 15.i,
+                                                            width: 15.i,
+                                                          ),
+                                                        ),
                                                       ),
-                                                      InkWell(
-                                                        onTap: (){
-                                                          Navigator.push(context,
-                                                              PageTransition(type: PageTransitionType.fade, child: ChatScreen()));
-                                                        },
-                                                        child: Container(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              shape:
-                                                                  BoxShape.circle,
-                                                              color: ColorUtils
-                                                                  .lightBlue
-                                                                  .withOpacity(
-                                                                      0.1),
-                                                            ),
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    16),
-                                                            child:
-                                                                SvgPicture.asset(
-                                                              ImageUtils.chatIcon,
-                                                              width: 4.i,
-                                                              height: 4.i,
-                                                            )),
-                                                      )
+                                                      SizedBox(
+                                                        width: 3.w,
+                                                      ),
+                                                      Column(
+                                                        crossAxisAlignment:
+                                                        CrossAxisAlignment.start,
+                                                        children: [
+                                                          Text(
+                                                            "Syed Ali Raza",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize:
+                                                                Fontsizes.size15,
+                                                                color:
+                                                                ColorUtils.black),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 0.25.h,
+                                                          ),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Contractor - TAWJEEH",
+                                                                style: TextStyle(
+                                                                    fontFamily: FontUtils
+                                                                        .poppinsRegular,
+                                                                    fontSize:
+                                                                    Fontsizes
+                                                                        .size9,
+                                                                    color: ColorUtils
+                                                                        .black),
+                                                              ),
+                                                              SizedBox(
+                                                                width: 2.w,
+                                                              ),
+                                                              if (model
+                                                                  .bookingValue !=
+                                                                  "Process")
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .min,
+                                                                  children: [
+                                                                    SvgPicture.asset(
+                                                                      ImageUtils
+                                                                          .clockIcon,
+                                                                      width: 3.i,
+                                                                      height: 3.i,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                    SizedBox(
+                                                                      width: 1.5.w,
+                                                                    ),
+                                                                    Text(
+                                                                      "9AM to 5PM",
+                                                                      style: TextStyle(
+                                                                          fontFamily:
+                                                                          FontUtils
+                                                                              .poppinsRegular,
+                                                                          fontSize:
+                                                                          Fontsizes
+                                                                              .size9,
+                                                                          color: ColorUtils
+                                                                              .black),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                            ],
+                                                          ),
+                                                          SizedBox(
+                                                            height: 2.h,
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ],
+                                                  ),
+                                                ),
+                                                  Padding(
+                                                    padding: EdgeInsets.only(right: 4.w),
+                                                    child: InkWell(
+                                                      onTap: () {
+                                                        Navigator.push(
+                                                            context,
+                                                            PageTransition(
+                                                                type:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                                child:
+                                                                ChatScreen()));
+                                                      },
+                                                      child: Container(
+                                                          decoration:
+                                                          BoxDecoration(
+                                                            shape: BoxShape
+                                                                .circle,
+                                                            color: ColorUtils
+                                                                .lightBlue
+                                                                .withOpacity(
+                                                                0.1),
+                                                          ),
+                                                          padding:
+                                                          EdgeInsets.all(
+                                                              16),
+                                                          child: SvgPicture
+                                                              .asset(
+                                                            ImageUtils
+                                                                .chatIcon,
+                                                            width: 4.i,
+                                                            height: 4.i,
+                                                          )),
+                                                    ),
                                                   ),
                                               ],
                                             ),
                                             SizedBox(
                                               height: 4.h,
                                             ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Expanded(
-                                                  child: Container(
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      shape: BoxShape.rectangle,
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                              Radius.circular(
-                                                                  30.0)),
-                                                    ),
-                                                    child: AnimatedContainer(
-                                                      duration: const Duration(
-                                                          milliseconds: 400),
-                                                      height: 6.5.h,
-                                                      //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                      decoration: BoxDecoration(
+                                            Container(
+                                              margin: EdgeInsets.symmetric(horizontal: 4.w),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Expanded(
+                                                    child: Container(
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                        shape: BoxShape.rectangle,
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(25),
-                                                        color: ColorUtils
-                                                            .lightBlue,
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    25.0)),
                                                       ),
-                                                      child: MaterialButton(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        shape: RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        25)),
-                                                        onPressed: () {
-                                                          Navigator.push(
-                                                              context,
-                                                              PageTransition(
-                                                                  type:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                  child:
-                                                                      BookingDetails(
-                                                                    currentBookingValue:
-                                                                        model
-                                                                            .bookingValue,
-                                                                  )));
-                                                        },
-                                                        child: Text(
-                                                          "Details",
-                                                          style: TextStyle(
-                                                              fontFamily: FontUtils
-                                                                  .poppinsRegular,
-                                                              fontSize: 1.8.t,
-                                                              color:
-                                                                  Colors.white),
+                                                      child: AnimatedContainer(
+                                                        duration: const Duration(
+                                                            milliseconds: 400),
+                                                        height: 6.5.h,
+                                                        //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(25),
+                                                          color: ColorUtils
+                                                              .lightBlue,
+                                                        ),
+                                                        child: MaterialButton(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          25)),
+                                                          onPressed: () {
+                                                            Navigator.push(
+                                                                context,
+                                                                PageTransition(
+                                                                    type:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    child:
+                                                                        BookingDetails(
+                                                                      currentBookingValue:
+                                                                          model
+                                                                              .bookingValue,
+                                                                    )));
+                                                          },
+                                                          child: Text(
+                                                            "Details",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize: 1.8.t,
+                                                                color:
+                                                                    Colors.white),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                                SizedBox(
-                                                  width: 4.w,
-                                                ),
-                                                Expanded(
-                                                  child: Container(
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      shape: BoxShape.rectangle,
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                              Radius.circular(
-                                                                  30.0)),
-                                                    ),
-                                                    child: AnimatedContainer(
-                                                      duration: const Duration(
-                                                          milliseconds: 400),
-                                                      height: 6.5.h,
-                                                      //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                      decoration: BoxDecoration(
+                                                  SizedBox(
+                                                    width: 4.w,
+                                                  ),
+                                                  Expanded(
+                                                    child: Container(
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                        shape: BoxShape.rectangle,
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(25),
-                                                        border: Border.all(
-                                                            color:
-                                                                ColorUtils.red),
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    25.0)),
                                                       ),
-                                                      child: MaterialButton(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        shape: RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        25)),
-                                                        onPressed: () {
-                                                          showDialog(
-                                                            context: context,
-                                                            builder: (context) {
-                                                              return MyCustomDialog(
-                                                                childWidget:
-                                                                    Column(
-                                                                  children: [
-                                                                    Text(
-                                                                      "Are you sure you \nwant to cancel?",
-                                                                      style: TextStyle(
-                                                                          fontFamily: FontUtils
-                                                                              .poppinsMedium,
-                                                                          fontSize: Fontsizes
-                                                                              .size22,
-                                                                          color:
-                                                                              Colors.black),
-                                                                    ),
-                                                                    SizedBox(
-                                                                      height:
-                                                                          3.h,
-                                                                    ),
-                                                                    Container(
-                                                                      margin: EdgeInsets.symmetric(
-                                                                          horizontal:
-                                                                              5.w),
-                                                                      child:
-                                                                          Row(
-                                                                        children: [
-                                                                          Expanded(
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: const BoxDecoration(
-                                                                                shape: BoxShape.rectangle,
-                                                                                borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                                                                              ),
-                                                                              child: AnimatedContainer(
-                                                                                duration: const Duration(milliseconds: 400),
-                                                                                height: 6.5.h,
-                                                                                //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                                                decoration: BoxDecoration(
-                                                                                    borderRadius: BorderRadius.circular(25),
-                                                                                    border: Border.all(
-                                                                                      color: ColorUtils.lightBlue,
-                                                                                    )),
-                                                                                child: MaterialButton(
-                                                                                  padding: EdgeInsets.zero,
-                                                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                                                                  onPressed: () {
-                                                                                    Navigator.pop(context);
-                                                                                    showDialog(
-                                                                                      context: context,
-                                                                                      builder: (context) {
-                                                                                        return MyCustomDialog(
-                                                                                          childWidget: Column(
-                                                                                            children: [
-                                                                                              Text(
-                                                                                                "Booking \ncancellation",
-                                                                                                textAlign: TextAlign.center,
-                                                                                                style: TextStyle(
-                                                                                                    fontFamily: FontUtils
-                                                                                                        .poppinsMedium,
-                                                                                                    fontSize: Fontsizes
-                                                                                                        .size22,
-                                                                                                    color:
-                                                                                                    Colors.black),
-                                                                                              ),
-                                                                                              SizedBox(height: 2.h,),
-                                                                                              Container(
-                                                                                                margin: EdgeInsets.symmetric(horizontal: 6.w),
-                                                                                                child: TextField(
-                                                                                                  style:  TextStyle(color: ColorUtils.black),
-                                                                                                  maxLines: 5,
-                                                                                                  keyboardType: TextInputType.text,
-                                                                                                  decoration:  InputDecoration(
-                                                                                                    //isDense: true,
-                                                                                                    contentPadding: EdgeInsets.only(left: 5.w,top: 2.5.h, right: 2.w, bottom: 2.5.h),
-                                                                                                    enabledBorder: OutlineInputBorder(
-                                                                                                      borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
-                                                                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                                                                    ),
-                                                                                                    focusedBorder: OutlineInputBorder(
-                                                                                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                                                                      borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
-                                                                                                    ),
-                                                                                                    hintText: "Reason",
-                                                                                                    hintStyle: TextStyle(color: ColorUtils.black.withOpacity(0.5)),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                              SizedBox(height: 3.h,),
-                                                                                              Container(
-                                                                                            decoration: const BoxDecoration(
-                                                                                              shape: BoxShape.rectangle,
-                                                                                              borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                                                                                            ),
-                                                                                            child: AnimatedContainer(
-                                                                                              duration: const Duration(milliseconds: 400),
-                                                                                              height: 6.5.h,
-                                                                                              //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                                                              decoration: BoxDecoration(
-                                                                                                borderRadius: BorderRadius.circular(25),
-                                                                                                color: ColorUtils.lightBlue,
-                                                                                              ),
-                                                                                              child: MaterialButton(
-                                                                                                padding: EdgeInsets.zero,
-                                                                                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                                                                                onPressed: (){
-                                                                                                  Navigator.pop(context);
-                                                                                                },
-                                                                                                child: Container(
-                                                                                                  padding: EdgeInsets.symmetric(horizontal: 12.w),
-                                                                                                  child: Text(
-                                                                                                    "Submit",
-                                                                                                    style: TextStyle(
-                                                                                                        fontFamily: FontUtils.poppinsRegular,
-                                                                                                        fontSize: 1.8.t,
-                                                                                                        color: Colors.white),
-                                                                                                  ),
-                                                                                                ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                            ],
-                                                                                          ),
-                                                                                        );
-                                                                                      },
-                                                                                    );
-                                                                                  },
-                                                                                  child: Text(
-                                                                                    "Yes",
-                                                                                    style: TextStyle(fontFamily: FontUtils.poppinsRegular, fontSize: Fontsizes.size14, color: ColorUtils.lightBlue),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          SizedBox(
-                                                                            width:
-                                                                                4.w,
-                                                                          ),
-                                                                          Expanded(
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: const BoxDecoration(
-                                                                                shape: BoxShape.rectangle,
-                                                                                borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                                                                              ),
-                                                                              child: AnimatedContainer(
-                                                                                duration: const Duration(milliseconds: 400),
-                                                                                height: 6.5.h,
-                                                                                //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                                                decoration: BoxDecoration(
-                                                                                  borderRadius: BorderRadius.circular(25),
-                                                                                  color: ColorUtils.lightBlue,
-                                                                                ),
-                                                                                child: MaterialButton(
-                                                                                  padding: EdgeInsets.zero,
-                                                                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                                                                                  onPressed: () {
-                                                                                    Navigator.pop(context);
-                                                                                  },
-                                                                                  child: Text(
-                                                                                    "No",
-                                                                                    style: TextStyle(fontFamily: FontUtils.poppinsRegular, fontSize: 1.8.t, color: Colors.white),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
+                                                      child: AnimatedContainer(
+                                                        duration: const Duration(
+                                                            milliseconds: 400),
+                                                        height: 6.5.h,
+                                                        //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(25),
+                                                          border: Border.all(
+                                                              color:
+                                                                  ColorUtils.red2),
+                                                        ),
+                                                        child: MaterialButton(
+                                                          padding:
+                                                              EdgeInsets.zero,
+                                                          shape: RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          25)),
+                                                          onPressed: () {
+                                                            showDialog(
+                                                              context: context,
+                                                              builder: (context) {
+                                                                return MyCustomDialog(
+                                                                  childWidget:
+                                                                      Column(
+                                                                    children: [
+                                                                      Text(
+                                                                        "Are you sure you \nwant to cancel?",
+                                                                        style: TextStyle(
+                                                                            fontFamily: FontUtils
+                                                                                .poppinsMedium,
+                                                                            fontSize: Fontsizes
+                                                                                .size22,
+                                                                            color:
+                                                                                Colors.black),
                                                                       ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              );
-                                                            },
-                                                          );
-                                                        },
-                                                        child: Text(
-                                                          "Cancel",
-                                                          style: TextStyle(
-                                                              fontFamily: FontUtils
-                                                                  .poppinsRegular,
-                                                              fontSize: 1.8.t,
-                                                              color:
-                                                                  Colors.red),
+                                                                      SizedBox(
+                                                                        height:
+                                                                            3.h,
+                                                                      ),
+                                                                      Container(
+                                                                        margin: EdgeInsets.symmetric(
+                                                                            horizontal:
+                                                                                5.w),
+                                                                        child:
+                                                                            Row(
+                                                                          children: [
+                                                                            Expanded(
+                                                                              child:
+                                                                                  Container(
+                                                                                decoration: const BoxDecoration(
+                                                                                  shape: BoxShape.rectangle,
+                                                                                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                                                                                ),
+                                                                                child: AnimatedContainer(
+                                                                                  duration: const Duration(milliseconds: 400),
+                                                                                  height: 6.5.h,
+                                                                                  //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                                                  decoration: BoxDecoration(
+                                                                                      borderRadius: BorderRadius.circular(25),
+                                                                                      border: Border.all(
+                                                                                        color: ColorUtils.lightBlue,
+                                                                                      )),
+                                                                                  child: MaterialButton(
+                                                                                    padding: EdgeInsets.zero,
+                                                                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                                                    onPressed: () {
+                                                                                      Navigator.pop(context);
+                                                                                      showDialog(
+                                                                                        context: context,
+                                                                                        builder: (context) {
+                                                                                          return MyCustomDialog(
+                                                                                            childWidget: Column(
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  "Booking \ncancellation",
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: TextStyle(fontFamily: FontUtils.poppinsMedium, fontSize: Fontsizes.size22, color: Colors.black),
+                                                                                                ),
+                                                                                                SizedBox(
+                                                                                                  height: 2.h,
+                                                                                                ),
+                                                                                                Container(
+                                                                                                  margin: EdgeInsets.symmetric(horizontal: 6.w),
+                                                                                                  child: TextField(
+                                                                                                    style: TextStyle(color: ColorUtils.black),
+                                                                                                    maxLines: 5,
+                                                                                                    keyboardType: TextInputType.text,
+                                                                                                    decoration: InputDecoration(
+                                                                                                      //isDense: true,
+                                                                                                      contentPadding: EdgeInsets.only(left: 5.w, top: 2.5.h, right: 2.w, bottom: 2.5.h),
+                                                                                                      enabledBorder: OutlineInputBorder(
+                                                                                                        borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
+                                                                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                                                                      ),
+                                                                                                      focusedBorder: OutlineInputBorder(
+                                                                                                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                                                                        borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
+                                                                                                      ),
+                                                                                                      hintText: "Reason",
+                                                                                                      hintStyle: TextStyle(color: ColorUtils.black.withOpacity(0.5)),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                                SizedBox(
+                                                                                                  height: 3.h,
+                                                                                                ),
+                                                                                                Container(
+                                                                                                  decoration: const BoxDecoration(
+                                                                                                    shape: BoxShape.rectangle,
+                                                                                                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                                                                                                  ),
+                                                                                                  child: AnimatedContainer(
+                                                                                                    duration: const Duration(milliseconds: 400),
+                                                                                                    height: 6.5.h,
+                                                                                                    //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                                                                    decoration: BoxDecoration(
+                                                                                                      borderRadius: BorderRadius.circular(25),
+                                                                                                      color: ColorUtils.lightBlue,
+                                                                                                    ),
+                                                                                                    child: MaterialButton(
+                                                                                                      padding: EdgeInsets.zero,
+                                                                                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                                                                      onPressed: () {
+                                                                                                        Navigator.pop(context);
+                                                                                                      },
+                                                                                                      child: Container(
+                                                                                                        padding: EdgeInsets.symmetric(horizontal: 12.w),
+                                                                                                        child: Text(
+                                                                                                          "Submit",
+                                                                                                          style: TextStyle(fontFamily: FontUtils.poppinsRegular, fontSize: 1.8.t, color: Colors.white),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          );
+                                                                                        },
+                                                                                      );
+                                                                                    },
+                                                                                    child: Text(
+                                                                                      "Yes",
+                                                                                      style: TextStyle(fontFamily: FontUtils.poppinsRegular, fontSize: Fontsizes.size14, color: ColorUtils.lightBlue),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width:
+                                                                                  4.w,
+                                                                            ),
+                                                                            Expanded(
+                                                                              child:
+                                                                                  Container(
+                                                                                decoration: const BoxDecoration(
+                                                                                  shape: BoxShape.rectangle,
+                                                                                  borderRadius: BorderRadius.all(Radius.circular(25.0)),
+                                                                                ),
+                                                                                child: AnimatedContainer(
+                                                                                  duration: const Duration(milliseconds: 400),
+                                                                                  height: 6.5.h,
+                                                                                  //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                                                  decoration: BoxDecoration(
+                                                                                    borderRadius: BorderRadius.circular(25),
+                                                                                    color: ColorUtils.lightBlue,
+                                                                                  ),
+                                                                                  child: MaterialButton(
+                                                                                    padding: EdgeInsets.zero,
+                                                                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                                                    onPressed: () {
+                                                                                      Navigator.pop(context);
+                                                                                    },
+                                                                                    child: Text(
+                                                                                      "No",
+                                                                                      style: TextStyle(fontFamily: FontUtils.poppinsRegular, fontSize: 1.8.t, color: Colors.white),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                );
+                                                              },
+                                                            );
+                                                          },
+                                                          child: Text(
+                                                            "Cancel",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize: 1.8.t,
+                                                                color:
+                                                                    Colors.red),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                             SizedBox(
                                               height: 2.h,

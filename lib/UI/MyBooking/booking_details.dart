@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Home/passport_Renewal.dart';
+import 'package:mandobi_mobile_app/UI/MyBooking/chat.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -88,7 +89,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       ),
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 400),
-                                        height: 6.5.h,
+                                        height: 5.5.h,
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(25),
                                           color: detailsSelected == true
@@ -129,7 +130,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       ),
                                       child: AnimatedContainer(
                                         duration: const Duration(milliseconds: 400),
-                                        height: 6.5.h,
+                                        height: 5.5.h,
                                         //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(25),
@@ -390,17 +391,17 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       children: [
                                         if(model.bookingValue != "Completed" && model.bookingValue != "Cancel")
                                         Container(
-                                          margin: EdgeInsets.only(top: 8.h),
+                                          margin: EdgeInsets.only(top: 15.h),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius:
-                                            BorderRadius.all(Radius.circular(30.0)),
+                                            BorderRadius.all(Radius.circular(25.0)),
                                             border: Border.all(color: ColorUtils.red2),
                                           ),
                                           child: AnimatedContainer(
                                             duration: const Duration(milliseconds: 400),
                                             width: MediaQuery.of(context).size.width / 1,
-                                            height: 6.5.h,
+                                            height: 6.35.h,
                                             //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(25),
@@ -1059,6 +1060,8 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       ],
                                     ),
                                   SizedBox(height: 4.h,),
+
+                                  // About Agent
                                   Container(
                                     padding: EdgeInsets.only(bottom: 0.5.h),
                                     decoration: BoxDecoration(
@@ -1085,6 +1088,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                             horizontal: 4.w, vertical: 1.5.h),
                                         child: Column(
                                           children: [
+                                            if(model.bookingValue == "Pending" || model.bookingValue == "Cancel")
                                             Row(
                                               children: [
                                                 Container(
@@ -1130,6 +1134,105 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                           color: ColorUtils.black),
                                                     ),
                                                   ],
+                                                ),
+                                              ],
+                                            ),
+                                            if(model.bookingValue == "Process" || model.bookingValue == "Completed")
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Row(
+                                                    children: [
+                                                      Container(
+                                                        decoration: BoxDecoration(
+                                                            shape: BoxShape.circle,
+                                                            border: Border.all(
+                                                                color: ColorUtils
+                                                                    .lightBlue)),
+                                                        child: Padding(
+                                                          padding:
+                                                          const EdgeInsets.all(
+                                                              6.0),
+                                                          child: Image.asset(
+                                                            ImageUtils.userPic,
+                                                            height: 15.i,
+                                                            width: 15.i,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 3.w,
+                                                      ),
+                                                      Column(
+                                                        crossAxisAlignment:
+                                                        CrossAxisAlignment.start,
+                                                        children: [
+                                                          Text(
+                                                            "Syed Ali Raza",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize:
+                                                                Fontsizes.size15,
+                                                                color:
+                                                                ColorUtils.black),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 0.25.h,
+                                                          ),
+                                                          Text(
+                                                            "Contractor - TAWJEEH",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize:
+                                                                Fontsizes
+                                                                    .size9,
+                                                                color: ColorUtils
+                                                                    .black),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 2.h,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(right: 4.w),
+                                                  child: InkWell(
+                                                    onTap: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          PageTransition(
+                                                              type:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                              child:
+                                                              ChatScreen()));
+                                                    },
+                                                    child: Container(
+                                                        decoration:
+                                                        BoxDecoration(
+                                                          shape: BoxShape
+                                                              .circle,
+                                                          color: ColorUtils
+                                                              .lightBlue
+                                                              .withOpacity(
+                                                              0.1),
+                                                        ),
+                                                        padding:
+                                                        EdgeInsets.all(
+                                                            16),
+                                                        child: SvgPicture
+                                                            .asset(
+                                                          ImageUtils
+                                                              .chatIcon,
+                                                          width: 4.i,
+                                                          height: 4.i,
+                                                        )),
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -1325,12 +1428,12 @@ class _BookingDetailsState extends State<BookingDetails> {
                                             borderRadius:
                                             BorderRadius.all(
                                                 Radius.circular(
-                                                    30.0)),
+                                                    25.0)),
                                           ),
                                           child: AnimatedContainer(
                                             duration: const Duration(
                                                 milliseconds: 400),
-                                            height: 6.5.h,
+                                            height: 6.35.h,
                                             //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                             decoration: BoxDecoration(
                                               borderRadius:
@@ -1379,7 +1482,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                           child: AnimatedContainer(
                                             duration: const Duration(
                                                 milliseconds: 400),
-                                            height: 6.5.h,
+                                            height: 6.35.h,
                                             //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                             decoration: BoxDecoration(
                                               borderRadius:
@@ -1412,11 +1515,11 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: 2.h,
-                                  ),
                                 ],
                               ),
+                            SizedBox(
+                              height: 2.h,
+                            ),
                           ],
                         ),
                       ),

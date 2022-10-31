@@ -60,13 +60,13 @@ class _EditProfileState extends State<EditProfile> {
                             SizedBox(height: 5.h,),
                             Container(
                               //alignment: Alignment.topCenter,
-                              width: 34.8.i,
-                              height: 34.8.i,
+                              width: 30.i,
+                              height: 30.i,
                               child: Stack(
                                 children: <Widget>[
                                   Container(
-                                    width: 32.i,
-                                    height: 32.i,
+                                    width: 29.i,
+                                    height: 29.i,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(color: ColorUtils.darkBlue),
@@ -97,7 +97,7 @@ class _EditProfileState extends State<EditProfile> {
                                         )),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(bottom: 4.h),
+                                    margin: EdgeInsets.only(bottom: 2.h),
                                     child: Align(
                                       alignment: Alignment.bottomRight,
                                       child: PopupMenuButton(
@@ -143,7 +143,7 @@ class _EditProfileState extends State<EditProfile> {
                               textInputType: TextInputType.name,
                               controller: model.editProfileNameController,
                             ),
-                            SizedBox(height: 2.h,),
+                            SizedBox(height: 1.5.h,),
                             CustomTextField(
                               prefixRequired: false,
                               suffixRequired: false,
@@ -151,7 +151,7 @@ class _EditProfileState extends State<EditProfile> {
                               textInputType: TextInputType.name,
                               controller: model.editProfileUserNameController,
                             ),
-                            SizedBox(height: 2.h,),
+                            SizedBox(height: 1.5.h,),
                             CustomTextField(
                               prefixRequired: false,
                               suffixRequired: true,
@@ -162,7 +162,7 @@ class _EditProfileState extends State<EditProfile> {
                               textInputType: TextInputType.name,
                               //controller: model.editProfileUserNameController,
                             ),
-                            SizedBox(height: 2.h,),
+                            SizedBox(height: 1.5.h,),
                             CustomTextField(
                               prefixRequired: false,
                               suffixRequired: true,
@@ -173,7 +173,7 @@ class _EditProfileState extends State<EditProfile> {
                               suffixImageWidth: 10.i,
                               suffixImageHeight: 10.i,
                             ),
-                            SizedBox(height: 2.h,),
+                            SizedBox(height: 1.5.h,),
                             IntlPhoneField(
                               decoration: InputDecoration(
                                 counter: Text(""),
@@ -192,12 +192,12 @@ class _EditProfileState extends State<EditProfile> {
                                 print(phone.completeNumber);
                               },
                             ),
-                            SizedBox(height:10.h,),
+                            SizedBox(height:3.h,),
                             CustomButtonOne(
                               onButtonPressed: (){},
                               textValue: "Continue",
                             ),
-                            SizedBox(height: 1.5.h,),
+                            SizedBox(height: 3.h,),
                           ],
                         ),
                       ),

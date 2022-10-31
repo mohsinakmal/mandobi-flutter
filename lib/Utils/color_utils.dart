@@ -45,4 +45,5 @@ class ColorUtils{
   static Color lightBlue7 =  Color (0xFF6AA4B1);
   static Color lightGreen5 =  Color (0xFFADD777);
   static Color lightYellow =  Color (0xFFD7C777);
+  static Color silver7 =  Color (0xFFCFD8E1);
 }

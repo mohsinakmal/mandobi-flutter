@@ -27,6 +27,7 @@ class _AboutAgentState extends State<AboutAgent>
     with SingleTickerProviderStateMixin {
   bool servicesSelected = true;
   bool ratingSelected = false;
+  bool showMoreTapped = false;
 
 
   @override
@@ -111,11 +112,32 @@ class _AboutAgentState extends State<AboutAgent>
                                           CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              "Syed Ali Raza",
+                                              "Contractor",
                                               style: TextStyle(
                                                   fontFamily: FontUtils.poppinsMedium,
-                                                  fontSize: 2.t,
-                                                  color: ColorUtils.black),
+                                                  fontSize: 1.3.t,
+                                                  color: ColorUtils.lightBlue),
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "Syed Ali Raza",
+                                                  style: TextStyle(
+                                                      fontFamily: FontUtils.poppinsMedium,
+                                                      fontSize: 2.t,
+                                                      color: ColorUtils.black),
+                                                ),
+                                                SizedBox(width: 3.w,),
+                                                SvgPicture.asset(ImageUtils.ratingStar),
+                                                SizedBox(width: 1.w,),
+                                                Text(
+                                                  "5.5",
+                                                  style: TextStyle(
+                                                      fontFamily: FontUtils.poppinsMedium,
+                                                      fontSize: 1.1.t,
+                                                      color: ColorUtils.black),
+                                                ),
+                                              ],
                                             ),
                                             SizedBox(
                                               height: 0.5.h,
@@ -132,27 +154,7 @@ class _AboutAgentState extends State<AboutAgent>
                                                   style: TextStyle(
                                                       fontFamily:
                                                       FontUtils.poppinsRegular,
-                                                      fontSize: 1.6.t,
-                                                      color: ColorUtils.grey1),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 0.5.h,
-                                            ),
-                                            Row(
-                                              children: [
-                                                SvgPicture.asset(
-                                                    ImageUtils.plainEmailIcon),
-                                                SizedBox(
-                                                  width: 1.w,
-                                                ),
-                                                Text(
-                                                  "syedaliraza@email.com",
-                                                  style: TextStyle(
-                                                      fontFamily:
-                                                      FontUtils.poppinsRegular,
-                                                      fontSize: 1.6.t,
+                                                      fontSize: 1.2.t,
                                                       color: ColorUtils.grey1),
                                                 ),
                                               ],
@@ -166,108 +168,133 @@ class _AboutAgentState extends State<AboutAgent>
                                 SizedBox(
                                   height: 3.h,
                                 ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SvgPicture.asset(ImageUtils.bluePhoneIcon),
-                                        SizedBox(
-                                          width: 3.w,
-                                        ),
-                                        Text(
-                                          "+9 123 123 1234",
-                                          style: TextStyle(
-                                              fontFamily: FontUtils.poppinsRegular,
-                                              fontSize: Fontsizes.size14,
-                                              color: ColorUtils.black),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        SvgPicture.asset(
-                                          ImageUtils.clockIcon,
-                                          width: 5.i,
-                                          height: 5.i,
-                                        ),
-                                        SizedBox(
-                                          width: 3.w,
-                                        ),
-                                        Text(
-                                          "9AM to 5PM",
-                                          style: TextStyle(
-                                              fontFamily: FontUtils.poppinsRegular,
-                                              fontSize: Fontsizes.size14,
-                                              color: ColorUtils.black),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 4.h,
-                                ),
-                                Text(
-                                  "Experience",
-                                  style: TextStyle(
-                                      fontFamily: FontUtils.poppinsSemiBold,
-                                      fontSize: Fontsizes.size13,
-                                      color: ColorUtils.black),
-                                ),
-                                SizedBox(
-                                  height: 0.5.h,
-                                ),
-                                ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  //padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                  physics: BouncingScrollPhysics(),
-                                  separatorBuilder: (context, index) {
-                                    return SizedBox(
-                                      height: 1.h,
-                                    );
-                                  },
-                                  shrinkWrap: true,
-                                  itemCount: model.agentPlace.length,
-                                  itemBuilder: (context, index) {
-                                    return GestureDetector(
-                                      onTap: () {},
-                                      child: Column(
+                                if(showMoreTapped)
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
-                                          SizedBox(
-                                            height: 2.h,
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              SvgPicture.asset(ImageUtils.bluePhoneIcon),
+                                              SizedBox(
+                                                width: 3.w,
+                                              ),
+                                              Text(
+                                                "+9 123 123 1234",
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils.poppinsRegular,
+                                                    fontSize: Fontsizes.size14,
+                                                    color: ColorUtils.black),
+                                              ),
+                                            ],
                                           ),
-                                          Container(
-                                            //padding: EdgeInsets.only(bottom: 9.5.h),
-                                            decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(6)),
-                                              color: ColorUtils.lightBlue,
-                                            ),
-                                            padding: EdgeInsets.only(bottom: 0.5.h),
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                  color: ColorUtils.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(6)),
-                                                  border: Border.all(
-                                                      color:
-                                                      model.selectedCategoryIndex ==
-                                                          index
-                                                          ? ColorUtils.lightBlue
-                                                          : Colors.white),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: Colors.grey
-                                                          .withOpacity(0.5),
-                                                      spreadRadius: 5,
-                                                      blurRadius: 7,
-                                                      offset: Offset(0, 3),
-                                                    ),
-                                                  ]
-                                                /*boxShadow: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              SvgPicture.asset(
+                                                ImageUtils.clockIcon,
+                                                width: 5.i,
+                                                height: 5.i,
+                                              ),
+                                              SizedBox(
+                                                width: 3.w,
+                                              ),
+                                              Text(
+                                                "9AM to 5PM",
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils.poppinsRegular,
+                                                    fontSize: Fontsizes.size14,
+                                                    color: ColorUtils.black),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 4.h,
+                                      ),
+                                      Text(
+                                        "About",
+                                        style: TextStyle(
+                                            fontFamily: FontUtils.poppinsSemiBold,
+                                            fontSize: Fontsizes.size13,
+                                            color: ColorUtils.black),
+                                      ),
+                                      SizedBox(
+                                        height: 1.h,
+                                      ),
+                                      Text(
+                                        "Lorem Ipsum is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.  is simply dummy text of the printing and type setting industry. Lorem Ipsum is simply dummy text of ttting industry. ",
+                                        style: TextStyle(
+                                          fontFamily: FontUtils.poppinsRegular,
+                                          fontSize: Fontsizes.size10,
+                                          color: ColorUtils.silver1,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 3.h,
+                                      ),
+                                      Text(
+                                        "Experience",
+                                        style: TextStyle(
+                                            fontFamily: FontUtils.poppinsSemiBold,
+                                            fontSize: Fontsizes.size13,
+                                            color: ColorUtils.black),
+                                      ),
+                                      SizedBox(
+                                        height: 0.5.h,
+                                      ),
+                                      ListView.separated(
+                                        padding: EdgeInsets.zero,
+                                        //padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                        physics: BouncingScrollPhysics(),
+                                        separatorBuilder: (context, index) {
+                                          return SizedBox(
+                                            height: 1.h,
+                                          );
+                                        },
+                                        shrinkWrap: true,
+                                        itemCount: model.agentPlace.length,
+                                        itemBuilder: (context, index) {
+                                          return GestureDetector(
+                                            onTap: () {},
+                                            child: Column(
+                                              children: [
+                                                SizedBox(
+                                                  height: 2.h,
+                                                ),
+                                                Container(
+                                                  //padding: EdgeInsets.only(bottom: 9.5.h),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.all(
+                                                        Radius.circular(6)),
+                                                    color: ColorUtils.lightBlue,
+                                                  ),
+                                                  padding: EdgeInsets.only(bottom: 0.5.h),
+                                                  child: Container(
+                                                    decoration: BoxDecoration(
+                                                        color: ColorUtils.white,
+                                                        borderRadius: BorderRadius.all(
+                                                            Radius.circular(6)),
+                                                        border: Border.all(
+                                                            color:
+                                                            model.selectedCategoryIndex ==
+                                                                index
+                                                                ? ColorUtils.lightBlue
+                                                                : Colors.white),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.grey
+                                                                .withOpacity(0.5),
+                                                            spreadRadius: 5,
+                                                            blurRadius: 7,
+                                                            offset: Offset(0, 3),
+                                                          ),
+                                                        ]
+                                                      /*boxShadow: [
                                                   BoxShadow(blurRadius: 8.0),
                                                   BoxShadow(spreadRadius: 5),
                                                   BoxShadow(color: Colors.black, offset: Offset(0, -16)),
@@ -275,95 +302,147 @@ class _AboutAgentState extends State<AboutAgent>
                                                   BoxShadow(color: Colors.black, offset: Offset(-16, -16)),
                                                   BoxShadow(color: Colors.black, offset: Offset(-16, 16)),
                                                 ],*/
-                                              ),
-                                              //margin: EdgeInsets.symmetric(horizontal: 2.w),
-                                              child: Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 4.w, vertical: 3.h),
-                                                child: Column(
-                                                  children: [
-                                                    Row(
-                                                      children: [
-                                                        Container(
-                                                          decoration: BoxDecoration(
-                                                            shape: BoxShape.rectangle,
-                                                            borderRadius:
-                                                            BorderRadius.circular(
-                                                                5),
-                                                            color: ColorUtils
-                                                                .lightBlue
-                                                                .withOpacity(0.1),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                            EdgeInsets.symmetric(
-                                                                horizontal: 4.5.w,
-                                                                vertical: 2.h),
-                                                            child: SvgPicture.asset(
-                                                                ImageUtils
-                                                                    .blueBriefCase),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 3.w,
-                                                        ),
-                                                        Column(
-                                                          crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                          children: [
-                                                            Text(
-                                                              model.agentPlace[index],
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils
-                                                                      .poppinsSemiBold,
-                                                                  fontSize: Fontsizes
-                                                                      .size13,
-                                                                  color: ColorUtils
-                                                                      .black),
-                                                            ),
-                                                            SizedBox(
-                                                              height: 0.25.h,
-                                                            ),
-                                                            Text(
-                                                              "Contractor",
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils
-                                                                      .poppinsRegular,
-                                                                  fontSize: Fontsizes
-                                                                      .size12,
-                                                                  color: ColorUtils
-                                                                      .blue4),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Expanded(
-                                                          child: Align(
-                                                            alignment:
-                                                            Alignment.centerRight,
-                                                            child: Text(
-                                                              '2020-2021',
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils
-                                                                      .poppinsSemiBold,
-                                                                  fontSize: Fontsizes
-                                                                      .size13,
-                                                                  color: ColorUtils
-                                                                      .black),
-                                                            ),
-                                                          ),
-                                                        )
-                                                      ],
                                                     ),
-                                                  ],
+                                                    //margin: EdgeInsets.symmetric(horizontal: 2.w),
+                                                    child: Padding(
+                                                      padding: EdgeInsets.symmetric(
+                                                          horizontal: 4.w, vertical: 3.h),
+                                                      child: Column(
+                                                        children: [
+                                                          Row(
+                                                            children: [
+                                                              Container(
+                                                                decoration: BoxDecoration(
+                                                                  shape: BoxShape.rectangle,
+                                                                  borderRadius:
+                                                                  BorderRadius.circular(
+                                                                      5),
+                                                                  color: ColorUtils
+                                                                      .lightBlue
+                                                                      .withOpacity(0.1),
+                                                                ),
+                                                                child: Padding(
+                                                                  padding:
+                                                                  EdgeInsets.symmetric(
+                                                                      horizontal: 4.5.w,
+                                                                      vertical: 2.h),
+                                                                  child: SvgPicture.asset(
+                                                                      ImageUtils
+                                                                          .blueBriefCase),
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                width: 3.w,
+                                                              ),
+                                                              Column(
+                                                                crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                                children: [
+                                                                  Text(
+                                                                    model.agentPlace[index],
+                                                                    style: TextStyle(
+                                                                        fontFamily: FontUtils
+                                                                            .poppinsSemiBold,
+                                                                        fontSize: Fontsizes
+                                                                            .size13,
+                                                                        color: ColorUtils
+                                                                            .black),
+                                                                  ),
+                                                                  SizedBox(
+                                                                    height: 0.25.h,
+                                                                  ),
+                                                                  Text(
+                                                                    "Contractor",
+                                                                    style: TextStyle(
+                                                                        fontFamily: FontUtils
+                                                                            .poppinsRegular,
+                                                                        fontSize: Fontsizes
+                                                                            .size12,
+                                                                        color: ColorUtils
+                                                                            .blue4),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Expanded(
+                                                                child: Align(
+                                                                  alignment:
+                                                                  Alignment.centerRight,
+                                                                  child: Text(
+                                                                    '2020-2021',
+                                                                    style: TextStyle(
+                                                                        fontFamily: FontUtils
+                                                                            .poppinsSemiBold,
+                                                                        fontSize: Fontsizes
+                                                                            .size13,
+                                                                        color: ColorUtils
+                                                                            .black),
+                                                                  ),
+                                                                ),
+                                                              )
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
                                             ),
-                                          ),
-                                        ],
+                                          );
+                                        },
                                       ),
-                                    );
-                                  },
+                                    ],
+                                  ),
+                                if(showMoreTapped)
+                                SizedBox(
+                                  height: 3.h,
+                                ),
+                                Center(
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      borderRadius:
+                                      BorderRadius.all(Radius.circular(25.0)),
+                                    ),
+                                    child: AnimatedContainer(
+                                      duration: const Duration(milliseconds: 400),
+                                      height: 5.5.h,
+                                      //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25),
+                                        border: Border.all(color: ColorUtils.lightBlue),
+                                      ),
+                                      child: MaterialButton(
+                                        padding: EdgeInsets.zero,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(25)),
+                                        onPressed: () {
+                                          if(!showMoreTapped){
+                                            showMoreTapped = true;
+                                            setState(() {
+
+                                            });
+                                          }
+                                          else{
+                                            showMoreTapped = false;
+                                            setState(() {
+
+                                            });
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                          child: Text(showMoreTapped ? "Show Less" : "Show More",
+                                            style: TextStyle(
+                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontSize: Fontsizes.size11,
+                                                color: ColorUtils.black),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.h,
@@ -645,8 +724,12 @@ class _AboutAgentState extends State<AboutAgent>
                                           SizedBox(
                                             height: 2.h,
                                           ),
-                                          Card(
-                                            elevation: 5,
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(width: 2.0, color: ColorUtils.silver7.withOpacity(0.4)),
+                                              )
+                                            ),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[

@@ -5,6 +5,7 @@ import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
 import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
 import 'package:mandobi_mobile_app/UI/Menu/payment/payment_details.dart';
 import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
+import 'package:mandobi_mobile_app/UI/Menu/saved.dart';
 import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
 import 'package:mandobi_mobile_app/UI/Profile/my_profile.dart';
 import 'package:mandobi_mobile_app/UI/Register/login.dart';
@@ -125,8 +126,8 @@ class Menu extends StatelessWidget {
                                 children: [
                                   InkWell(
                                     onTap: (){
-                                      // Navigator.push(context,
-                                      //     PageTransition(type: PageTransitionType.fade, child:  ChangePassword()));
+                                      Navigator.push(context,
+                                          PageTransition(type: PageTransitionType.fade, child:  SavedBookmark()));
                                     },
                                     child: Row(
                                       children: [

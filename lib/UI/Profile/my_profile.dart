@@ -129,7 +129,7 @@ class MyProfile extends StatelessWidget {
                                     height: 29.i,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      border: Border.all(color: ColorUtils.darkBlue),
+                                      border: Border.all(color: ColorUtils.lightBlue),
                                     ),
                                     child: ClipOval(
                                         child:
@@ -144,11 +144,11 @@ class MyProfile extends StatelessWidget {
                                             )
                                                 : */
                                         Center(
-                                          child: SvgPicture.asset(
-                                            ImageUtils.defaultAvatar,
+                                          child: Image.asset(
+                                            ImageUtils.userPic,
                                             fit: BoxFit.contain,
-                                            width: 10.i,
-                                            height: 10.i,
+                                            width: 25.i,
+                                            height: 25.i,
                                           ),
                                         )
                                             : Image.file(

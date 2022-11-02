@@ -64,27 +64,36 @@ class PassportRenewal extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: 0.5.h,),
-                                CustomTextField(
-                                  textInputType: TextInputType.name,
-                                  suffixRequired: false,
-                                  prefixRequired: false,
-                                  hintText: "Ahmed Saud",
+                                Container(
+                                  height: 60,
+                                  child: CustomTextField(
+                                    textInputType: TextInputType.name,
+                                    suffixRequired: false,
+                                    prefixRequired: false,
+                                    hintText: "Ahmed Saud",
+                                  ),
                                 ),
                                 if(screenTitle != "File a Dispute" )
                                 SizedBox(height: 1.5.h,),
                                 if(screenTitle != "File a Dispute" )
-                                CustomTextField(
-                                  textInputType: TextInputType.text,
-                                  suffixRequired: false,
-                                  prefixRequired: false,
-                                  hintText: "Emara DB 1254 north area",
+                                Container(
+                                  height: 60,
+                                  child: CustomTextField(
+                                    textInputType: TextInputType.text,
+                                    suffixRequired: false,
+                                    prefixRequired: false,
+                                    hintText: "Emara DB 1254 north area",
+                                  ),
                                 ),
                                 SizedBox(height: 1.5.h,),
-                                CustomTextField(
-                                  textInputType: TextInputType.text,
-                                  suffixRequired: false,
-                                  prefixRequired: false,
-                                  hintText: "Ali Raza - Agent",
+                                Container(
+                                  height: 60,
+                                  child: CustomTextField(
+                                    textInputType: TextInputType.text,
+                                    suffixRequired: false,
+                                    prefixRequired: false,
+                                    hintText: "Ali Raza - Agent",
+                                  ),
                                 ),
                                 SizedBox(height: 1.5.h,),
                                 Row(

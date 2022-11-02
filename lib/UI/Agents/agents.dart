@@ -46,8 +46,14 @@ class Agents extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              width: 2.w,
+                            InkWell(
+                              onTap: (){
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                width: 10.w,
+                                child: Icon(Icons.arrow_back),
+                              ),
                             ),
                             Text(
                               "My Bookings",

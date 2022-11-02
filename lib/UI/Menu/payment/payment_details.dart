@@ -54,7 +54,47 @@ class PaymentDetails extends StatelessWidget {
                         AppBarTwoItems(
                           text: "Payment Details",
                         ),
-                        SizedBox(height: 3.h,),
+                        //SizedBox(height: 3.h,),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 5.w,),
+                    height: 70,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40,
+                          width: 18.h,
+                          padding: EdgeInsets.symmetric(horizontal: 2.w,),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(color: ColorUtils.grey,)
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.calendar_today_outlined , color: ColorUtils.grey,),
+                              SizedBox(width: 3,),
+                              Text("september" , style: TextStyle(color: ColorUtils.grey,),),
+                              Spacer(),
+                              Icon(Icons.keyboard_arrow_down ,  color: ColorUtils.grey,)
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context,
+                                PageTransition(type: PageTransitionType.fade, child:  CardDetails()));
+                          },
+                          child: Container(child: Row(
+                            children: [
+                              Text("Card Details" , style: TextStyle(color: ColorUtils.lightBlue,),),
+                              Icon(Icons.arrow_forward , color: ColorUtils.lightBlue,)
+                            ],
+                          )),
+                        )
+
                       ],
                     ),
                   ),

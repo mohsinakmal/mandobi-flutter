@@ -146,13 +146,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                 GestureDetector(
                                   onTap: (){
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child: AboutAgent()));
+                                        PageTransition(type: PageTransitionType.fade, child: Agents()));
                                   },
-                                  child: Text("View All",
-                                    style: TextStyle(
-                                        fontFamily: FontUtils.poppinsRegular,
-                                        fontSize: 1.4.t,
-                                        color: ColorUtils.grey2
+                                  child: Container(
+                                    width: 12.w,
+                                    height: 3.h,
+                                    child: Center(
+                                      child: Text("View All",
+                                        style: TextStyle(
+                                            fontFamily: FontUtils.poppinsRegular,
+                                            fontSize: 1.4.t,
+                                            color: ColorUtils.grey2
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -176,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     model.selectedCategoryIndex = index;
                                     model.notifyListeners();
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child: AboutAgent()));
+                                        PageTransition(type: PageTransitionType.fade, child: Agents()));
                                   },
                                   child: Column(
                                     children: [

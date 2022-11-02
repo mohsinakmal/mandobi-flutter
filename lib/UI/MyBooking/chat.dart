@@ -7,7 +7,10 @@ import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_mainViewModel.dart';
+import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
+import 'package:mandobi_mobile_app/Widgets/receiveMsg.dart';
+import 'package:mandobi_mobile_app/Widgets/sendMsg.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
@@ -44,23 +47,26 @@ class _ChatScreenState extends State<ChatScreen> {
                           height: context.getPadding().top,
                         ),
                         TopMargin(),
+                        AppBarTwoItems(
+                          text: "Chat",
+                        ),
                         SizedBox(height: 1.h,),
                         Row(
                           children: [
-                            InkWell(
-                              onTap: (){
-                                Navigator.of(context).pop();
-                              },
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: ColorUtils.lightBlue.withOpacity(0.1),
-                                  ),
-                                  padding: EdgeInsets.all(16),
-                                  child: SvgPicture.asset(ImageUtils.blueArrow)
-                              ),
-                            ),
-                            SizedBox(width: 2.w,),
+                            // InkWell(
+                            //   onTap: (){
+                            //     Navigator.of(context).pop();
+                            //   },
+                            //   child: Container(
+                            //       decoration: BoxDecoration(
+                            //         shape: BoxShape.circle,
+                            //         color: ColorUtils.lightBlue.withOpacity(0.1),
+                            //       ),
+                            //       padding: EdgeInsets.all(16),
+                            //       child: SvgPicture.asset(ImageUtils.blueArrow)
+                            //   ),
+                            // ),
+                            // SizedBox(width: 2.w,),
                             Row(
                               children: [
                                 Container(
@@ -138,7 +144,15 @@ class _ChatScreenState extends State<ChatScreen> {
                                 SvgPicture.asset(ImageUtils.horizontalLine),
                               ],
                             ),
-                            Image.asset(ImageUtils.chats),
+                            SizedBox(height: 20,),
+                            SendMsg(context , "Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Scientiam pollicentur."),
+                            SizedBox(height: 20,),
+                            ReceiveMsg(context , "Expectoque , quod quaerebam, respondeas Serpere anguiculos, nare anaticulas"),
+                            SizedBox(height: 20,),
+                            SendMsg(context , "Sed id ne cogitari quidem potest quale sit, ut non repugnet ipsum sibi. Scientiam pollicentur."),
+                            SizedBox(height: 20,),
+                            ReceiveMsg(context , "Expectoque , quod quaerebam, respondeas Serpere anguiculos, nare anaticulas"),
+
                           ],
                         ),
                       ),
@@ -148,11 +162,12 @@ class _ChatScreenState extends State<ChatScreen> {
                     alignment: Alignment.bottomCenter,
                     child: HorizontalMargin(
                       widget: Container(
-                        padding: EdgeInsets.only(
-                            left: 4.w,
-                            right: 4.w,
-                            top: 6.h
-                        ),
+                        height: 70,
+                        // padding: EdgeInsets.only(
+                        //     left: 4.w,
+                        //     right: 4.w,
+                        //     top: 6.h
+                        // ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           //crossAxisAlignment: CrossAxisAlignment.end,
@@ -168,7 +183,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.all(
-                                      Radius.circular(15.0),
+                                      Radius.circular(30.0),
                                     ),
                                     border: Border.all(color: ColorUtils.silver)
                                 ),
@@ -243,7 +258,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         ),
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(height: 30,)
                 ],
               ),
             ),

@@ -125,13 +125,35 @@ class Menu extends StatelessWidget {
                                 children: [
                                   InkWell(
                                     onTap: (){
+                                      // Navigator.push(context,
+                                      //     PageTransition(type: PageTransitionType.fade, child:  ChangePassword()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.bookmark_border,
+                                        color: ColorUtils.lightBlue,
+                                        ),
+                                        SizedBox(width: 3.w,),
+                                        Text("Saved",
+                                          style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size16,
+                                              color: ColorUtils.black
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 4.h,),
+                                  InkWell(
+                                    onTap: (){
                                       Navigator.push(context,
                                           PageTransition(type: PageTransitionType.fade, child:  ChangePassword()));
                                     },
                                     child: Row(
                                       children: [
                                         Icon(Icons.lock_open_outlined,
-                                        color: ColorUtils.lightBlue,
+                                          color: ColorUtils.lightBlue,
                                         ),
                                         SizedBox(width: 3.w,),
                                         Text("Change Password",

@@ -28,7 +28,7 @@ class _AboutAgentState extends State<AboutAgent>
   bool servicesSelected = true;
   bool ratingSelected = false;
   bool showMoreTapped = false;
-
+  bool bookmark = false;
 
   @override
   Widget build(BuildContext context) {
@@ -66,10 +66,33 @@ class _AboutAgentState extends State<AboutAgent>
                                   fontSize: 2.t,
                                   color: ColorUtils.darkBlue),
                             ),
-                            BookMarkCircle()
+                            InkWell(
+                              onTap: (){
+                                if (!bookmark) {
+                                  bookmark = true;
+                                  setState(() {});
+                                } else {
+                                  bookmark = false;
+                                  setState(() {});
+                                }
+                              },
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: ColorUtils.lightBlue.withOpacity(0.1),
+                                  ),
+                                  padding: EdgeInsets.all(16),
+                                  child: Icon(Icons.bookmark_border , color:  bookmark ? ColorUtils.lightBlue: ColorUtils.lightBlue.withOpacity(0.3),)
+                                  // Image.asset(
+                                  //   ImageUtils.bookMark,
+                                  //   width: 4.i,
+                                  //   height: 4.i,
+                                  // )
+                                ),
+                            ),
+                            // BookMarkCircle()
                           ],
                         ),
-
                       ],
                     ),
                   ),
@@ -86,7 +109,8 @@ class _AboutAgentState extends State<AboutAgent>
                                   height: 4.h,
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [
@@ -109,12 +133,13 @@ class _AboutAgentState extends State<AboutAgent>
                                         ),
                                         Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               "Contractor",
                                               style: TextStyle(
-                                                  fontFamily: FontUtils.poppinsMedium,
+                                                  fontFamily:
+                                                      FontUtils.poppinsMedium,
                                                   fontSize: 1.3.t,
                                                   color: ColorUtils.lightBlue),
                                             ),
@@ -123,17 +148,24 @@ class _AboutAgentState extends State<AboutAgent>
                                                 Text(
                                                   "Syed Ali Raza",
                                                   style: TextStyle(
-                                                      fontFamily: FontUtils.poppinsMedium,
+                                                      fontFamily: FontUtils
+                                                          .poppinsMedium,
                                                       fontSize: 2.t,
                                                       color: ColorUtils.black),
                                                 ),
-                                                SizedBox(width: 3.w,),
-                                                SvgPicture.asset(ImageUtils.ratingStar),
-                                                SizedBox(width: 1.w,),
+                                                SizedBox(
+                                                  width: 3.w,
+                                                ),
+                                                SvgPicture.asset(
+                                                    ImageUtils.ratingStar),
+                                                SizedBox(
+                                                  width: 1.w,
+                                                ),
                                                 Text(
                                                   "5.5",
                                                   style: TextStyle(
-                                                      fontFamily: FontUtils.poppinsMedium,
+                                                      fontFamily: FontUtils
+                                                          .poppinsMedium,
                                                       fontSize: 1.1.t,
                                                       color: ColorUtils.black),
                                                 ),
@@ -152,8 +184,8 @@ class _AboutAgentState extends State<AboutAgent>
                                                 Text(
                                                   "Emara DB 1254 north area",
                                                   style: TextStyle(
-                                                      fontFamily:
-                                                      FontUtils.poppinsRegular,
+                                                      fontFamily: FontUtils
+                                                          .poppinsRegular,
                                                       fontSize: 1.2.t,
                                                       color: ColorUtils.grey1),
                                                 ),
@@ -168,24 +200,28 @@ class _AboutAgentState extends State<AboutAgent>
                                 SizedBox(
                                   height: 3.h,
                                 ),
-                                if(showMoreTapped)
+                                if (showMoreTapped)
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
-                                              SvgPicture.asset(ImageUtils.bluePhoneIcon),
+                                              SvgPicture.asset(
+                                                  ImageUtils.bluePhoneIcon),
                                               SizedBox(
                                                 width: 3.w,
                                               ),
                                               Text(
                                                 "+9 123 123 1234",
                                                 style: TextStyle(
-                                                    fontFamily: FontUtils.poppinsRegular,
+                                                    fontFamily: FontUtils
+                                                        .poppinsRegular,
                                                     fontSize: Fontsizes.size14,
                                                     color: ColorUtils.black),
                                               ),
@@ -205,7 +241,8 @@ class _AboutAgentState extends State<AboutAgent>
                                               Text(
                                                 "9AM to 5PM",
                                                 style: TextStyle(
-                                                    fontFamily: FontUtils.poppinsRegular,
+                                                    fontFamily: FontUtils
+                                                        .poppinsRegular,
                                                     fontSize: Fontsizes.size14,
                                                     color: ColorUtils.black),
                                               ),
@@ -219,7 +256,8 @@ class _AboutAgentState extends State<AboutAgent>
                                       Text(
                                         "About",
                                         style: TextStyle(
-                                            fontFamily: FontUtils.poppinsSemiBold,
+                                            fontFamily:
+                                                FontUtils.poppinsSemiBold,
                                             fontSize: Fontsizes.size13,
                                             color: ColorUtils.black),
                                       ),
@@ -240,7 +278,8 @@ class _AboutAgentState extends State<AboutAgent>
                                       Text(
                                         "Experience",
                                         style: TextStyle(
-                                            fontFamily: FontUtils.poppinsSemiBold,
+                                            fontFamily:
+                                                FontUtils.poppinsSemiBold,
                                             fontSize: Fontsizes.size13,
                                             color: ColorUtils.black),
                                       ),
@@ -269,32 +308,40 @@ class _AboutAgentState extends State<AboutAgent>
                                                 Container(
                                                   //padding: EdgeInsets.only(bottom: 9.5.h),
                                                   decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(6)),
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(6)),
                                                     color: ColorUtils.lightBlue,
                                                   ),
-                                                  padding: EdgeInsets.only(bottom: 0.5.h),
+                                                  padding: EdgeInsets.only(
+                                                      bottom: 0.5.h),
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                         color: ColorUtils.white,
-                                                        borderRadius: BorderRadius.all(
-                                                            Radius.circular(6)),
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    6)),
                                                         border: Border.all(
                                                             color:
-                                                            model.selectedCategoryIndex ==
-                                                                index
-                                                                ? ColorUtils.lightBlue
-                                                                : Colors.white),
+                                                                model.selectedCategoryIndex ==
+                                                                        index
+                                                                    ? ColorUtils
+                                                                        .lightBlue
+                                                                    : Colors
+                                                                        .white),
                                                         boxShadow: [
                                                           BoxShadow(
                                                             color: Colors.grey
-                                                                .withOpacity(0.5),
+                                                                .withOpacity(
+                                                                    0.5),
                                                             spreadRadius: 5,
                                                             blurRadius: 7,
-                                                            offset: Offset(0, 3),
+                                                            offset:
+                                                                Offset(0, 3),
                                                           ),
                                                         ]
-                                                      /*boxShadow: [
+                                                        /*boxShadow: [
                                                   BoxShadow(blurRadius: 8.0),
                                                   BoxShadow(spreadRadius: 5),
                                                   BoxShadow(color: Colors.black, offset: Offset(0, -16)),
@@ -302,30 +349,37 @@ class _AboutAgentState extends State<AboutAgent>
                                                   BoxShadow(color: Colors.black, offset: Offset(-16, -16)),
                                                   BoxShadow(color: Colors.black, offset: Offset(-16, 16)),
                                                 ],*/
-                                                    ),
+                                                        ),
                                                     //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                                     child: Padding(
-                                                      padding: EdgeInsets.symmetric(
-                                                          horizontal: 4.w, vertical: 3.h),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal: 4.w,
+                                                              vertical: 3.h),
                                                       child: Column(
                                                         children: [
                                                           Row(
                                                             children: [
                                                               Container(
-                                                                decoration: BoxDecoration(
-                                                                  shape: BoxShape.rectangle,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  shape: BoxShape
+                                                                      .rectangle,
                                                                   borderRadius:
-                                                                  BorderRadius.circular(
-                                                                      5),
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              5),
                                                                   color: ColorUtils
                                                                       .lightBlue
-                                                                      .withOpacity(0.1),
+                                                                      .withOpacity(
+                                                                          0.1),
                                                                 ),
                                                                 child: Padding(
-                                                                  padding:
-                                                                  EdgeInsets.symmetric(
-                                                                      horizontal: 4.5.w,
-                                                                      vertical: 2.h),
+                                                                  padding: EdgeInsets.symmetric(
+                                                                      horizontal:
+                                                                          4.5.w,
+                                                                      vertical:
+                                                                          2.h),
                                                                   child: SvgPicture.asset(
                                                                       ImageUtils
                                                                           .blueBriefCase),
@@ -336,29 +390,35 @@ class _AboutAgentState extends State<AboutAgent>
                                                               ),
                                                               Column(
                                                                 crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
                                                                   Text(
-                                                                    model.agentPlace[index],
+                                                                    model.agentPlace[
+                                                                        index],
                                                                     style: TextStyle(
-                                                                        fontFamily: FontUtils
-                                                                            .poppinsSemiBold,
-                                                                        fontSize: Fontsizes
-                                                                            .size13,
+                                                                        fontFamily:
+                                                                            FontUtils
+                                                                                .poppinsSemiBold,
+                                                                        fontSize:
+                                                                            Fontsizes
+                                                                                .size13,
                                                                         color: ColorUtils
                                                                             .black),
                                                                   ),
                                                                   SizedBox(
-                                                                    height: 0.25.h,
+                                                                    height:
+                                                                        0.25.h,
                                                                   ),
                                                                   Text(
                                                                     "Contractor",
                                                                     style: TextStyle(
-                                                                        fontFamily: FontUtils
-                                                                            .poppinsRegular,
-                                                                        fontSize: Fontsizes
-                                                                            .size12,
+                                                                        fontFamily:
+                                                                            FontUtils
+                                                                                .poppinsRegular,
+                                                                        fontSize:
+                                                                            Fontsizes
+                                                                                .size12,
                                                                         color: ColorUtils
                                                                             .blue4),
                                                                   ),
@@ -367,14 +427,17 @@ class _AboutAgentState extends State<AboutAgent>
                                                               Expanded(
                                                                 child: Align(
                                                                   alignment:
-                                                                  Alignment.centerRight,
+                                                                      Alignment
+                                                                          .centerRight,
                                                                   child: Text(
                                                                     '2020-2021',
                                                                     style: TextStyle(
-                                                                        fontFamily: FontUtils
-                                                                            .poppinsSemiBold,
-                                                                        fontSize: Fontsizes
-                                                                            .size13,
+                                                                        fontFamily:
+                                                                            FontUtils
+                                                                                .poppinsSemiBold,
+                                                                        fontSize:
+                                                                            Fontsizes
+                                                                                .size13,
                                                                         color: ColorUtils
                                                                             .black),
                                                                   ),
@@ -394,48 +457,51 @@ class _AboutAgentState extends State<AboutAgent>
                                       ),
                                     ],
                                   ),
-                                if(showMoreTapped)
-                                SizedBox(
-                                  height: 3.h,
-                                ),
+                                if (showMoreTapped)
+                                  SizedBox(
+                                    height: 3.h,
+                                  ),
                                 Center(
                                   child: Container(
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.rectangle,
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(25.0)),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(25.0)),
                                     ),
                                     child: AnimatedContainer(
-                                      duration: const Duration(milliseconds: 400),
+                                      duration:
+                                          const Duration(milliseconds: 400),
                                       height: 5.5.h,
                                       //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(25),
-                                        border: Border.all(color: ColorUtils.lightBlue),
+                                        border: Border.all(
+                                            color: ColorUtils.lightBlue),
                                       ),
                                       child: MaterialButton(
                                         padding: EdgeInsets.zero,
                                         shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(25)),
+                                            borderRadius:
+                                                BorderRadius.circular(25)),
                                         onPressed: () {
-                                          if(!showMoreTapped){
+                                          if (!showMoreTapped) {
                                             showMoreTapped = true;
-                                            setState(() {
-
-                                            });
-                                          }
-                                          else{
+                                            setState(() {});
+                                          } else {
                                             showMoreTapped = false;
-                                            setState(() {
-
-                                            });
+                                            setState(() {});
                                           }
                                         },
                                         child: Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 10.w),
-                                          child: Text(showMoreTapped ? "Show Less" : "Show More",
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 10.w),
+                                          child: Text(
+                                            showMoreTapped
+                                                ? "Show Less"
+                                                : "Show More",
                                             style: TextStyle(
-                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontFamily:
+                                                    FontUtils.poppinsRegular,
                                                 fontSize: Fontsizes.size11,
                                                 color: ColorUtils.black),
                                           ),
@@ -450,10 +516,10 @@ class _AboutAgentState extends State<AboutAgent>
                                 Container(
                                   decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(25.0)),
-                                      border:
-                                      Border.all(color: ColorUtils.lightBlue)),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(25.0)),
+                                      border: Border.all(
+                                          color: ColorUtils.lightBlue)),
                                   child: Row(
                                     children: [
                                       Expanded(
@@ -464,10 +530,12 @@ class _AboutAgentState extends State<AboutAgent>
                                                 Radius.circular(25.0)),
                                           ),
                                           child: AnimatedContainer(
-                                            duration: Duration(milliseconds: 400),
+                                            duration:
+                                                Duration(milliseconds: 400),
                                             height: 6.5.h,
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(25),
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
                                               color: servicesSelected == true
                                                   ? ColorUtils.lightBlue
                                                   : Colors.white,
@@ -477,7 +545,8 @@ class _AboutAgentState extends State<AboutAgent>
                                               padding: EdgeInsets.zero,
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
-                                                  BorderRadius.circular(25)),
+                                                      BorderRadius.circular(
+                                                          25)),
                                               onPressed: () {
                                                 setState(() {
                                                   servicesSelected = true;
@@ -487,12 +556,13 @@ class _AboutAgentState extends State<AboutAgent>
                                               child: Text(
                                                 "Services",
                                                 style: TextStyle(
-                                                    fontFamily:
-                                                    FontUtils.poppinsRegular,
+                                                    fontFamily: FontUtils
+                                                        .poppinsRegular,
                                                     fontSize: Fontsizes.size14,
-                                                    color: servicesSelected == true
-                                                        ? Colors.white
-                                                        : Colors.black),
+                                                    color:
+                                                        servicesSelected == true
+                                                            ? Colors.white
+                                                            : Colors.black),
                                               ),
                                             ),
                                           ),
@@ -506,12 +576,13 @@ class _AboutAgentState extends State<AboutAgent>
                                                 Radius.circular(25.0)),
                                           ),
                                           child: AnimatedContainer(
-                                            duration:
-                                            const Duration(milliseconds: 400),
+                                            duration: const Duration(
+                                                milliseconds: 400),
                                             height: 6.5.h,
                                             //margin: EdgeInsets.symmetric(horizontal: 5.w),
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(25),
+                                              borderRadius:
+                                                  BorderRadius.circular(25),
                                               color: ratingSelected == true
                                                   ? ColorUtils.lightBlue
                                                   : Colors.white,
@@ -520,7 +591,8 @@ class _AboutAgentState extends State<AboutAgent>
                                               padding: EdgeInsets.zero,
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
-                                                  BorderRadius.circular(25)),
+                                                      BorderRadius.circular(
+                                                          25)),
                                               onPressed: () {
                                                 setState(() {
                                                   ratingSelected = true;
@@ -530,15 +602,17 @@ class _AboutAgentState extends State<AboutAgent>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.min,
                                                 mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
                                                     "Ratings",
                                                     style: TextStyle(
-                                                        fontFamily:
-                                                        FontUtils.poppinsRegular,
-                                                        fontSize: Fontsizes.size15,
-                                                        color: ratingSelected == true
+                                                        fontFamily: FontUtils
+                                                            .poppinsRegular,
+                                                        fontSize:
+                                                            Fontsizes.size15,
+                                                        color: ratingSelected ==
+                                                                true
                                                             ? Colors.white
                                                             : Colors.black),
                                                   ),
@@ -557,12 +631,14 @@ class _AboutAgentState extends State<AboutAgent>
                                                   Text(
                                                     "5.5",
                                                     style: TextStyle(
-                                                      fontFamily:
-                                                      FontUtils.poppinsRegular,
-                                                      fontSize: Fontsizes.size10,
-                                                      color: ratingSelected == true
-                                                          ? Colors.white
-                                                          : Colors.black,
+                                                      fontFamily: FontUtils
+                                                          .poppinsRegular,
+                                                      fontSize:
+                                                          Fontsizes.size10,
+                                                      color:
+                                                          ratingSelected == true
+                                                              ? Colors.white
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ],
@@ -580,9 +656,12 @@ class _AboutAgentState extends State<AboutAgent>
                           if (servicesSelected == true)
                             Column(
                               children: [
-                                SizedBox(height: 1.h,),
+                                SizedBox(
+                                  height: 1.h,
+                                ),
                                 ListView.separated(
-                                  padding: EdgeInsets.symmetric(horizontal: 3.w),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 3.w),
                                   //padding: EdgeInsets.symmetric(horizontal: 4.w),
                                   physics: BouncingScrollPhysics(),
                                   separatorBuilder: (context, index) {
@@ -595,8 +674,11 @@ class _AboutAgentState extends State<AboutAgent>
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
                                       onTap: () {
-                                        Navigator.push(context,
-                                            PageTransition(type: PageTransitionType.fade, child:  ServiceDetails()));
+                                        Navigator.push(
+                                            context,
+                                            PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: ServiceDetails()));
                                       },
                                       child: Column(
                                         children: [
@@ -604,7 +686,8 @@ class _AboutAgentState extends State<AboutAgent>
                                             height: 2.h,
                                           ),
                                           Container(
-                                            padding: EdgeInsets.only(bottom: 0.5.h),
+                                            padding:
+                                                EdgeInsets.only(bottom: 0.5.h),
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(6)),
@@ -613,14 +696,15 @@ class _AboutAgentState extends State<AboutAgent>
                                             child: Container(
                                               decoration: BoxDecoration(
                                                   color: ColorUtils.white,
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(6)),
+                                                  borderRadius: BorderRadius
+                                                      .all(Radius.circular(6)),
                                                   border: Border.all(
                                                       color:
-                                                      model.selectedCategoryIndex ==
-                                                          index
-                                                          ? ColorUtils.lightBlue
-                                                          : Colors.white),
+                                                          model.selectedCategoryIndex ==
+                                                                  index
+                                                              ? ColorUtils
+                                                                  .lightBlue
+                                                              : Colors.white),
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: Colors.grey
@@ -633,11 +717,12 @@ class _AboutAgentState extends State<AboutAgent>
                                               //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                               child: Padding(
                                                 padding: EdgeInsets.symmetric(
-                                                    horizontal: 4.w, vertical: 1.5.h),
+                                                    horizontal: 4.w,
+                                                    vertical: 1.5.h),
                                                 child: Row(
                                                   mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
                                                   children: [
                                                     Text(
                                                       "Passport Renewal",
@@ -645,31 +730,34 @@ class _AboutAgentState extends State<AboutAgent>
                                                           fontFamily: FontUtils
                                                               .poppinsRegular,
                                                           fontSize:
-                                                          Fontsizes.size15,
-                                                          color: ColorUtils.black),
+                                                              Fontsizes.size15,
+                                                          color:
+                                                              ColorUtils.black),
                                                     ),
                                                     Container(
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        ColorUtils.lightGreen2,
+                                                        color: ColorUtils
+                                                            .lightGreen2,
                                                         borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.circular(7)),
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    7)),
                                                       ),
                                                       child: Padding(
-                                                        padding:
-                                                        EdgeInsets.symmetric(
-                                                            horizontal: 3.w,
-                                                            vertical: 1.h),
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 3.w,
+                                                                vertical: 1.h),
                                                         child: Text(
                                                           "AED 200",
                                                           style: TextStyle(
                                                               fontFamily: FontUtils
                                                                   .poppinsRegular,
                                                               fontSize:
-                                                              Fontsizes.size12,
-                                                              color:
-                                                              ColorUtils.white),
+                                                                  Fontsizes
+                                                                      .size12,
+                                                              color: ColorUtils
+                                                                  .white),
                                                         ),
                                                       ),
                                                     ),
@@ -692,22 +780,22 @@ class _AboutAgentState extends State<AboutAgent>
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SizedBox(height: 2.h,),
+                                SizedBox(
+                                  height: 2.h,
+                                ),
                                 Container(
                                   margin: EdgeInsets.symmetric(horizontal: 4.w),
                                   child: Text(
                                     'User Reviews',
                                     style: TextStyle(
-                                        fontFamily: FontUtils
-                                            .poppinsSemiBold,
-                                        fontSize: Fontsizes
-                                            .size13,
-                                        color: ColorUtils
-                                            .black),
+                                        fontFamily: FontUtils.poppinsSemiBold,
+                                        fontSize: Fontsizes.size13,
+                                        color: ColorUtils.black),
                                   ),
                                 ),
                                 ListView.separated(
-                                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 4.w),
                                   physics: BouncingScrollPhysics(),
                                   separatorBuilder: (context, index) {
                                     return SizedBox(
@@ -726,10 +814,12 @@ class _AboutAgentState extends State<AboutAgent>
                                           ),
                                           Container(
                                             decoration: BoxDecoration(
-                                              border: Border(
-                                                bottom: BorderSide(width: 2.0, color: ColorUtils.silver7.withOpacity(0.4)),
-                                              )
-                                            ),
+                                                border: Border(
+                                              bottom: BorderSide(
+                                                  width: 2.0,
+                                                  color: ColorUtils.silver7
+                                                      .withOpacity(0.4)),
+                                            )),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
                                               children: <Widget>[
@@ -742,7 +832,8 @@ class _AboutAgentState extends State<AboutAgent>
                                                                 .lightBlue)),
                                                     child: Padding(
                                                       padding:
-                                                      const EdgeInsets.all(3.0),
+                                                          const EdgeInsets.all(
+                                                              3.0),
                                                       child: Image.asset(
                                                         ImageUtils.userPic,
                                                         fit: BoxFit.cover,
@@ -751,24 +842,26 @@ class _AboutAgentState extends State<AboutAgent>
                                                   ),
                                                   title: Row(
                                                     mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
                                                     children: [
                                                       Text(
                                                         "Anonymous",
                                                         style: TextStyle(
                                                             fontFamily: FontUtils
                                                                 .poppinsRegular,
-                                                            fontSize:
-                                                            Fontsizes.size13,
-                                                            color: ColorUtils.black),
+                                                            fontSize: Fontsizes
+                                                                .size13,
+                                                            color: ColorUtils
+                                                                .black),
                                                       ),
                                                       Expanded(
                                                         child: Align(
-                                                          alignment:
-                                                          Alignment.centerRight,
+                                                          alignment: Alignment
+                                                              .centerRight,
                                                           child: Image.asset(
-                                                            ImageUtils.ratingsGroup,
+                                                            ImageUtils
+                                                                .ratingsGroup,
                                                             width: 20.i,
                                                             height: 20.i,
                                                           ),
@@ -779,9 +872,10 @@ class _AboutAgentState extends State<AboutAgent>
                                                   subtitle: Text(
                                                     "5 of 5",
                                                     style: TextStyle(
-                                                      fontFamily:
-                                                      FontUtils.poppinsRegular,
-                                                      fontSize: Fontsizes.size11,
+                                                      fontFamily: FontUtils
+                                                          .poppinsRegular,
+                                                      fontSize:
+                                                          Fontsizes.size11,
                                                       color: ColorUtils.black
                                                           .withOpacity(0.4),
                                                     ),
@@ -793,10 +887,12 @@ class _AboutAgentState extends State<AboutAgent>
                                                   child: Text(
                                                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                                                     style: TextStyle(
-                                                        fontFamily:
-                                                        FontUtils.poppinsRegular,
-                                                        fontSize: Fontsizes.size10,
-                                                        color: ColorUtils.silver1),
+                                                        fontFamily: FontUtils
+                                                            .poppinsRegular,
+                                                        fontSize:
+                                                            Fontsizes.size10,
+                                                        color:
+                                                            ColorUtils.silver1),
                                                   ),
                                                 ),
                                               ],

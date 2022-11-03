@@ -36,8 +36,6 @@ class _LoginScreenState extends State<LoginScreen> {
           return GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: SafeArea(
-              top: false,
-              bottom: false,
               child: Scaffold(
                 backgroundColor: Colors.white,
                 body: SingleChildScrollView(
@@ -45,25 +43,25 @@ class _LoginScreenState extends State<LoginScreen> {
                     widget: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 6.h,),
+                        SizedBox(height: 3.h,),
                         Align(
                           alignment: Alignment.center,
                           child: Image.asset(ImageUtils.loginLogo,
-                            height: 20.h,
-                            width: 20.h,
+                            height: 18.h,
+                            width: 18.h,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Text("Login to your \nAccount",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              height: 0.22.h,
+                            //  height: 0.h,
                               fontFamily: FontUtils.poppinsRegular,
                               fontSize: 2.75.t,
                               color: ColorUtils.darkBlue
                           ),
                         ),
-                        SizedBox(height: 6.h,),
+                        SizedBox(height: 2.h,),
                         CustomTextField(
                           controller: model.loginEmailController,
                           textInputType: TextInputType.emailAddress,
@@ -159,38 +157,57 @@ class _LoginScreenState extends State<LoginScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
-                                borderRadius: BorderRadius.circular(16),
-                                //color: ColorUtils.black.withOpacity(0.5),
+                            InkWell(
+                              onTap: (){
+                                  Navigator.push(context,
+                                      PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
+                                  borderRadius: BorderRadius.circular(16),
+                                  //color: ColorUtils.black.withOpacity(0.5),
+                                ),
+                                child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.8.h),
+                                    child: SvgPicture.asset(ImageUtils.facebookLogo)),
                               ),
-                              child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.8.h),
-                                  child: SvgPicture.asset(ImageUtils.facebookLogo)),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
-                                borderRadius: BorderRadius.circular(16),
-                                //color: ColorUtils.black.withOpacity(0.5),
+                            InkWell(
+                              onTap: (){
+                                  Navigator.push(context,
+                                      PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
+                                  borderRadius: BorderRadius.circular(16),
+                                  //color: ColorUtils.black.withOpacity(0.5),
+                                ),
+                                child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                                    child: SvgPicture.asset(ImageUtils.googleLogo)),
                               ),
-                              child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
-                                  child: SvgPicture.asset(ImageUtils.googleLogo)),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
-                                borderRadius: BorderRadius.circular(16),
-                                //color: ColorUtils.black.withOpacity(0.5),
+                            InkWell(
+                              onTap: (){
+                                Navigator.push(context,
+                                    PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(color: ColorUtils.black.withOpacity(0.15)),
+                                  borderRadius: BorderRadius.circular(16),
+                                  //color: ColorUtils.black.withOpacity(0.5),
+                                ),
+                                child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+                                    child: SvgPicture.asset(ImageUtils.appleLogo)),
                               ),
-                              child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
-                                  child: SvgPicture.asset(ImageUtils.appleLogo)),
                             ),
                           ],
                         ),
@@ -223,6 +240,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ],
                         ),
+                        SizedBox(height: 3.h,),
                       ],
                     ),
                   ),

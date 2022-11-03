@@ -8,6 +8,7 @@ import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
+import 'package:mandobi_mobile_app/Widgets/bottom_navigation_bar.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
@@ -42,6 +43,7 @@ class OTPVerification extends StatelessWidget {
                       ),
                       TopMargin(),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
                               decoration: BoxDecoration(
@@ -51,7 +53,7 @@ class OTPVerification extends StatelessWidget {
                               padding: EdgeInsets.all(16),
                               child: SvgPicture.asset(ImageUtils.blueArrow)
                           ),
-                          SizedBox(width: 16.w,),
+                          // SizedBox(width: 16.w,),
                           Text("OTP Verification",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -60,6 +62,8 @@ class OTPVerification extends StatelessWidget {
                                 color: ColorUtils.darkBlue
                             ),
                           ),
+                          Text("   ")
+
                         ],
                       ),
                       SizedBox(
@@ -152,7 +156,7 @@ class OTPVerification extends StatelessWidget {
                         textValue: "Submit",
                         onButtonPressed: (){
                           Navigator.push(context,
-                              PageTransition(type: PageTransitionType.fade, child:HomeScreen()));
+                              PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
                         },
                       ),
                     ],

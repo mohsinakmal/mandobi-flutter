@@ -358,13 +358,33 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                   crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      "Syed Ali Raza",
-                                                      style: TextStyle(
-                                                          fontFamily:
-                                                          FontUtils.poppinsMedium,
-                                                          fontSize: Fontsizes.size16,
-                                                          color: ColorUtils.black),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          "Syed Ali Raza",
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                              FontUtils.poppinsMedium,
+                                                              fontSize: Fontsizes.size16,
+                                                              color: ColorUtils.black),
+                                                        ),
+                                                        SizedBox(width: 1.5.w,),
+                                                        SvgPicture.asset(ImageUtils.ratingStar,
+                                                          width: 3.i,
+                                                          height: 3.i,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        SizedBox(width: 1.5.w,),
+                                                        Text("5.5",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsRegular,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.black
+                                                          ),
+                                                        ),
+
+
+                                                      ],
                                                     ),
                                                     SizedBox(
                                                       height: 0.25.h,
@@ -1114,13 +1134,30 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                   crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      "Syed Ali Raza",
-                                                      style: TextStyle(
-                                                          fontFamily:
-                                                          FontUtils.poppinsMedium,
-                                                          fontSize: Fontsizes.size16,
-                                                          color: ColorUtils.black),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          "Syed Ali Raza",
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                              FontUtils.poppinsMedium,
+                                                              fontSize: Fontsizes.size16,
+                                                              color: ColorUtils.black),
+                                                        ),
+                                                        SvgPicture.asset(ImageUtils.ratingStar,
+                                                          width: 3.i,
+                                                          height: 3.i,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        SizedBox(width: 1.5.w,),
+                                                        Text("5.5",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsRegular,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.black
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     SizedBox(
                                                       height: 0.25.h,
@@ -1167,15 +1204,41 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                         crossAxisAlignment:
                                                         CrossAxisAlignment.start,
                                                         children: [
-                                                          Text(
-                                                            "Syed Ali Raza",
-                                                            style: TextStyle(
-                                                                fontFamily: FontUtils
-                                                                    .poppinsRegular,
-                                                                fontSize:
-                                                                Fontsizes.size15,
-                                                                color:
-                                                                ColorUtils.black),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Syed Ali Raza",
+                                                                style: TextStyle(
+                                                                    fontFamily: FontUtils
+                                                                        .poppinsRegular,
+                                                                    fontSize:
+                                                                    Fontsizes.size15,
+                                                                    color:
+                                                                    ColorUtils.black),
+                                                              ),
+                                                              Expanded(
+                                                                child: Center(
+                                                                  child: Row(
+                                                                    mainAxisSize: MainAxisSize.min,
+                                                                    children: [
+                                                                      SvgPicture.asset(ImageUtils.ratingStar,
+                                                                        width: 3.i,
+                                                                        height: 3.i,
+                                                                        fit: BoxFit.cover,
+                                                                      ),
+                                                                      SizedBox(width: 1.5.w,),
+                                                                      Text("5.5",
+                                                                        style: TextStyle(
+                                                                            fontFamily: FontUtils.poppinsRegular,
+                                                                            fontSize: Fontsizes.size10,
+                                                                            color: ColorUtils.black
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
                                                           ),
                                                           SizedBox(
                                                             height: 0.25.h,

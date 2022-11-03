@@ -56,7 +56,7 @@ class Agents extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "My Bookings",
+                              "Agents",
                               style: TextStyle(
                                   fontFamily: FontUtils.poppinsRegular,
                                   fontSize: 2.t,
@@ -95,7 +95,7 @@ class Agents extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 25.h,
+                            height: 20.h,
                             child: ListView.separated(
                               physics: BouncingScrollPhysics(),
                               separatorBuilder: (context, index) {
@@ -114,8 +114,8 @@ class Agents extends StatelessWidget {
                                     children: [
                                       SizedBox(height: 2.h,),
                                       Container(
-                                        width: 30.w,
-                                        height: 18.h,
+                                        width: 25.w,
+                                        height: 15.h,
                                         margin: EdgeInsets.only(left: 3.5.w),
                                         padding: EdgeInsets.only(top: 3.h),
                                         decoration: BoxDecoration(
@@ -218,7 +218,7 @@ class Agents extends StatelessWidget {
                                             child: Text(model.popularServicesAndAgents[index],
                                               style: TextStyle(
                                                   fontFamily: FontUtils.poppinsSemiBold,
-                                                  fontSize: 1.7.t,
+                                                  fontSize: 1.6.t,
                                                   color: model.selectedPopularServiceIndex == index ? ColorUtils.white : ColorUtils.black
                                               ),
                                             ),

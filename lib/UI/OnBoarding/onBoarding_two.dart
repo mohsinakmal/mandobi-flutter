@@ -29,9 +29,9 @@ class OnBoardingTwo extends StatelessWidget {
                 height: context.getPadding().top,
               ),
               TopMargin(),
-              AppBarTwoItems(
-                text: "",
-              ),
+              // AppBarTwoItems(
+              //   text: "",
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

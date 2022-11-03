@@ -29,17 +29,17 @@ class PaymentDetails extends StatelessWidget {
             top: false,
             bottom: false,
             child: Scaffold(
-              floatingActionButton: HorizontalMargin(
-                widget: CustomButtonOne(
-                  onButtonPressed: (){
-                    Navigator.push(context,
-                        PageTransition(type: PageTransitionType.fade, child:  CardDetails()));
-                  },
-                  textValue: "Card Details",
-                ),
-              ),
-              floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-              backgroundColor: Colors.white,
+              // floatingActionButton: HorizontalMargin(
+              //   widget: CustomButtonOne(
+              //     onButtonPressed: (){
+              //       Navigator.push(context,
+              //           PageTransition(type: PageTransitionType.fade, child:  CardDetails()));
+              //     },
+              //     textValue: "Card Details",
+              //   ),
+              // ),
+              // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+              // backgroundColor: Colors.white,
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

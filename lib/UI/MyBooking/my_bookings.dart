@@ -318,15 +318,35 @@ class MyBookings extends StatelessWidget {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      "Syed Ali Raza",
-                                                      style: TextStyle(
-                                                          fontFamily: FontUtils
-                                                              .poppinsRegular,
-                                                          fontSize:
-                                                              Fontsizes.size15,
-                                                          color:
-                                                              ColorUtils.black),
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          "Syed Ali Raza",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils
+                                                                  .poppinsRegular,
+                                                              fontSize:
+                                                                  Fontsizes.size15,
+                                                              color:
+                                                                  ColorUtils.black),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 5.w,
+                                                        ),
+                                                        SvgPicture.asset(ImageUtils.ratingStar,
+                                                          width: 3.i,
+                                                          height: 3.i,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        SizedBox(width: 1.5.w,),
+                                                        Text("5.5",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsRegular,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.black
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                     SizedBox(
                                                       height: 0.25.h,
@@ -419,15 +439,36 @@ class MyBookings extends StatelessWidget {
                                                         crossAxisAlignment:
                                                         CrossAxisAlignment.start,
                                                         children: [
-                                                          Text(
-                                                            "Syed Ali Raza",
-                                                            style: TextStyle(
-                                                                fontFamily: FontUtils
-                                                                    .poppinsRegular,
-                                                                fontSize:
-                                                                Fontsizes.size15,
-                                                                color:
-                                                                ColorUtils.black),
+                                                          Row(
+                                                            children: [
+                                                              Text(
+                                                                "Syed Ali Raza",
+                                                                style: TextStyle(
+                                                                    fontFamily: FontUtils
+                                                                        .poppinsRegular,
+                                                                    fontSize:
+                                                                    Fontsizes.size15,
+                                                                    color:
+                                                                    ColorUtils.black),
+                                                              ),
+                                                              SizedBox(
+                                                                width: 5.w,
+                                                              ),
+                                                              SvgPicture.asset(ImageUtils.ratingStar,
+                                                                width: 3.i,
+                                                                height: 3.i,
+                                                                fit: BoxFit.cover,
+                                                              ),
+                                                              SizedBox(width: 1.5.w,),
+                                                              Text("5.5",
+                                                                style: TextStyle(
+                                                                    fontFamily: FontUtils.poppinsRegular,
+                                                                    fontSize: Fontsizes.size10,
+                                                                    color: ColorUtils.black
+                                                                ),
+                                                              ),
+
+                                                            ],
                                                           ),
                                                           SizedBox(
                                                             height: 0.25.h,

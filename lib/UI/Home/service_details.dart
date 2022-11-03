@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/Home/passport_Renewal.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
@@ -87,17 +88,17 @@ class ServiceDetails extends StatelessWidget {
                                       ImageUtils.circle1,
                                       width: 22.5.i,
                                       height: 22.5.i,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                     ),
                                     Image.asset(ImageUtils.circleGrey2,
                                       width: 22.5.i,
                                       height: 22.5.i,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                     ),
                                     Image.asset(ImageUtils.circleGrey3,
                                       width: 22.5.i,
                                       height: 22.5.i,
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                     ),
                                   ],
                                 ),
@@ -131,6 +132,7 @@ class ServiceDetails extends StatelessWidget {
                                   onTap: (){
                                   },
                                   child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       SizedBox(height: 2.h,),
                                       Container(
@@ -153,13 +155,18 @@ class ServiceDetails extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 3.h,),
-                                      Text(
-                                        model.documentNames[index],
-                                        style: TextStyle(
-                                          fontFamily: FontUtils.poppinsRegular,
-                                          fontSize: Fontsizes.size10,
-                                          color: ColorUtils.black,
+                                      SizedBox(height: 1.h,),
+                                      Center(
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(left: 15),
+                                          child: Text(
+                                            model.documentNames[index],
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.black,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ],

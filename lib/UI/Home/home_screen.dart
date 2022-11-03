@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: context.getPadding().top,
                         ),
-                        TopMargin(),
+                        // TopMargin(),
                         GestureDetector(
                           onTap: (){
                             Navigator.push(context,
@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     children: [
                                       SizedBox(height: 2.h,),
                                       Container(
-                                        width: 30.w,
+                                        width: 25.w,
                                         height: 18.h,
                                         margin: EdgeInsets.only(left: 3.5.w),
                                         padding: EdgeInsets.only(top: 3.h),
@@ -340,11 +340,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         title: Row(
                                           children: [
-                                            Text(model.popularAgentNames[index],
-                                              style: TextStyle(
-                                                  fontFamily: FontUtils.poppinsRegular,
-                                                  fontSize: Fontsizes.size15,
-                                                  color: ColorUtils.black
+                                            Container(
+                                              width: 20.i ,
+                                              child: Text(model.popularAgentNames[index],
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils.poppinsRegular,
+                                                    fontSize: Fontsizes.size15,
+                                                    color: ColorUtils.black
+                                                ),
                                               ),
                                             ),
                                             Expanded(
@@ -373,11 +376,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         subtitle: Row(
                                           children: [
-                                            Text("Contractor - TAWJEEH",
-                                              style: TextStyle(
-                                                  fontFamily: FontUtils.poppinsSemiBold,
-                                                  fontSize: Fontsizes.size9,
-                                                  color: ColorUtils.black
+                                            Container(
+                                              width: 33.i ,
+                                              child: Text("Contractor - TAWJEEH",
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils.poppinsSemiBold,
+                                                    fontSize: Fontsizes.size9,
+                                                    color: ColorUtils.black
+                                                ),
                                               ),
                                             ),
                                             Expanded(

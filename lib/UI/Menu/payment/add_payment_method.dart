@@ -62,7 +62,7 @@ class AddPaymentMethod extends StatelessWidget {
                           children: [
                             Expanded(
                               child: CustomTextField(
-                                hintText: "Expiry Date",
+                                hintText: "MM/YY",
                                 prefixRequired: false,
                                 suffixRequired: false,
                                 textInputType: TextInputType.number,

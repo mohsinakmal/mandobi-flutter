@@ -53,6 +53,7 @@ class ImageUtils{
   static String circle3 = "assets/images/circle3.png";
   static String circleGrey1 = "assets/images/circlegrey1Whitebg.png";
   static String circleGrey2 = "assets/images/circlegrey2Whitebg.png";
+  static String circleGrey2svg = "assets/images/circleGrey2.svg";
   static String circleGrey3 = "assets/images/circlegrey3Whitebg.png";
   static String paymentCurve = "assets/images/payment_curve.png";
   static String masterCard = "assets/images/masterCard.png";

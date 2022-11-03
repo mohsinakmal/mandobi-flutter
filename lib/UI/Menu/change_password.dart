@@ -39,11 +39,12 @@ class _ChangePasswordState extends State<ChangePassword> {
             top: false,
             bottom: false,
             child: Scaffold(
+              resizeToAvoidBottomInset: false,
               backgroundColor: Colors.white,
-              body: Column(
-                children: [
-                  Expanded(
-                    child: HorizontalMargin(
+              body: Container(
+                child: Column(
+                  children: [
+                    HorizontalMargin(
                       widget: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -178,24 +179,28 @@ class _ChangePasswordState extends State<ChangePassword> {
                                   ),
                                 ),
                               ),
+
                             ],
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 9.w),
-                    child: CustomButtonOne(
-                      onButtonPressed: (){
-                        Navigator.push(context,
-                            PageTransition(type: PageTransitionType.fade, child:  LoginScreen()));
-                      },
-                      textValue: "Update",
+                    Spacer(),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 9.w),
+                      child: CustomButtonOne(
+                        onButtonPressed: (){
+                          Navigator.push(context,
+                              PageTransition(type: PageTransitionType.fade, child:  LoginScreen()));
+                        },
+                        textValue: "Update",
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 1.h,),
-                ],
+                    SizedBox(
+                      height: 3.5.h,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

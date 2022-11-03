@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="161" height="161" viewBox="0 0 161 161">
+    <defs>
+        <filter id="beryqxu1za" x="0" y="0" width="161" height="161" filterUnits="userSpaceOnUse">
+            <feOffset dx="7" dy="10"/>
+            <feGaussianBlur stdDeviation="13.5" result="blur"/>
+            <feFlood flood-color="#6e6e6e" flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g data-name="Group 28032" transform="translate(-114.5 -1704.534)">
+        <g style="filter:url(#beryqxu1za)">
+            <g data-name="Rectangle 17518" transform="translate(148 1735.03)" style="stroke:#eee;stroke-width:2px;fill:#fff">
+                <rect width="80" height="80" rx="40" style="stroke:none"/>
+                <rect x="1" y="1" width="78" height="78" rx="39" style="fill:none"/>
+            </g>
+        </g>
+        <g data-name="Group 27752">
+            <path data-name="Path 454" d="M215.031 321a32.7 32.7 0 0 0-32.7 32.7h32.7z" transform="translate(-26.148 1421.835)" style="fill:#ececec"/>
+        </g>
+        <g data-name="Group 27753">
+            <path data-name="Path 454" d="M182.333 321a32.7 32.7 0 0 1 32.7 32.7h-32.7z" transform="translate(6.55 1421.835)" style="fill:#dedede"/>
+        </g>
+        <circle data-name="Ellipse 18" cx="9" cy="9" r="9" transform="translate(180 1766.796)" style="fill:#fff"/>
+        <text data-name="2" transform="translate(183 1779.796)" style="font-size:10px;font-family:Poppins-Regular,Poppins"><tspan x="0" y="0">02</tspan></text>
+    </g>
+</svg>

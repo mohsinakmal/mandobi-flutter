@@ -63,11 +63,11 @@ class _RegisterAccountState extends State<RegisterAccount> {
                         child: HorizontalMargin(
                           widget: Column(
                             children: [
-                              SizedBox(height: 5.h,),
+                              SizedBox(height: 0.h,),
                               Container(
                                 //alignment: Alignment.topCenter,
-                                width: 34.8.i,
-                                height: 34.8.i,
+                                width: 30.8.i,
+                                height: 30.8.i,
                                 child: Stack(
                                   children: <Widget>[
                                     Container(
@@ -75,7 +75,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                       height: 32.i,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        border: Border.all(color: ColorUtils.darkBlue),
+                                        border: Border.all(color: ColorUtils.lightBlue),
                                       ),
                                       child: ClipOval(
                                           child:
@@ -99,6 +99,8 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           )
                                               : Image.file(
                                             model.registrationProfileFileImage!,
+                                            width: 10.i,
+                                            height: 10.i,
                                             fit: BoxFit.cover,
                                           )),
                                     ),
@@ -141,7 +143,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 4.h,),
+                              SizedBox(height: 2.h,),
                               CustomTextField(
                                 prefixRequired: false,
                                 suffixRequired: false,
@@ -149,7 +151,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 textInputType: TextInputType.name,
                                 controller: model.registerNameController,
                               ),
-                              SizedBox(height: 2.5.h,),
+                              SizedBox(height: 2.h,),
                               CustomTextField(
                                 prefixRequired: false,
                                 suffixRequired: true,
@@ -160,7 +162,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 suffixImageWidth: 10.i,
                                 suffixImageHeight: 10.i,
                               ),
-                              SizedBox(height: 2.5.h,),
+                              SizedBox(height: 2.h,),
                               IntlPhoneField(
                                 decoration: InputDecoration(
                                   counter: Text(""),
@@ -187,7 +189,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 textInputType: TextInputType.text,
                                 controller: model.registerAddressController,
                               ),
-                              SizedBox(height: 2.5.h,),
+                              SizedBox(height: 2.h,),
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(
@@ -224,7 +226,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 2.5.h,),
+                              SizedBox(height: 2.h,),
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(
@@ -261,7 +263,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 5.h,),
+                              SizedBox(height: 2.h,),
                               CustomButtonOne(
                                 onButtonPressed: (){
                                   Navigator.push(context,

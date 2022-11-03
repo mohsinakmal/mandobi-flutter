@@ -20,10 +20,10 @@ class CustomButtonOne extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 400),
         width: MediaQuery.of(context).size.width / 1,
-        height: 6.35.h,
+        height: 7.h,
         //margin: EdgeInsets.symmetric(horizontal: 5.w),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(35),
           color: ColorUtils.lightBlue,
         ),
         child: MaterialButton(

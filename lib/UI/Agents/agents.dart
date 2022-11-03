@@ -95,7 +95,7 @@ class Agents extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 20.h,
+                            height: 22.h,
                             child: ListView.separated(
                               physics: BouncingScrollPhysics(),
                               separatorBuilder: (context, index) {
@@ -115,7 +115,7 @@ class Agents extends StatelessWidget {
                                       SizedBox(height: 2.h,),
                                       Container(
                                         width: 25.w,
-                                        height: 15.h,
+                                        height: 17.5.h,
                                         margin: EdgeInsets.only(left: 3.5.w),
                                         padding: EdgeInsets.only(top: 3.h),
                                         decoration: BoxDecoration(

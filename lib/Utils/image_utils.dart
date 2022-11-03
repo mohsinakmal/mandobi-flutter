@@ -48,13 +48,13 @@ class ImageUtils{
   static String man = "assets/images/man.png";
   static String laptop = "assets/images/laptop.png";
   static String redCross = "assets/images/red_cross.svg";
-  static String circle1 = "assets/images/circle1.png";
+  static String circle1 = "assets/images/circle1colored.png";
   static String circle2 = "assets/images/circle2.png";
   static String circle3 = "assets/images/circle3.png";
   static String circleGrey1 = "assets/images/circlegrey1Whitebg.png";
-  static String circleGrey2 = "assets/images/circlegrey2Whitebg.png";
+  static String circleGrey2 = "assets/images/circle2Grey.png";
   static String circleGrey2svg = "assets/images/circleGrey2.svg";
-  static String circleGrey3 = "assets/images/circlegrey3Whitebg.png";
+  static String circleGrey3 = "assets/images/circle3Grey.png";
   static String paymentCurve = "assets/images/payment_curve.png";
   static String masterCard = "assets/images/masterCard.png";
   static String visaCard = "assets/images/visadCard.png";

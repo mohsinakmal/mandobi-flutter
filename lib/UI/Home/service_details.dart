@@ -81,7 +81,7 @@ class ServiceDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 2.h,),
-                                Row(
+                                /*Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Image.asset(
@@ -99,6 +99,104 @@ class ServiceDetails extends StatelessWidget {
                                       width: 22.5.i,
                                       height: 22.5.i,
                                       fit: BoxFit.fill,
+                                    ),
+                                  ],
+                                ),*/
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              ImageUtils.circle1,
+                                              width: 18.75.i,
+                                              height: 18.75.i,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Image.asset(ImageUtils.greenDotLines,
+                                                width: 6.i,
+                                                height: 6.i,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 2.h,),
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 3.w),
+                                          child: Text(
+                                            "Initial \nPayment",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                              FontUtils.poppinsMedium,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Image.asset(
+                                              ImageUtils.circleGrey2,
+                                              width: 20.i,
+                                              height: 20.i,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Image.asset(ImageUtils.greyDotLines,
+                                                width: 6.i,
+                                                height: 6.i,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 2.h,),
+                                        Padding(
+                                          padding: EdgeInsets.only(right: 8.w),
+                                          child: Text(
+                                            "Document \nSubmission",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                              FontUtils.poppinsMedium,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.black.withOpacity(0.3),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        Image.asset(
+                                          ImageUtils.circleGrey3,
+                                          width: 20.i,
+                                          height: 20.i,
+                                          fit: BoxFit.cover,
+                                        ),
+                                        SizedBox(height: 2.h,),
+                                        Text(
+                                          "Final \nDelivery",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily:
+                                            FontUtils.poppinsMedium,
+                                            fontSize: Fontsizes.size10,
+                                            color: ColorUtils.black.withOpacity(0.3),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),

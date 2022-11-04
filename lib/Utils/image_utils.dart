@@ -52,9 +52,9 @@ class ImageUtils{
   static String circle2 = "assets/images/circle2.png";
   static String circle3 = "assets/images/circle3.png";
   static String circleGrey1 = "assets/images/circlegrey1Whitebg.png";
-  static String circleGrey2 = "assets/images/circle2Grey.png";
+  static String circleGrey2 = "assets/images/circle2grey.png";
   static String circleGrey2svg = "assets/images/circleGrey2.svg";
-  static String circleGrey3 = "assets/images/circle3Grey.png";
+  static String circleGrey3 = "assets/images/circle3grey.png";
   static String paymentCurve = "assets/images/payment_curve.png";
   static String masterCard = "assets/images/masterCard.png";
   static String visaCard = "assets/images/visadCard.png";
@@ -70,4 +70,6 @@ class ImageUtils{
   static String bottomBooking = "assets/images/bottom_booking.svg";
   static String bottomAgent = "assets/images/bottom_agent.svg";
   static String bottomMenu = "assets/images/bottom_menu.svg";
+  static String greenDotLines = "assets/images/greendotlines.png";
+  static String greyDotLines = "assets/images/greydotlines.png";
 }

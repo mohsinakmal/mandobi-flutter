@@ -664,8 +664,8 @@ class _BookingDetailsState extends State<BookingDetails> {
                                               children: [
                                                 Image.asset(
                                                   ImageUtils.circle1,
-                                                  width: 18.75.i,
-                                                  height: 18.75.i,
+                                                  width: 18.5.i,
+                                                  height: 18.5.i,
                                                   fit: BoxFit.cover,
                                                 ),
                                                 Padding(
@@ -699,8 +699,8 @@ class _BookingDetailsState extends State<BookingDetails> {
                                               children: [
                                                 Image.asset(
                                                   ImageUtils.circleGrey2,
-                                                  width: 20.i,
-                                                  height: 20.i,
+                                                  width: 18.5.i,
+                                                  height: 18.5.i,
                                                   fit: BoxFit.cover,
                                                 ),
                                                 Padding(
@@ -732,8 +732,8 @@ class _BookingDetailsState extends State<BookingDetails> {
                                           children: [
                                             Image.asset(
                                               ImageUtils.circleGrey3,
-                                              width: 20.i,
-                                              height: 20.i,
+                                              width: 18.5.i,
+                                              height: 18.5.i,
                                               fit: BoxFit.cover,
                                             ),
                                             SizedBox(height: 2.h,),

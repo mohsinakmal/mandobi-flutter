@@ -48,4 +48,9 @@ class ColorUtils{
   static Color silver7 =  Color (0xFFCFD8E1);
   static Color silver8 =  Color (0xFFE9E9E9);
   static Color silver9 =  Color (0xFFBEBEBE);
+  static Color golden3 =  Color (0xFFE1A429);
+  static Color golden4 =  Color (0xFFC49332);
+  static Color lightBlue8 =  Color (0xFF24B1AC);
+  static Color lightGreen6 =  Color (0xFF23A862);
+  static Color red3 =  Color (0xFFB12320);
 }

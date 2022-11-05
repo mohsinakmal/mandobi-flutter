@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
-import 'package:mandobi_mobile_app/UI/Agents/agents.dart';
-import 'package:mandobi_mobile_app/UI/Home/about_agent.dart';
-import 'package:mandobi_mobile_app/UI/Home/home_screen.dart';
-import 'package:mandobi_mobile_app/UI/Home/tas_heel.dart';
-import 'package:mandobi_mobile_app/UI/Menu/change_password.dart';
-import 'package:mandobi_mobile_app/UI/Menu/dispute/disputes.dart';
-import 'package:mandobi_mobile_app/UI/Menu/menu.dart';
-import 'package:mandobi_mobile_app/UI/Menu/privacy_policy.dart';
-import 'package:mandobi_mobile_app/UI/Menu/terms_of_use.dart';
-import 'package:mandobi_mobile_app/UI/MyBooking/my_bookings.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentHome/agent_home_screen.dart';
+import 'package:mandobi_mobile_app/UI/UserFlow/Agents/agents.dart';
+import 'package:mandobi_mobile_app/UI/UserFlow/Home/home_screen.dart';
+import 'package:mandobi_mobile_app/UI/UserFlow/Menu/menu.dart';
+import 'package:mandobi_mobile_app/UI/UserFlow/MyBooking/my_bookings.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
@@ -18,9 +13,10 @@ import 'package:stacked/stacked.dart';
 
 class MyBottomNavBar extends StatefulWidget {
 
+  bool? fromAgent;
   int? index;
 
-  MyBottomNavBar({this.index,Key? key}) : super(key: key);
+  MyBottomNavBar({this.fromAgent, this.index,Key? key}) : super(key: key);
 
   @override
   State<MyBottomNavBar> createState() => _MyBottomNavBarState();
@@ -29,7 +25,7 @@ class MyBottomNavBar extends StatefulWidget {
 class _MyBottomNavBarState extends State<MyBottomNavBar> {
 
   int currentIndex = 0;
-  Widget body =  HomeScreen();
+  Widget? body;
 
   @override
   void initState() {
@@ -106,7 +102,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
       currentIndex = selectedIndex;
       switch(currentIndex){
         case 0:
-          body =  HomeScreen();
+          body = widget.fromAgent == false ? HomeScreen() : AgentHomeScreen();
           break;
         case 1:
           body = MyBookings();

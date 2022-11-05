@@ -72,4 +72,13 @@ class ImageUtils{
   static String bottomMenu = "assets/images/bottom_menu.svg";
   static String greenDotLines = "assets/images/greendotlines.png";
   static String greyDotLines = "assets/images/greydotlines.png";
+  static String pendingContainer = "assets/images/pending_container.png";
+  static String processContainer = "assets/images/process_container.png";
+  static String completedContainer = "assets/images/completed_container.png";
+  static String cancelContainer = "assets/images/cancel_container.png";
+  static String bookingCancelIcon = "assets/images/bookings_cancel.svg";
+  static String bookingClockIcon = "assets/images/bookings_clock.svg";
+  static String bookingCompleteIcon = "assets/images/bookings_complete.svg";
+  static String bookingProcessIcon = "assets/images/bookings_process.svg";
+  static String bulletIcon = "assets/images/bullet.svg";
 }

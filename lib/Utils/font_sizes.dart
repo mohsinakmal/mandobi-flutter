@@ -18,4 +18,5 @@ class Fontsizes{
   static double size22 = 2.6.t;
   static double size23 = 2.7.t;
   static double size24 = 2.8.t;
+  static double size30 = 3.4.t;
 }

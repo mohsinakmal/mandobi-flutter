@@ -6,6 +6,7 @@ import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Register/otp_verification.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
+import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
 import 'package:mandobi_mobile_app/Utils/font_utils.dart';
 import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/user_registration_model.dart';
@@ -19,7 +20,10 @@ import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class RegisterAccount extends StatefulWidget {
-  const RegisterAccount({Key? key}) : super(key: key);
+
+  bool? fromServiceAssistant;
+
+  RegisterAccount({this.fromServiceAssistant, Key? key}) : super(key: key);
 
   @override
   State<RegisterAccount> createState() => _RegisterAccountState();
@@ -29,8 +33,9 @@ class _RegisterAccountState extends State<RegisterAccount> {
 
    bool registerIsVisible = true;
    bool confirmPasswordIsVisible = true;
+   bool checkValue = false;
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<UserRegistrationModel>.reactive(
         viewModelBuilder: () => locator<UserRegistrationModel>(),
@@ -263,6 +268,57 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                   ),
                                 ),
                               ),
+                              if(widget.fromServiceAssistant! == true)
+                                Row(
+                                  children: [
+                                    Checkbox(
+                                    value: checkValue,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        checkValue = value!;
+                                      });
+                                    },
+                                    ),
+                                    RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: "I accept the",
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.black,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: ' terms and conditions',
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.lightBlue,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: ' 55',
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: 2.t,
+                                              color: ColorUtils.lightBlue,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: ' sec',
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: 2.t,
+                                              color: ColorUtils.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               SizedBox(height: 2.h,),
                               CustomButtonOne(
                                 onButtonPressed: (){

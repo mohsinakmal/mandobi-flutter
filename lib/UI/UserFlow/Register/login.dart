@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   borderSide: BorderSide(width: 2.0,
                                   color: ColorUtils.lightBlue
                                   ),
-                                  insets: EdgeInsets.symmetric(horizontal:12.w),
+                                  insets: EdgeInsets.symmetric(horizontal:10.w),
                               ),
                               indicatorColor: ColorUtils.lightBlue,
                               labelColor: ColorUtils.lightBlue,
@@ -158,14 +158,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     SizedBox(height: 4.h,),
                                     CustomButtonOne(
                                       onButtonPressed: (){
-                                        if(selectedTabIndex == 0){
-                                          Navigator.push(context,
+                                        Navigator.push(context,
                                               PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,fromAgent: false,)));
-                                        }
-                                        else{
-                                          Navigator.push(context,
-                                              PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,fromAgent: true,)));
-                                        }
                                       },
                                       textValue: "Login",
                                     ),
@@ -229,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         InkWell(
                                           onTap: (){
                                             Navigator.push(context,
-                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,fromAgent: false,)));
 
                                           },
                                           child: Container(
@@ -247,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         InkWell(
                                           onTap: (){
                                             Navigator.push(context,
-                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,fromAgent: false,)));
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -279,7 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         GestureDetector(
                                           onTap: (){
                                             Navigator.push(context,
-                                                PageTransition(type: PageTransitionType.fade, child:  RegisterAccount()));
+                                                PageTransition(type: PageTransitionType.fade, child:  RegisterAccount(fromServiceAssistant: false,)));
                                           },
                                           child: Text("Sign Up",
                                             textAlign: TextAlign.center,
@@ -351,7 +345,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     CustomButtonOne(
                                       onButtonPressed: (){
                                         Navigator.push(context,
-                                            PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                                            PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,fromAgent: true,)));
                                       },
                                       textValue: "Login",
                                     ),
@@ -391,7 +385,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         GestureDetector(
                                           onTap: (){
                                             Navigator.push(context,
-                                                PageTransition(type: PageTransitionType.fade, child:  RegisterAccount()));
+                                                  PageTransition(type: PageTransitionType.fade, child:  RegisterAccount(fromServiceAssistant: true,)));
+
                                           },
                                           child: Text("Sign Up",
                                             textAlign: TextAlign.center,

@@ -88,25 +88,25 @@ class CustomTextField extends StatelessWidget {
               ),
             ),
           ) :
-      TextField(
-        controller: controller,
-        style:  TextStyle(color: ColorUtils.black),
-        keyboardType: textInputType,
-        decoration:  InputDecoration(
-          //isDense: true,
-          contentPadding: EdgeInsets.only(left: 5.w,top: 2.h, right: 2.w, bottom: 3.h),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        TextField(
+          controller: controller,
+          style:  TextStyle(color: ColorUtils.black),
+          keyboardType: textInputType,
+          decoration:  InputDecoration(
+            //isDense: true,
+            contentPadding: EdgeInsets.only(left: 5.w,top: 2.h, right: 2.w, bottom: 3.h),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: ColorUtils.black.withOpacity(0.5), width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
+            ),
+            hintText: hintText,
+            hintStyle: TextStyle(color: ColorUtils.black.withOpacity(0.5)),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            borderSide: BorderSide(color: ColorUtils.lightBlue, width: 1.5),
-          ),
-          hintText: hintText,
-          hintStyle: TextStyle(color: ColorUtils.black.withOpacity(0.5)),
-        ),
-      )
+        )
     );
   }
 }

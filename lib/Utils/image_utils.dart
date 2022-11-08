@@ -81,4 +81,10 @@ class ImageUtils{
   static String bookingCompleteIcon = "assets/images/bookings_complete.svg";
   static String bookingProcessIcon = "assets/images/bookings_process.svg";
   static String bulletIcon = "assets/images/bullet.svg";
+  static String editIcon = "assets/images/edit_icon.svg";
+  static String categoriesEdit = "assets/images/categories_edit_icon.png";
+  static String docIcon = "assets/images/doc.svg";
+  static String pdf = "assets/images/pdf.svg";
+  static String pdfIcon = "assets/images/pdf_icon.png";
+  static String crossWhite = "assets/images/cross_white.svg";
 }

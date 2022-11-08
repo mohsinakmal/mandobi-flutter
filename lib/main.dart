@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentHome/agent_home_screen.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/create_service.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_experience.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_one.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_three.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_two.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_edit_service.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/splash.dart';
 import 'package:mandobi_mobile_app/Utils/size_config.dart';
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
         return OrientationBuilder(
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
-            return AgentProfileCreationTwo();
+            return SplashScreen();
           },
         );
       },

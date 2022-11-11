@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_my_bookings.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentHome/agent_home_screen.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentMenu/agentMenu.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentPayments/agent_payments.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Agents/agents.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Home/home_screen.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Menu/menu.dart';
@@ -64,10 +67,10 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
                   label: 'My Booking',
                 ),
                 BottomNavigationBarItem(
-                  icon: SvgPicture.asset(ImageUtils.bottomAgent,
+                  icon: SvgPicture.asset(widget.fromAgent == false ? ImageUtils.bottomAgent : ImageUtils.bottomPaymentIcon,
                     color: currentIndex == 2 ? ColorUtils.lightBlue : ColorUtils.white,
                   ),
-                  label: 'Agents',
+                  label: widget.fromAgent == false ? 'Agents' : 'Payments',
                 ),
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(ImageUtils.bottomMenu,
@@ -105,13 +108,13 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           body = widget.fromAgent == false ? HomeScreen() : AgentHomeScreen();
           break;
         case 1:
-          body = MyBookings();
+          body = body = widget.fromAgent == false ? MyBookings() : AgentMyBookings();
           break;
         case 2:
-          body =  Agents();
+          body = widget.fromAgent == false ? Agents() : AgentPayments();
           break;
         case 3:
-          body =  Menu();
+          body = widget.fromAgent == false ? Menu() : AgentMenu();
           break;
       }
     });

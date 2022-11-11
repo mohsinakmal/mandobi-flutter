@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_booking_details.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_my_bookings.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Home/notifications.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Profile/my_profile.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
@@ -269,134 +271,139 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
                                 );
                               },),
                           ),
-                          HorizontalMargin(
-                            widget: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 2.h,),
-                                Text("Recent Bookings",
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 2.h,),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                                child: Text("Recent Bookings",
                                   style: TextStyle(
                                       fontFamily: FontUtils.poppinsSemiBold,
                                       fontSize: 1.7.t,
                                       color: ColorUtils.black
                                   ),
                                 ),
-                                SizedBox(height: 2.h,),
-                                ListView.separated(
-                                  padding: EdgeInsets.symmetric(horizontal: 2.w),
-                                  physics: BouncingScrollPhysics(),
-                                  separatorBuilder: (context, index) {
-                                    return SizedBox(
-                                      height: 1.h,
-                                    );
-                                  },
-                                  shrinkWrap: true,
-                                  itemCount: model.recentBookingStatus.length,
-                                  itemBuilder: (context, index) {
-                                    return Container(
-                                      //margin: EdgeInsets.all(4),
-                                      decoration: BoxDecoration(
+                              ),
+                              SizedBox(height: 2.h,),
+                              ListView.separated(
+                                padding: EdgeInsets.symmetric(horizontal: 2.w),
+                                physics: BouncingScrollPhysics(),
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(
+                                    height: 1.h,
+                                  );
+                                },
+                                shrinkWrap: true,
+                                itemCount: model.recentBookingStatus.length,
+                                itemBuilder: (context, index) {
+                                  return Container(
+                                    //margin: EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
                                         borderRadius:
                                         BorderRadius.all(Radius.circular(6)),
                                         color: model.recentBookingStatus[index]=="Process" ? ColorUtils.lightBlue3:
                                         model.recentBookingStatus[index]=="Pending" ? ColorUtils.golden3:
                                         ColorUtils.lightGreen1
-                                      ),
-                                      padding: EdgeInsets.only(bottom: 0.5.h,),
-                                      child: GestureDetector(
-                                        onTap: () {
-                                        },
-                                        child: Card(
-                                          margin: EdgeInsets.zero,
-                                          elevation: 5,
-                                          child: Container(
-                                            margin: EdgeInsets.symmetric(
-                                                horizontal: 5.w, vertical: 2.h),
-                                            child: Column(
-                                              //mainAxisSize: MainAxisSize.min,
-                                              children: <Widget>[
-                                                Align(
-                                                  alignment: Alignment.centerRight,
-                                                  child: Row(
-                                                    mainAxisSize: MainAxisSize.min,
-                                                    children: [
-                                                      SvgPicture.asset(ImageUtils.bulletIcon,
-                                                          color: model.recentBookingStatus[index]=="Process" ? ColorUtils.lightBlue3:
-                                                          model.recentBookingStatus[index]=="Pending" ? ColorUtils.golden3:
-                                                          ColorUtils.lightGreen1
-                                                      ),
-                                                      SizedBox(width: 1.5.w,),
-                                                      Text(model.recentBookingStatus[index],
-                                                        style: TextStyle(
-                                                          color: model.recentBookingStatus[index]=="Process" ? ColorUtils.lightBlue3:
-                                                          model.recentBookingStatus[index]=="Pending" ? ColorUtils.golden3:
-                                                          ColorUtils.lightGreen1
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                                    ),
+                                    padding: EdgeInsets.only(bottom: 0.5.h,),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(context,
+                                            PageTransition(type: PageTransitionType.fade, child:  AgentBookingDetails(
+                                              currentBookingValue: index == 0 ? "Process" : index == 1 ? "Pending" : "Completed",
+                                            )));
+                                      },
+                                      child: Card(
+                                        margin: EdgeInsets.zero,
+                                        elevation: 5,
+                                        child: Container(
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 5.w, vertical: 2.h),
+                                          child: Column(
+                                            //mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                              Align(
+                                                alignment: Alignment.centerRight,
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.min,
                                                   children: [
-                                                    Row(
-                                                      children: [
-                                                        Container(
-                                                          decoration: BoxDecoration(
-                                                              shape: BoxShape.circle,
-                                                              border: Border.all(color: ColorUtils.lightBlue)
-                                                          ),
-                                                          child: Padding(
-                                                            padding: const EdgeInsets.all(6.0),
-                                                            child: Image.asset(ImageUtils.userPic,
-                                                              height: 15.i,
-                                                              width: 15.i,
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        SizedBox(width: 2.w,),
-                                                        Column(
-                                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                                          children: [
-                                                            Text("Anees A.",
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils.poppinsMedium,
-                                                                  fontSize: Fontsizes.size16,
-                                                                  color: ColorUtils.black
-                                                              ),
-                                                            ),
-                                                            SizedBox(height: 0.35.h,),
-                                                            Text("Driving License",
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils.poppinsRegular,
-                                                                  fontSize: Fontsizes.size12,
-                                                                  color: ColorUtils.black
-                                                              ),
-                                                            ),
-                                                            Text("AED 500",
-                                                              style: TextStyle(
-                                                                  fontFamily: FontUtils.poppinsRegular,
-                                                                  fontSize: Fontsizes.size12,
-                                                                  color: ColorUtils.black
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ],
+                                                    SvgPicture.asset(ImageUtils.bulletIcon,
+                                                        color: model.recentBookingStatus[index]=="Process" ? ColorUtils.lightBlue3:
+                                                        model.recentBookingStatus[index]=="Pending" ? ColorUtils.golden3:
+                                                        ColorUtils.lightGreen1
+                                                    ),
+                                                    SizedBox(width: 1.5.w,),
+                                                    Text(model.recentBookingStatus[index],
+                                                      style: TextStyle(
+                                                          color: model.recentBookingStatus[index]=="Process" ? ColorUtils.lightBlue3:
+                                                          model.recentBookingStatus[index]=="Pending" ? ColorUtils.golden3:
+                                                          ColorUtils.lightGreen1
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Row(
+                                                    children: [
+                                                      Container(
+                                                        decoration: BoxDecoration(
+                                                            shape: BoxShape.circle,
+                                                            border: Border.all(color: ColorUtils.lightBlue)
+                                                        ),
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.all(6.0),
+                                                          child: Image.asset(ImageUtils.userPic,
+                                                            height: 15.i,
+                                                            width: 15.i,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 2.w,),
+                                                      Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children: [
+                                                          Text("Anees A.",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils.poppinsMedium,
+                                                                fontSize: Fontsizes.size16,
+                                                                color: ColorUtils.black
+                                                            ),
+                                                          ),
+                                                          SizedBox(height: 0.35.h,),
+                                                          Text("Driving License",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils.poppinsRegular,
+                                                                fontSize: Fontsizes.size12,
+                                                                color: ColorUtils.black
+                                                            ),
+                                                          ),
+                                                          Text("AED 500",
+                                                            style: TextStyle(
+                                                                fontFamily: FontUtils.poppinsRegular,
+                                                                fontSize: Fontsizes.size12,
+                                                                color: ColorUtils.black
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
                         ],
                       ),

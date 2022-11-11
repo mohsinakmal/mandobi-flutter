@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentMenu/membership/membership_plans.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/create_service.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_edit_service.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -9,8 +12,10 @@ import 'package:mandobi_mobile_app/Utils/image_utils.dart';
 import 'package:mandobi_mobile_app/ViewModels/agent_registration_model.dart';
 import 'package:mandobi_mobile_app/Widgets/app_bar_two_items.dart';
 import 'package:mandobi_mobile_app/Widgets/custom_button_one.dart';
+import 'package:mandobi_mobile_app/Widgets/dialogBox.dart';
 import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class AgentProfileCreationThree extends StatefulWidget {
@@ -231,14 +236,24 @@ class _AgentProfileCreationThreeState extends State<AgentProfileCreationThree> w
                                         color: ColorUtils.black,
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(right: 4.w),
-                                      child: Text(
-                                        "+ Add Service",
-                                        style: TextStyle(
-                                          fontFamily: FontUtils.poppinsMedium,
-                                          fontSize: Fontsizes.size11,
-                                          color: ColorUtils.blue3,
+                                    GestureDetector(
+                                      onTap: (){
+                                        Navigator.push(
+                                            context,
+                                            PageTransition(
+                                                type:
+                                                PageTransitionType.fade,
+                                                child: ProfileCreationCreateService()));
+                                      },
+                                      child: Padding(
+                                        padding: EdgeInsets.only(right: 4.w),
+                                        child: Text(
+                                          "+ Add Service",
+                                          style: TextStyle(
+                                            fontFamily: FontUtils.poppinsMedium,
+                                            fontSize: Fontsizes.size11,
+                                            color: ColorUtils.blue3,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -260,83 +275,89 @@ class _AgentProfileCreationThreeState extends State<AgentProfileCreationThree> w
                             shrinkWrap: true,
                             itemCount: model.selectedCategoryIndex != 4 ? 4 : 1,
                             itemBuilder: (context, index) {
-                              return GestureDetector(
-                                onTap: () {
-                                },
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 2.h,
+                              return Column(
+                                children: [
+                                  SizedBox(
+                                    height: 2.h,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(bottom: 0.4.h),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6)),
+                                      color: ColorUtils.lightGreen2,
                                     ),
-                                    Container(
-                                      padding: EdgeInsets.only(bottom: 0.4.h),
+                                    child: Container(
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(6)),
-                                        color: ColorUtils.lightGreen2,
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                            color: ColorUtils.white,
-                                            borderRadius: BorderRadius
-                                                .all(Radius.circular(6)),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.5),
-                                                spreadRadius: 5,
-                                                blurRadius: 7,
-                                                offset: Offset(0, 3),
-                                              ),
-                                            ]),
-                                        //margin: EdgeInsets.symmetric(horizontal: 2.w),
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 3.w,
-                                              vertical: 1.5.h),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Radio(value: "Passport Renewal",
-                                                      groupValue: _character,
-                                                      activeColor: ColorUtils.lightGreen2,
-                                                      onChanged: (String? value){
-                                                    setState(() {
-                                                      _character = value!;
-                                                    });
-                                                  }),
-                                                  Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                    children: [
-                                                      Text(
-                                                        "Passport Renewal",
-                                                        style: TextStyle(
-                                                            fontFamily: FontUtils
-                                                                .poppinsMedium,
-                                                            fontSize:
-                                                            Fontsizes.size14,
-                                                            color:
-                                                            ColorUtils.black),
-                                                      ),
-                                                      Text(
-                                                        "AED 200",
-                                                        style: TextStyle(
-                                                            fontFamily: FontUtils
-                                                                .poppinsSemiBold,
-                                                            fontSize:
-                                                            Fontsizes.size15,
-                                                            color:
-                                                            ColorUtils.lightGreen2),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                              Container(
+                                          color: ColorUtils.white,
+                                          borderRadius: BorderRadius
+                                              .all(Radius.circular(6)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey
+                                                  .withOpacity(0.5),
+                                              spreadRadius: 5,
+                                              blurRadius: 7,
+                                              offset: Offset(0, 3),
+                                            ),
+                                          ]),
+                                      //margin: EdgeInsets.symmetric(horizontal: 2.w),
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 3.w,
+                                            vertical: 1.5.h),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Radio(value: "Passport Renewal",
+                                                    groupValue: _character,
+                                                    activeColor: ColorUtils.lightGreen2,
+                                                    onChanged: (String? value){
+                                                  setState(() {
+                                                    _character = value!;
+                                                  });
+                                                }),
+                                                Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      "Passport Renewal",
+                                                      style: TextStyle(
+                                                          fontFamily: FontUtils
+                                                              .poppinsMedium,
+                                                          fontSize:
+                                                          Fontsizes.size14,
+                                                          color:
+                                                          ColorUtils.black),
+                                                    ),
+                                                    Text(
+                                                      "AED 200",
+                                                      style: TextStyle(
+                                                          fontFamily: FontUtils
+                                                              .poppinsSemiBold,
+                                                          fontSize:
+                                                          Fontsizes.size15,
+                                                          color:
+                                                          ColorUtils.lightGreen2),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                            GestureDetector(
+                                              onTap: (){
+                                                Navigator.push(
+                                                    context,
+                                                    PageTransition(
+                                                        type:
+                                                        PageTransitionType.fade,
+                                                        child: AgentProfileEditService()));
+                                              },
+                                              child: Container(
                                                 decoration: BoxDecoration(
                                                   color: ColorUtils
                                                       .lightGreen2,
@@ -353,13 +374,13 @@ class _AgentProfileCreationThreeState extends State<AgentProfileCreationThree> w
                                                   child: SvgPicture.asset(ImageUtils.editIcon),
                                                 ),
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               );
                             },
                           ),
@@ -378,6 +399,280 @@ class _AgentProfileCreationThreeState extends State<AgentProfileCreationThree> w
                                 SizedBox(height: 1.h,),
                                 CustomButtonOne(
                                   onButtonPressed: (){
+                                    showDialog(context: context,
+                                      builder: (context) {
+                                        return SimpleDialog(
+                                          titlePadding: const EdgeInsets.only(top: 0),
+                                          contentPadding: EdgeInsets.only(top: 0.h),
+                                          insetPadding:
+                                          EdgeInsets.symmetric(horizontal: 4.w, vertical: 0.h),
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(3.i))),
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                                  1,
+                                              child: Stack(
+                                                clipBehavior: Clip.none,
+                                                children: [
+                                                  Container(
+                                                    margin: EdgeInsets.only(top: 36),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          "Syed Ali Raza",
+                                                          textAlign: TextAlign.center,
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils
+                                                                  .poppinsMedium,
+                                                              fontSize:
+                                                              Fontsizes.size22,
+                                                              color: ColorUtils.black),
+                                                        ),
+                                                        SizedBox(height: 1.h,),
+                                                        Row(
+                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery.of(context).size.width/2.1,
+                                                              decoration: BoxDecoration(
+                                                                  borderRadius: BorderRadius.circular(8),
+                                                                  border: Border.all(color: ColorUtils.lightBlue)
+                                                              ),
+                                                              child: ClipRRect(
+                                                                borderRadius: BorderRadius.all(Radius.circular(8)),
+                                                                child: LinearProgressIndicator(
+                                                                  minHeight: 1.h,
+                                                                  backgroundColor: ColorUtils.white,
+                                                                  color: ColorUtils.lightBlue,
+                                                                  value: 100,
+                                                                  semanticsLabel: 'Linear progress indicator',
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(width: 3.w,),
+                                                            Text("100%",
+                                                              style: TextStyle(
+                                                                  fontFamily: FontUtils.poppinsRegular,
+                                                                  fontSize: Fontsizes.size12,
+                                                                  color: ColorUtils.lightBlue
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        SizedBox(height: 3.h,),
+                                                        Text(
+                                                          "Congratulations!",
+                                                          textAlign: TextAlign.center,
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils
+                                                                  .poppinsMedium,
+                                                              fontSize:
+                                                              Fontsizes.size22,
+                                                              color: ColorUtils.black),
+                                                        ),
+                                                        SizedBox(height: 1.h,),
+                                                        Padding(
+                                                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                                          child: Text(
+                                                            "Lorem Ipsum is simply dummy text of the printing and type setting is simply dummy",
+                                                            textAlign: TextAlign.center,
+                                                            style: TextStyle(
+                                                                height: 0.25.h,
+                                                                fontFamily: FontUtils
+                                                                    .poppinsRegular,
+                                                                fontSize:
+                                                                Fontsizes.size10,
+                                                                color: ColorUtils.silver1),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 2.h,),
+                                                        Container(
+                                                          decoration: const BoxDecoration(
+                                                            shape: BoxShape.rectangle,
+                                                            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                                                          ),
+                                                          child: AnimatedContainer(
+                                                            duration: const Duration(milliseconds: 400),
+                                                            height: 6.5.h,
+                                                            //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadius.circular(25),
+                                                              color: ColorUtils.lightBlue,
+                                                            ),
+                                                            child: MaterialButton(
+                                                              padding: EdgeInsets.zero,
+                                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                              onPressed: (){
+                                                                Navigator.push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                        type:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                        child:
+                                                                        Membership_Plans()));
+                                                              },
+                                                              child: Padding(
+                                                                padding: EdgeInsets.symmetric(horizontal: 12.w),
+                                                                child: Text(
+                                                                  "Membership Plans",
+                                                                  style: TextStyle(
+                                                                      fontFamily: FontUtils.poppinsRegular,
+                                                                      fontSize: Fontsizes.size14,
+                                                                      color: ColorUtils.white),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 2.h,),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    top: -50,
+                                                    right: 20,
+                                                    left: 20,
+                                                    child: Container(
+                                                      padding: EdgeInsets.all(8.0),
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        shape: BoxShape.circle
+                                                      ),
+                                                      child: Container(
+                                                        decoration: BoxDecoration(
+                                                            shape: BoxShape.circle,
+                                                            border: Border.all(color: ColorUtils.lightBlue)
+                                                        ),
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.all(6.0),
+                                                          child: Image.asset(ImageUtils.userPic,
+                                                            height: 15.i,
+                                                            width: 15.i,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        );
+
+                                          MyCustomDialog(
+                                          childWidget: Column(
+                                            children: [
+                                              Text(
+                                                "Syed Ali Raza",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils
+                                                        .poppinsMedium,
+                                                    fontSize:
+                                                    Fontsizes.size22,
+                                                    color: ColorUtils.black),
+                                              ),
+                                              SizedBox(height: 1.h,),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    width: MediaQuery.of(context).size.width/2.1,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        border: Border.all(color: ColorUtils.lightBlue)
+                                                    ),
+                                                    child: ClipRRect(
+                                                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                                                      child: LinearProgressIndicator(
+                                                        minHeight: 1.h,
+                                                        backgroundColor: ColorUtils.white,
+                                                        color: ColorUtils.lightBlue,
+                                                        value: 100,
+                                                        semanticsLabel: 'Linear progress indicator',
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 3.w,),
+                                                  Text("100%",
+                                                    style: TextStyle(
+                                                        fontFamily: FontUtils.poppinsRegular,
+                                                        fontSize: Fontsizes.size12,
+                                                        color: ColorUtils.lightBlue
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 3.h,),
+                                              Text(
+                                                "Congratulations!",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontFamily: FontUtils
+                                                        .poppinsMedium,
+                                                    fontSize:
+                                                    Fontsizes.size22,
+                                                    color: ColorUtils.black),
+                                              ),
+                                              SizedBox(height: 1.h,),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                                child: Text(
+                                                  "Lorem Ipsum is simply dummy text of the printing and type setting is simply dummy",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      height: 0.25.h,
+                                                      fontFamily: FontUtils
+                                                          .poppinsRegular,
+                                                      fontSize:
+                                                      Fontsizes.size10,
+                                                      color: ColorUtils.silver1),
+                                                ),
+                                              ),
+                                              SizedBox(height: 2.h,),
+                                              Container(
+                                                decoration: const BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                                                ),
+                                                child: AnimatedContainer(
+                                                  duration: const Duration(milliseconds: 400),
+                                                  height: 6.5.h,
+                                                  //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(25),
+                                                    color: ColorUtils.lightBlue,
+                                                  ),
+                                                  child: MaterialButton(
+                                                    padding: EdgeInsets.zero,
+                                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                                                    onPressed: (){
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 12.w),
+                                                      child: Text(
+                                                        "Membership Plans",
+                                                        style: TextStyle(
+                                                            fontFamily: FontUtils.poppinsRegular,
+                                                            fontSize: Fontsizes.size14,
+                                                            color: ColorUtils.white),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 2.h,),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
                                   },
                                   textValue: "Done",
                                 ),

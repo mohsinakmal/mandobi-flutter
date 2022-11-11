@@ -87,4 +87,6 @@ class ImageUtils{
   static String pdf = "assets/images/pdf.svg";
   static String pdfIcon = "assets/images/pdf_icon.png";
   static String crossWhite = "assets/images/cross_white.svg";
+  static String bottomPaymentIcon = "assets/images/bottom_payment_icon.svg";
+  static String greenCard = "assets/images/green_card.png";
 }

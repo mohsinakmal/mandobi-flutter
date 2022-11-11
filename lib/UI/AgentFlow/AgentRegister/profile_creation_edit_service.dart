@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_three.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -13,6 +14,7 @@ import 'package:mandobi_mobile_app/Widgets/horizontal_page_margin.dart';
 import 'package:mandobi_mobile_app/Widgets/margin_below_appbar.dart';
 import 'package:mandobi_mobile_app/Widgets/text_field_spaces.dart';
 import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class AgentProfileEditService extends StatefulWidget {
@@ -315,8 +317,17 @@ class _AgentProfileEditServiceState extends State<AgentProfileEditService> {
                                 ),
                                 SizedBox(height: 4.h,),
                                 CustomButtonOne(
+                                  onButtonPressed: (){
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            type:
+                                            PageTransitionType.fade,
+                                            child: AgentProfileCreationThree()));
+                                  },
                                   textValue: "Done",
                                 ),
+                                SizedBox(height: 2.h,),
                               ],
                             ),
                           ),

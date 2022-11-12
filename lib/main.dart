@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentHome/agent_home_screen.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentProfile/agent_edit_profile.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentProfile/agent_my_profile.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/create_service.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_experience.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentRegister/profile_creation_one.dart';

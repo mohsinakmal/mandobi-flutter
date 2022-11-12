@@ -24,6 +24,10 @@ class AgentRegistrationModel extends BaseViewModel{
   ];
 
   // Profile Creation Services
+  List<String> agentPlace = [
+    "TAS-HEEL",
+    "TAW-JEEH",
+  ];
 
 
 }

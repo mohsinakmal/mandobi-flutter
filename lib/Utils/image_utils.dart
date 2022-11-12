@@ -89,4 +89,9 @@ class ImageUtils{
   static String crossWhite = "assets/images/cross_white.svg";
   static String bottomPaymentIcon = "assets/images/bottom_payment_icon.svg";
   static String greenCard = "assets/images/green_card.png";
+  static String editBlueIcon = "assets/images/edit_blue_icon.svg";
+  static String agentBlueEmailIcon = "assets/images/agent_blue_email.svg";
+  static String agentBlueLocationPin = "assets/images/agent_blue_location_pin.svg";
+  static String agentBlueClockIcon = "assets/images/agent_blue_clock_icon.svg";
+  static String redTrash = "assets/images/red_trash.svg";
 }

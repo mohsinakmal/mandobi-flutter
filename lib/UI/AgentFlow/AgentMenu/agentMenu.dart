@@ -4,6 +4,7 @@ import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentMenu/bank_details.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentMenu/membership/membership_plans.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentMenu/services/services.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentProfile/agent_my_profile.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Menu/change_password.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Menu/dispute/disputes.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Menu/privacy_policy.dart';
@@ -59,7 +60,7 @@ class AgentMenu extends StatelessWidget {
                                 GestureDetector(
                                   onTap: (){
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child:  MyProfile()));
+                                        PageTransition(type: PageTransitionType.fade, child:  AgentMyProfile()));
                                   },
                                   child: Row(
                                     children: [

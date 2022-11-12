@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_booking_details.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_my_bookings.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentProfile/agent_my_profile.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Home/notifications.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Profile/my_profile.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
@@ -52,7 +53,7 @@ class _AgentHomeScreenState extends State<AgentHomeScreen> {
                         GestureDetector(
                           onTap: (){
                             Navigator.push(context,
-                                PageTransition(type: PageTransitionType.fade, child: MyProfile()));
+                                PageTransition(type: PageTransitionType.fade, child: AgentMyProfile()));
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

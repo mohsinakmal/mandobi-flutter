@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_booking_details.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_chat.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -216,28 +217,119 @@ class AgentMyBookings extends StatelessWidget {
                                   //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                   child: Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 4.w, vertical: 3.h),
+                                        horizontal: 2.w, vertical: 2.h),
                                     child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
-                                          "Passport Renewal",
-                                          style: TextStyle(
-                                            fontFamily: FontUtils.poppinsRegular,
-                                            fontSize: Fontsizes.size15,
-                                            color: ColorUtils.black,
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                  color:
+                                                  model.bookingValue == "Pending"
+                                                      ? ColorUtils.golden1
+                                                      : model.bookingValue == "Process"
+                                                      ? ColorUtils.lightBlue3
+                                                      : model.bookingValue == "Completed"
+                                                      ? ColorUtils.lightGreen1
+                                                      : ColorUtils.red,)),
+                                          child: Padding(
+                                            padding:
+                                            const EdgeInsets.all(6.0),
+                                            child: Image.asset(
+                                              ImageUtils.userPic,
+                                              height: 15.i,
+                                              width: 15.i,
+                                            ),
                                           ),
                                         ),
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 4.w),
-                                          child: Text(
-                                            "01/Jan",
-                                            style: TextStyle(
-                                              fontFamily: FontUtils.poppinsBold,
-                                              fontSize: Fontsizes.size12,
-                                              color: ColorUtils.black,
+                                        SizedBox(
+                                          width: 3.w,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "Anees A.",
+                                              style: TextStyle(
+                                                fontFamily: FontUtils.poppinsSemiBold,
+                                                fontSize: Fontsizes.size15,
+                                                color: ColorUtils.black,
+                                              ),
                                             ),
+                                            Text(
+                                              "Driving License",
+                                              style: TextStyle(
+                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontSize: Fontsizes.size13,
+                                                color: ColorUtils.black,
+                                              ),
+                                            ),
+                                            Text(
+                                              "AED 500",
+                                              style: TextStyle(
+                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontSize: Fontsizes.size13,
+                                                color: ColorUtils.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Spacer(),
+                                        Container(
+                                          height: 70,
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            // mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                model.bookingValue.toString(),
+                                                style: TextStyle(
+                                                  fontFamily: FontUtils.poppinsRegular,
+                                                  fontSize: Fontsizes.size13,
+                                                  color: model.bookingValue == "Pending"
+                                                      ? ColorUtils.golden1
+                                                      : model.bookingValue == "Process"
+                                                      ? ColorUtils.lightBlue3
+                                                      : model.bookingValue == "Completed"
+                                                      ? ColorUtils.lightGreen1
+                                                      : ColorUtils.red ,
+                                                ),
+                                              ),
+                                              if(model.bookingValue == "Process")
+                                              InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      PageTransition(
+                                                          type:
+                                                          PageTransitionType
+                                                              .fade,
+                                                          child:
+                                                          ChatScreen()));
+                                                },
+                                                child: Container(
+                                                    decoration:
+                                                    BoxDecoration(
+                                                      shape: BoxShape
+                                                          .circle,
+                                                      color: ColorUtils
+                                                          .lightBlue
+                                                          .withOpacity(
+                                                          0.1),
+                                                    ),
+                                                    padding:
+                                                    EdgeInsets.all(
+                                                        16),
+                                                    child: SvgPicture
+                                                        .asset(
+                                                      ImageUtils
+                                                          .chatIcon,
+                                                      width: 3.i,
+                                                      height: 3.i,
+                                                    )),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ],
@@ -958,21 +1050,21 @@ class AgentMyBookings extends StatelessWidget {
                               margin: EdgeInsets.symmetric(horizontal: 4.5.w),
                               decoration: BoxDecoration(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(6)),
+                                BorderRadius.all(Radius.circular(6)),
                                 color: model.bookingValue == "Pending"
                                     ? ColorUtils.golden1
                                     : model.bookingValue == "Process"
-                                        ? ColorUtils.lightBlue3
-                                        : model.bookingValue == "Completed"
-                                            ? ColorUtils.lightGreen1
-                                            : ColorUtils.red,
+                                    ? ColorUtils.lightBlue3
+                                    : model.bookingValue == "Completed"
+                                    ? ColorUtils.lightGreen1
+                                    : ColorUtils.red,
                               ),
                               padding: EdgeInsets.only(bottom: 0.5.h),
                               child: Container(
                                 decoration: BoxDecoration(
                                     color: ColorUtils.white,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(6)),
+                                    BorderRadius.all(Radius.circular(6)),
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.grey.withOpacity(0.5),
@@ -984,28 +1076,119 @@ class AgentMyBookings extends StatelessWidget {
                                 //margin: EdgeInsets.symmetric(horizontal: 2.w),
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: 4.w, vertical: 3.h),
+                                      horizontal: 2.w, vertical: 2.h),
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        "Passport Renewal",
-                                        style: TextStyle(
-                                          fontFamily: FontUtils.poppinsRegular,
-                                          fontSize: Fontsizes.size15,
-                                          color: ColorUtils.black,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            border: Border.all(
+                                              color:
+                                              model.bookingValue == "Pending"
+                                                  ? ColorUtils.golden1
+                                                  : model.bookingValue == "Process"
+                                                  ? ColorUtils.lightBlue3
+                                                  : model.bookingValue == "Completed"
+                                                  ? ColorUtils.lightGreen1
+                                                  : ColorUtils.red,)),
+                                        child: Padding(
+                                          padding:
+                                          const EdgeInsets.all(6.0),
+                                          child: Image.asset(
+                                            ImageUtils.userPic,
+                                            height: 15.i,
+                                            width: 15.i,
+                                          ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.only(right: 4.w),
-                                        child: Text(
-                                          "01/Jan",
-                                          style: TextStyle(
-                                            fontFamily: FontUtils.poppinsBold,
-                                            fontSize: Fontsizes.size12,
-                                            color: ColorUtils.black,
+                                      SizedBox(
+                                        width: 3.w,
+                                      ),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Anees A.",
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsSemiBold,
+                                              fontSize: Fontsizes.size15,
+                                              color: ColorUtils.black,
+                                            ),
                                           ),
+                                          Text(
+                                            "Driving License",
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size13,
+                                              color: ColorUtils.black,
+                                            ),
+                                          ),
+                                          Text(
+                                            "AED 500",
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size13,
+                                              color: ColorUtils.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Spacer(),
+                                      Container(
+                                        height: 70,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          // mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              model.bookingValue.toString(),
+                                              style: TextStyle(
+                                                fontFamily: FontUtils.poppinsRegular,
+                                                fontSize: Fontsizes.size13,
+                                                color: model.bookingValue == "Pending"
+                                                    ? ColorUtils.golden1
+                                                    : model.bookingValue == "Process"
+                                                    ? ColorUtils.lightBlue3
+                                                    : model.bookingValue == "Completed"
+                                                    ? ColorUtils.lightGreen1
+                                                    : ColorUtils.red ,
+                                              ),
+                                            ),
+                                            if(model.bookingValue == "Process")
+                                              InkWell(
+                                                onTap: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      PageTransition(
+                                                          type:
+                                                          PageTransitionType
+                                                              .fade,
+                                                          child:
+                                                          ChatScreen()));
+                                                },
+                                                child: Container(
+                                                    decoration:
+                                                    BoxDecoration(
+                                                      shape: BoxShape
+                                                          .circle,
+                                                      color: ColorUtils
+                                                          .lightBlue
+                                                          .withOpacity(
+                                                          0.1),
+                                                    ),
+                                                    padding:
+                                                    EdgeInsets.all(
+                                                        16),
+                                                    child: SvgPicture
+                                                        .asset(
+                                                      ImageUtils
+                                                          .chatIcon,
+                                                      width: 3.i,
+                                                      height: 3.i,
+                                                    )),
+                                              ),
+                                          ],
                                         ),
                                       ),
                                     ],
@@ -1017,25 +1200,25 @@ class AgentMyBookings extends StatelessWidget {
                           SizedBox(
                             height: 3.h,
                           ),
-                          Container(
+                         Container(
                             margin: EdgeInsets.symmetric(horizontal: 4.5.w),
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
+                              BorderRadius.all(Radius.circular(6)),
                               color: model.bookingValue == "Pending"
                                   ? ColorUtils.golden1
                                   : model.bookingValue == "Process"
-                                      ? ColorUtils.lightBlue3
-                                      : model.bookingValue == "Completed"
-                                          ? ColorUtils.lightGreen1
-                                          : ColorUtils.red,
+                                  ? ColorUtils.lightBlue3
+                                  : model.bookingValue == "Completed"
+                                  ? ColorUtils.lightGreen1
+                                  : ColorUtils.red,
                             ),
                             padding: EdgeInsets.only(bottom: 0.5.h),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: ColorUtils.white,
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(6)),
+                                  BorderRadius.all(Radius.circular(6)),
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.grey.withOpacity(0.5),
@@ -1047,28 +1230,119 @@ class AgentMyBookings extends StatelessWidget {
                               //margin: EdgeInsets.symmetric(horizontal: 2.w),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 4.w, vertical: 3.h),
+                                    horizontal: 2.w, vertical: 2.h),
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      "Passport Renewal",
-                                      style: TextStyle(
-                                        fontFamily: FontUtils.poppinsRegular,
-                                        fontSize: Fontsizes.size15,
-                                        color: ColorUtils.black,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            color:
+                                            model.bookingValue == "Pending"
+                                                ? ColorUtils.golden1
+                                                : model.bookingValue == "Process"
+                                                ? ColorUtils.lightBlue3
+                                                : model.bookingValue == "Completed"
+                                                ? ColorUtils.lightGreen1
+                                                : ColorUtils.red,)),
+                                      child: Padding(
+                                        padding:
+                                        const EdgeInsets.all(6.0),
+                                        child: Image.asset(
+                                          ImageUtils.userPic,
+                                          height: 15.i,
+                                          width: 15.i,
+                                        ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(right: 4.w),
-                                      child: Text(
-                                        "01/Jan",
-                                        style: TextStyle(
-                                          fontFamily: FontUtils.poppinsBold,
-                                          fontSize: Fontsizes.size12,
-                                          color: ColorUtils.black,
+                                    SizedBox(
+                                      width: 3.w,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Anees A.",
+                                          style: TextStyle(
+                                            fontFamily: FontUtils.poppinsSemiBold,
+                                            fontSize: Fontsizes.size15,
+                                            color: ColorUtils.black,
+                                          ),
                                         ),
+                                        Text(
+                                          "Driving License",
+                                          style: TextStyle(
+                                            fontFamily: FontUtils.poppinsRegular,
+                                            fontSize: Fontsizes.size13,
+                                            color: ColorUtils.black,
+                                          ),
+                                        ),
+                                        Text(
+                                          "AED 500",
+                                          style: TextStyle(
+                                            fontFamily: FontUtils.poppinsRegular,
+                                            fontSize: Fontsizes.size13,
+                                            color: ColorUtils.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    Container(
+                                      height: 70,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        // mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            model.bookingValue.toString(),
+                                            style: TextStyle(
+                                              fontFamily: FontUtils.poppinsRegular,
+                                              fontSize: Fontsizes.size13,
+                                              color: model.bookingValue == "Pending"
+                                                  ? ColorUtils.golden1
+                                                  : model.bookingValue == "Process"
+                                                  ? ColorUtils.lightBlue3
+                                                  : model.bookingValue == "Completed"
+                                                  ? ColorUtils.lightGreen1
+                                                  : ColorUtils.red ,
+                                            ),
+                                          ),
+                                          if(model.bookingValue == "Process")
+                                            InkWell(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    PageTransition(
+                                                        type:
+                                                        PageTransitionType
+                                                            .fade,
+                                                        child:
+                                                        ChatScreen()));
+                                              },
+                                              child: Container(
+                                                  decoration:
+                                                  BoxDecoration(
+                                                    shape: BoxShape
+                                                        .circle,
+                                                    color: ColorUtils
+                                                        .lightBlue
+                                                        .withOpacity(
+                                                        0.1),
+                                                  ),
+                                                  padding:
+                                                  EdgeInsets.all(
+                                                      16),
+                                                  child: SvgPicture
+                                                      .asset(
+                                                    ImageUtils
+                                                        .chatIcon,
+                                                    width: 3.i,
+                                                    height: 3.i,
+                                                  )),
+                                            ),
+                                        ],
                                       ),
                                     ),
                                   ],

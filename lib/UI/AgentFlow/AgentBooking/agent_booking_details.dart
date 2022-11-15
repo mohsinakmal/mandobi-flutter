@@ -1292,93 +1292,78 @@ class _AgentBookingDetailsState extends State<AgentBookingDetails> {
                                             if(model.bookingValue == "Process" || model.bookingValue == "Completed")
                                             Row(
                                               children: [
-                                                Expanded(
-                                                  child: Row(
-                                                    children: [
-                                                      Container(
-                                                        decoration: BoxDecoration(
-                                                            shape: BoxShape.circle,
-                                                            border: Border.all(
-                                                                color: ColorUtils
-                                                                    .lightBlue)),
-                                                        child: Padding(
-                                                          padding:
-                                                          const EdgeInsets.all(
-                                                              6.0),
-                                                          child: Image.asset(
-                                                            ImageUtils.userPic,
-                                                            height: 15.i,
-                                                            width: 15.i,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 3.w,
-                                                      ),
-                                                      Column(
-                                                        crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
-                                                        children: [
-                                                          Row(
-                                                            children: [
-                                                              Text(
-                                                                "Syed Ali Raza",
-                                                                style: TextStyle(
-                                                                    fontFamily: FontUtils
-                                                                        .poppinsRegular,
-                                                                    fontSize:
-                                                                    Fontsizes.size15,
-                                                                    color:
-                                                                    ColorUtils.black),
-                                                              ),
-                                                              Expanded(
-                                                                child: Center(
-                                                                  child: Row(
-                                                                    mainAxisSize: MainAxisSize.min,
-                                                                    children: [
-                                                                      SvgPicture.asset(ImageUtils.ratingStar,
-                                                                        width: 3.i,
-                                                                        height: 3.i,
-                                                                        fit: BoxFit.cover,
-                                                                      ),
-                                                                      SizedBox(width: 1.5.w,),
-                                                                      Text("5.5",
-                                                                        style: TextStyle(
-                                                                            fontFamily: FontUtils.poppinsRegular,
-                                                                            fontSize: Fontsizes.size10,
-                                                                            color: ColorUtils.black
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          SizedBox(
-                                                            height: 0.25.h,
-                                                          ),
-                                                          Text(
-                                                            "Contractor - TAWJEEH",
-                                                            style: TextStyle(
-                                                                fontFamily: FontUtils
-                                                                    .poppinsRegular,
-                                                                fontSize:
-                                                                Fontsizes
-                                                                    .size9,
-                                                                color: ColorUtils
-                                                                    .black),
-                                                          ),
-                                                          SizedBox(
-                                                            height: 2.h,
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ],
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                          color: ColorUtils
+                                                              .lightBlue)),
+                                                  child: Padding(
+                                                    padding:
+                                                    const EdgeInsets.all(
+                                                        6.0),
+                                                    child: Image.asset(
+                                                      ImageUtils.userPic,
+                                                      height: 15.i,
+                                                      width: 15.i,
+                                                    ),
                                                   ),
                                                 ),
+                                                SizedBox(
+                                                  width: 3.w,
+                                                ),
+                                                Column(
+                                                  crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        Text(
+                                                          "Syed Ali Raza",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils
+                                                                  .poppinsRegular,
+                                                              fontSize:
+                                                              Fontsizes.size15,
+                                                              color:
+                                                              ColorUtils.black),
+                                                        ),
+                                                        SvgPicture.asset(ImageUtils.ratingStar,
+                                                          width: 3.i,
+                                                          height: 3.i,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                        SizedBox(width: 1.5.w,),
+                                                        Text("5.5",
+                                                          style: TextStyle(
+                                                              fontFamily: FontUtils.poppinsRegular,
+                                                              fontSize: Fontsizes.size10,
+                                                              color: ColorUtils.black
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: 0.25.h,
+                                                    ),
+                                                    Text(
+                                                      "Contractor - TAWJEEH",
+                                                      style: TextStyle(
+                                                          fontFamily: FontUtils
+                                                              .poppinsRegular,
+                                                          fontSize:
+                                                          Fontsizes
+                                                              .size9,
+                                                          color: ColorUtils
+                                                              .black),
+                                                    ),
+                                                    SizedBox(
+                                                      height: 2.h,
+                                                    ),
+                                                  ],
+                                                ),
                                                 Padding(
-                                                  padding: EdgeInsets.only(right: 4.w),
+                                                  padding: EdgeInsets.only(left: 9.w),
                                                   child: InkWell(
                                                     onTap: () {
                                                       Navigator.push(

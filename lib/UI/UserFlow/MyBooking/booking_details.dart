@@ -1087,41 +1087,69 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       ],
                                     ),
                                   if(model.bookingValue == "Cancel")
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Image.asset(
-                                              ImageUtils.circleGrey1,
-                                              width: 20.i,
-                                              height: 20.i,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            SizedBox(height: 2.h,),
-                                            Text(
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Image.asset(
+                                                ImageUtils.circleGrey1,
+                                                width: 18.75.i,
+                                                height: 18.75.i,
+                                                fit: BoxFit.cover,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image.asset(ImageUtils.greyDotLines,
+                                                  width: 6.i,
+                                                  height: 6.i,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: 2.h,),
+                                          Padding(
+                                            padding: EdgeInsets.only(left: 3.w),
+                                            child: Text(
                                               "Initial \nPayment",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                 fontFamily:
                                                 FontUtils.poppinsMedium,
                                                 fontSize: Fontsizes.size10,
-                                                color: ColorUtils.black.withOpacity(0.3),
+                                                color: ColorUtils.black,
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            Image.asset(
-                                              ImageUtils.circleGrey2,
-                                              width: 20.i,
-                                              height: 20.i,
-                                              fit: BoxFit.cover,
-                                            ),
-                                            SizedBox(height: 2.h,),
-                                            Text(
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Image.asset(
+                                                ImageUtils.circleGrey2,
+                                                width: 20.i,
+                                                height: 20.i,
+                                                fit: BoxFit.cover,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image.asset(ImageUtils.greyDotLines,
+                                                  width: 6.i,
+                                                  height: 6.i,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: 2.h,),
+                                          Padding(
+                                            padding: EdgeInsets.only(right: 8.w),
+                                            child: Text(
                                               "Document \nSubmission",
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
@@ -1131,31 +1159,32 @@ class _BookingDetailsState extends State<BookingDetails> {
                                                 color: ColorUtils.black.withOpacity(0.3),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Column(
-                                          children: [
-                                            Image.asset(
-                                              ImageUtils.circleGrey3,
-                                              width: 20.i,
-                                              height: 20.i,
-                                              fit: BoxFit.cover,
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          Image.asset(
+                                            ImageUtils.circleGrey3,
+                                            width: 20.i,
+                                            height: 20.i,
+                                            fit: BoxFit.cover,
+                                          ),
+                                          SizedBox(height: 2.h,),
+                                          Text(
+                                            "Final \nDelivery",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontFamily:
+                                              FontUtils.poppinsMedium,
+                                              fontSize: Fontsizes.size10,
+                                              color: ColorUtils.black.withOpacity(0.3),
                                             ),
-                                            SizedBox(height: 2.h,),
-                                            Text(
-                                              "Final \nDelivery",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontFamily:
-                                                FontUtils.poppinsMedium,
-                                                fontSize: Fontsizes.size10,
-                                                color: ColorUtils.black.withOpacity(0.3),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                   if(model.bookingValue == "Process")
                                     Column(
                                       children: [

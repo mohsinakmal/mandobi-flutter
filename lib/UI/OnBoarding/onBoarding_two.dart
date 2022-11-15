@@ -32,6 +32,22 @@ class OnBoardingTwo extends StatelessWidget {
               // AppBarTwoItems(
               //   text: "",
               // ),
+              AppBar(
+                primary: false,
+                titleSpacing: 0,
+                leadingWidth: 11.i,
+                centerTitle: true,
+                automaticallyImplyLeading: false,
+                elevation: 0.0,
+                backgroundColor: Colors.white,
+                title: Text(
+                  "",
+                  style: TextStyle(
+                      fontFamily: FontUtils.poppinsRegular,
+                      fontSize: 2.t,
+                      color: ColorUtils.darkBlue),
+                ),
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

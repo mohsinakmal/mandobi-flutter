@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: 6.h,
+                                    height: 3.h,
                                   ),
                                   CustomTextField(
                                     controller: model.loginEmailController,
@@ -177,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 4.h,
+                                    height: 3.h,
                                   ),
                                   CustomButtonOne(
                                     onButtonPressed: () {
@@ -219,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 4.h,
+                                    height: 2.h,
                                   ),
                                   Row(
                                     mainAxisAlignment:
@@ -255,6 +255,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   type: PageTransitionType.fade,
                                                   child: MyBottomNavBar(
                                                     index: 0,
+                                                    fromAgent: false,
                                                   )));
                                         },
                                         child: Container(
@@ -382,7 +383,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: 6.h,
+                                    height: 3.h,
                                   ),
                                   CustomTextField(
                                     controller: model.loginEmailController,
@@ -447,7 +448,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 4.h,
+                                    height: 3.h,
                                   ),
                                   CustomButtonOne(
                                     onButtonPressed: () {

@@ -55,9 +55,9 @@ class _RegisterAccountState extends State<RegisterAccount> {
                       widget: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: context.getPadding().top,
-                          ),
+                          // SizedBox(
+                          //   height: context.getPadding().top,
+                          // ),
                           TopMargin(),
                           AppBarTwoItems(
                             text: "Register Your Account",
@@ -72,13 +72,13 @@ class _RegisterAccountState extends State<RegisterAccount> {
                             MarginBelowAppBar(),
                             Container(
                               //alignment: Alignment.topCenter,
-                              width: 30.8.i,
-                              height: 30.8.i,
+                              width: 22.8.i,
+                              height: 22.8.i,
                               child: Stack(
                                 children: <Widget>[
                                   Container(
-                                    width: 32.i,
-                                    height: 32.i,
+                                    width: 22.i,
+                                    height: 22.i,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       border: Border.all(
@@ -101,20 +101,20 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                                 child: SvgPicture.asset(
                                                   ImageUtils.defaultAvatar,
                                                   fit: BoxFit.contain,
-                                                  width: 10.i,
-                                                  height: 10.i,
+                                                  width: 8.i,
+                                                  height: 8.i,
                                                 ),
                                               )
                                             : Image.file(
                                                 model
                                                     .registrationProfileFileImage!,
-                                                width: 10.i,
-                                                height: 10.i,
+                                                width: 8.i,
+                                                height: 8.i,
                                                 fit: BoxFit.cover,
                                               )),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(bottom: 2.h),
+                                    margin: EdgeInsets.only(bottom: 1.h),
                                     child: Align(
                                       alignment: Alignment.bottomRight,
                                       child: PopupMenuButton(
@@ -159,7 +159,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 3.h,),
+                            SizedBox(height: 1.h,),
                             SizedBox(
                               height: 6.5.h,
                               child: AppBar(
@@ -198,7 +198,6 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 3.h,),
                             Expanded(
                               child: TabBarView(
                                 physics: NeverScrollableScrollPhysics(),
@@ -207,7 +206,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                     child: Column(
                                       children: [
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.h,
                                         ),
                                         CustomTextField(
                                           prefixRequired: false,
@@ -233,7 +232,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           suffixImageHeight: 10.i,
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.h,
                                         ),
                                         IntlPhoneField(
                                           decoration: InputDecoration(
@@ -265,7 +264,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               model.registerAddressController,
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
@@ -325,7 +324,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           ),
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
@@ -409,7 +408,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                     child: Column(
                                       children: [
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         CustomTextField(
                                           prefixRequired: false,
@@ -420,7 +419,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               model.registerNameController,
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         CustomTextField(
                                           prefixRequired: false,
@@ -435,7 +434,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           suffixImageHeight: 10.i,
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         IntlPhoneField(
                                           decoration: InputDecoration(
@@ -467,7 +466,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               model.registerAddressController,
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
@@ -527,7 +526,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                           ),
                                         ),
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
@@ -587,7 +586,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                             ),
                                           ),
                                         ),
-                                        Row(
+                                       /* Row(
                                           children: [
                                             Checkbox(
                                               value: checkValue,
@@ -626,9 +625,9 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               ),
                                             ),
                                           ],
-                                        ),
+                                        ), */
                                         SizedBox(
-                                          height: 2.h,
+                                          height: 1.5.h,
                                         ),
                                         CustomButtonOne(
                                           onButtonPressed: () {

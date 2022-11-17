@@ -259,7 +259,92 @@ class Agents extends StatelessWidget {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
-                                      ListTile(
+                                      Container(
+                                        margin: EdgeInsets.only(left:6.w,top: 2.h),
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  border: Border.all(color: ColorUtils.lightBlue)
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(3.0),
+                                                child: Image.asset(
+                                                  ImageUtils.userPic,
+                                                  height: 15.i,
+                                                  width: 15.i,
+                                                  //fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(width: 2.w,),
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Text(model.popularAgentNames[index],
+                                                  style: TextStyle(
+                                                      fontFamily: FontUtils.poppinsRegular,
+                                                      fontSize: Fontsizes.size15,
+                                                      color: ColorUtils.black
+                                                  ),
+                                                ),
+                                                Text("Contractor - TAWJEEH",
+                                                  style: TextStyle(
+                                                      fontFamily: FontUtils.poppinsSemiBold,
+                                                      fontSize: Fontsizes.size9,
+                                                      color: ColorUtils.black
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(width: 2.w,),
+                                            Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    SvgPicture.asset(ImageUtils.ratingStar,
+                                                      width: 3.i,
+                                                      height: 3.i,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                    SizedBox(width: 1.5.w,),
+                                                    Text("5.5",
+                                                      style: TextStyle(
+                                                          fontFamily: FontUtils.poppinsRegular,
+                                                          fontSize: Fontsizes.size10,
+                                                          color: ColorUtils.black
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 0.5.h,),
+                                                Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    SvgPicture.asset(ImageUtils.clockIcon,
+                                                      width: 3.i,
+                                                      height: 3.i,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                    SizedBox(width: 1.5.w,),
+                                                    Text("9AM to 5PM",
+                                                      style: TextStyle(
+                                                          fontFamily: FontUtils.poppinsRegular,
+                                                          fontSize: Fontsizes.size10,
+                                                          color: ColorUtils.black
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      /*ListTile(
                                         leading: Container(
                                           decoration: BoxDecoration(
                                               shape: BoxShape.circle,
@@ -339,7 +424,7 @@ class Agents extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                      ),
+                                      ),*/
                                       Container(
                                         margin: EdgeInsets.only(left:6.w, bottom: 3.h),
                                         child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",

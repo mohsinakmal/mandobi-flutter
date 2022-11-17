@@ -220,7 +220,7 @@ class _AgentProfileCreationOneState extends State<AgentProfileCreationOne> with 
                                 CustomButtonOne(
                                   onButtonPressed: (){
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child: AgentProfileCreationTwo()));
+                                        PageTransition(type: PageTransitionType.fade, child: AgentProfileCreationTwo(forEducation: true,)));
                                   },
                                   textValue: "Next",
                                 ),

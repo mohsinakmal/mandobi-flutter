@@ -408,9 +408,9 @@ class _AgentBookingDetailsState extends State<AgentBookingDetails> {
                                   if (detailsSelected == true)
                                     Column(
                                       children: [
-                                        if(model.bookingValue != "Completed" && model.bookingValue != "Cancel")
+                                        if(model.bookingValue == "Process")
                                         Container(
-                                          margin: EdgeInsets.only(top: 15.h),
+                                          margin: EdgeInsets.only(top: 7.h),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius:
@@ -441,6 +441,83 @@ class _AgentBookingDetailsState extends State<AgentBookingDetails> {
                                             ),
                                           ),
                                         ),
+                                        if(model.bookingValue == "Pending")
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  margin: EdgeInsets.only(top: 8.h),
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.rectangle,
+                                                    borderRadius:
+                                                    BorderRadius.all(Radius.circular(30.0)),
+                                                  ),
+                                                  child: AnimatedContainer(
+                                                    duration: const Duration(milliseconds: 400),
+                                                    height: 6.5.h,
+                                                    //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(25), color: ColorUtils.lightBlue
+                                                    ),
+                                                    child: MaterialButton(
+                                                      padding: EdgeInsets.zero,
+                                                      shape: RoundedRectangleBorder(
+                                                          borderRadius: BorderRadius.circular(25)),
+                                                      onPressed: () {
+
+                                                      },
+                                                      child: Text(
+                                                        "Accept",
+                                                        style: TextStyle(
+                                                            fontFamily: FontUtils.poppinsRegular,
+                                                            fontSize: Fontsizes.size16,
+                                                            color: Colors.white),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 3.w,),
+                                              Expanded(
+                                                child: Container(
+                                                  margin: EdgeInsets.only(top: 8.h),
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.rectangle,
+                                                    borderRadius:
+                                                    BorderRadius.all(Radius.circular(30.0)),
+                                                    border: Border.all(color: ColorUtils.red2),
+                                                  ),
+                                                  child: AnimatedContainer(
+                                                    duration: const Duration(milliseconds: 400),
+                                                    height: 6.5.h,
+                                                    //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.circular(25),
+                                                      color: ColorUtils.white,
+                                                    ),
+                                                    child: MaterialButton(
+                                                      padding: EdgeInsets.zero,
+                                                      shape: RoundedRectangleBorder(
+                                                          borderRadius: BorderRadius.circular(25)),
+                                                      onPressed: () {
+
+                                                        Navigator.push(context,
+                                                            PageTransition(type: PageTransitionType.fade, child:  PassportRenewal(screenTitle: "File a Dispute",)));
+                                                      },
+                                                      child: Text(
+                                                        "Reject",
+                                                        style: TextStyle(
+                                                            fontFamily: FontUtils.poppinsRegular,
+                                                            fontSize: Fontsizes.size16,
+                                                            color: Colors.red),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        SizedBox(height: 2.h,),
                                         if(model.bookingValue == "Completed")
                                           Row(
                                             children: [

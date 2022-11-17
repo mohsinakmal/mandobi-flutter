@@ -17,6 +17,8 @@ import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../../../Widgets/bottom_navigation_bar.dart';
+
 class AgentCardDetails extends StatelessWidget {
   const AgentCardDetails({Key? key}) : super(key: key);
 
@@ -182,8 +184,16 @@ class AgentCardDetails extends StatelessWidget {
                                         padding: EdgeInsets.zero,
                                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                                         onPressed: (){
-                                          Navigator.push(context,
-                                              PageTransition(type: PageTransitionType.fade, child:  AgentHomeScreen()));;
+                                          Navigator.push(
+                                              context,
+                                              PageTransition(
+                                                  type: PageTransitionType.fade,
+                                                  child: MyBottomNavBar(
+                                                    index: 0,
+                                                    fromAgent: true,
+                                                  )));
+                                          // Navigator.push(context,
+                                          //     PageTransition(type: PageTransitionType.fade, child:  AgentHomeScreen()));;
                                         },
                                         child: Padding(
                                           padding: EdgeInsets.symmetric(horizontal: 12.w),

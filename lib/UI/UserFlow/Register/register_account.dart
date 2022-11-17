@@ -249,7 +249,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               borderSide: BorderSide(),
                                             ),
                                           ),
-                                          initialCountryCode: 'PK',
+                                          initialCountryCode: 'AE',
                                           onChanged: (phone) {
                                             print(phone.completeNumber);
                                           },
@@ -451,7 +451,7 @@ class _RegisterAccountState extends State<RegisterAccount> {
                                               borderSide: BorderSide(),
                                             ),
                                           ),
-                                          initialCountryCode: 'PK',
+                                          initialCountryCode: 'AE',
                                           onChanged: (phone) {
                                             print(phone.completeNumber);
                                           },

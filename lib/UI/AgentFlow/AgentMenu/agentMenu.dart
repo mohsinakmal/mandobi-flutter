@@ -176,7 +176,7 @@ class AgentMenu extends StatelessWidget {
                                     },
                                     child: Row(
                                       children: [
-                                        Icon(Icons.chat_outlined,
+                                        Icon(Icons.account_balance,
                                           color: ColorUtils.lightBlue,
                                         ),
                                         SizedBox(width: 3.w,),
@@ -198,7 +198,7 @@ class AgentMenu extends StatelessWidget {
                                     },
                                     child: Row(
                                       children: [
-                                        Icon(Icons.chat_outlined,
+                                        Icon(Icons.workspace_premium,
                                           color: ColorUtils.lightBlue,
                                         ),
                                         SizedBox(width: 3.w,),

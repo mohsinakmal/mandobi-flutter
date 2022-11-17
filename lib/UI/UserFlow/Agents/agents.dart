@@ -15,7 +15,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
 class Agents extends StatelessWidget {
-  const Agents({Key? key}) : super(key: key);
+  bool? fromNavBar = false;
+   Agents({this.fromNavBar, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +46,22 @@ class Agents extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            if(fromNavBar == true)
+                            Container(
+                              width: 10.w,
+                            ),
+                            if(fromNavBar == false)
                             InkWell(
                               onTap: (){
                                 Navigator.pop(context);
                               },
                               child: Container(
-                                width: 10.w,
-                                child: Icon(Icons.arrow_back),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: ColorUtils.lightBlue.withOpacity(0.1),
+                                  ),
+                                  padding: EdgeInsets.all(16),
+                                  child:  SvgPicture.asset(ImageUtils.blueArrow)
                               ),
                             ),
                             Text(

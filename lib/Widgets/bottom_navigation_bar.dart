@@ -111,7 +111,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
           body = body = widget.fromAgent == false ? MyBookings() : AgentMyBookings();
           break;
         case 2:
-          body = widget.fromAgent == false ? Agents() : AgentPayments();
+          body = widget.fromAgent == false ? Agents(fromNavBar: true,) : AgentPayments();
           break;
         case 3:
           body = widget.fromAgent == false ? Menu() : AgentMenu();

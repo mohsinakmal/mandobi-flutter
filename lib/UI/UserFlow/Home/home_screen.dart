@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 GestureDetector(
                                   onTap: (){
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child: Agents()));
+                                        PageTransition(type: PageTransitionType.fade, child: Agents(fromNavBar: false,)));
                                   },
                                   child: Container(
                                     width: 12.w,
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     model.selectedCategoryIndex = index;
                                     model.notifyListeners();
                                     Navigator.push(context,
-                                        PageTransition(type: PageTransitionType.fade, child: Agents()));
+                                        PageTransition(type: PageTransitionType.fade, child: Agents(fromNavBar: false,)));
                                   },
                                   child: Column(
                                     children: [

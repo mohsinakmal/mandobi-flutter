@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
 import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_chat.dart';
+import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_file_dispute.dart';
 import 'package:mandobi_mobile_app/UI/UserFlow/Home/passport_Renewal.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
@@ -500,9 +501,8 @@ class _AgentBookingDetailsState extends State<AgentBookingDetails> {
                                                       shape: RoundedRectangleBorder(
                                                           borderRadius: BorderRadius.circular(25)),
                                                       onPressed: () {
-
                                                         Navigator.push(context,
-                                                            PageTransition(type: PageTransitionType.fade, child:  PassportRenewal(screenTitle: "File a Dispute",)));
+                                                            PageTransition(type: PageTransitionType.fade, child:  AgentFileDispute()));
                                                       },
                                                       child: Text(
                                                         "Reject",
@@ -673,7 +673,7 @@ class _AgentBookingDetailsState extends State<AgentBookingDetails> {
                                                       onPressed: () {
 
                                                         Navigator.push(context,
-                                                            PageTransition(type: PageTransitionType.fade, child:  PassportRenewal(screenTitle: "File a Dispute",)));
+                                                            PageTransition(type: PageTransitionType.fade, child:  AgentFileDispute()));
                                                       },
                                                       child: Text(
                                                         "File A Dispute",

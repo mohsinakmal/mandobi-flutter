@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mandobi_mobile_app/App/locator.dart';
-import 'package:mandobi_mobile_app/UI/AgentFlow/AgentBooking/agent_my_bookings.dart';
-import 'package:mandobi_mobile_app/UI/UserFlow/Home/checkout.dart';
 import 'package:mandobi_mobile_app/Utils/color_utils.dart';
 import 'package:mandobi_mobile_app/Utils/extensions.dart';
 import 'package:mandobi_mobile_app/Utils/font_sizes.dart';
@@ -19,11 +16,14 @@ import 'package:mandobi_mobile_app/Widgets/top_margin.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:stacked/stacked.dart';
 
-class PassportRenewal extends StatelessWidget {
-  String? screenTitle;
+class AgentFileDispute extends StatefulWidget {
+  const AgentFileDispute({Key? key}) : super(key: key);
 
-  PassportRenewal({this.screenTitle, Key? key}) : super(key: key);
+  @override
+  State<AgentFileDispute> createState() => _AgentFileDisputeState();
+}
 
+class _AgentFileDisputeState extends State<AgentFileDispute> {
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<UserMainViewModel>.reactive(
@@ -50,9 +50,7 @@ class PassportRenewal extends StatelessWidget {
                         ),
                         TopMargin(),
                         AppBarTwoItems(
-                          text: screenTitle != "File a Dispute"
-                              ? "Passport Renewal"
-                              : "File a Dispute",
+                          text: "File a Dispute",
                         ),
                       ],
                     ),
@@ -82,20 +80,6 @@ class PassportRenewal extends StatelessWidget {
                                     hintText: "Ahmed Saud",
                                   ),
                                 ),
-                                if (screenTitle != "File a Dispute")
-                                  SizedBox(
-                                    height: 1.5.h,
-                                  ),
-                                if (screenTitle != "File a Dispute")
-                                  Container(
-                                    height: 60,
-                                    child: CustomTextField(
-                                      textInputType: TextInputType.text,
-                                      suffixRequired: false,
-                                      prefixRequired: false,
-                                      hintText: "Emara DB 1254 north area",
-                                    ),
-                                  ),
                                 SizedBox(
                                   height: 1.5.h,
                                 ),
@@ -121,7 +105,7 @@ class PassportRenewal extends StatelessWidget {
                                             shape: BoxShape.rectangle,
                                             color: ColorUtils.lightBlue5,
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                            BorderRadius.circular(8),
                                             border: Border.all(
                                                 color: ColorUtils.silver6)),
                                         child: Center(
@@ -157,7 +141,7 @@ class PassportRenewal extends StatelessWidget {
                                             shape: BoxShape.rectangle,
                                             color: ColorUtils.lightBlue5,
                                             borderRadius:
-                                                BorderRadius.circular(8),
+                                            BorderRadius.circular(8),
                                             border: Border.all(
                                                 color: ColorUtils.silver6)),
                                         child: Center(
@@ -178,7 +162,7 @@ class PassportRenewal extends StatelessWidget {
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                           color:
-                                              ColorUtils.black.withOpacity(0.5),
+                                          ColorUtils.black.withOpacity(0.5),
                                           width: 1),
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(10.0)),
@@ -194,7 +178,7 @@ class PassportRenewal extends StatelessWidget {
                                     hintStyle: TextStyle(
                                         height: 0.2.h,
                                         color:
-                                            ColorUtils.black.withOpacity(0.5)),
+                                        ColorUtils.black.withOpacity(0.5)),
                                   ),
                                 ),
                                 SizedBox(
@@ -202,112 +186,107 @@ class PassportRenewal extends StatelessWidget {
                                 ),
                                 CustomButtonOne(
                                   onButtonPressed: () {
-                                    if (screenTitle != "File a Dispute") {
-                                      Navigator.push(context,
-                                          PageTransition(
-                                              type: PageTransitionType.fade,
-                                              child: Checkout()));
-                                    } else {
-                                      showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return MyCustomDialog(
-                                            childWidget: Column(
-                                              children: [
-                                                Text(
-                                                  "Dispute Submitted",
+                                    /*Navigator.push(context,
+                                        PageTransition(type: PageTransitionType.fade, child:  Checkout()));*/
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return MyCustomDialog(
+                                          childWidget: Column(
+                                            children: [
+                                              Text(
+                                                "Dispute Submitted",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontFamily:
+                                                    FontUtils.poppinsMedium,
+                                                    fontSize: Fontsizes.size22,
+                                                    color: ColorUtils.black),
+                                              ),
+                                              //SizedBox(height: 2.h,),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 4.w),
+                                                child: Text(
+                                                  "Your Dispute has been successfully submitted",
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
-                                                      fontFamily:
-                                                      FontUtils.poppinsMedium,
-                                                      fontSize: Fontsizes.size22,
-                                                      color: ColorUtils.black),
+                                                      height: 0.25.h,
+                                                      fontFamily: FontUtils
+                                                          .poppinsRegular,
+                                                      fontSize:
+                                                      Fontsizes.size10,
+                                                      color:
+                                                      ColorUtils.silver1),
                                                 ),
-                                                //SizedBox(height: 2.h,),
-                                                Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 4.w),
-                                                  child: Text(
-                                                    "Your Dispute has been successfully submitted",
-                                                    textAlign: TextAlign.center,
-                                                    style: TextStyle(
-                                                        height: 0.25.h,
-                                                        fontFamily: FontUtils
-                                                            .poppinsRegular,
-                                                        fontSize:
-                                                        Fontsizes.size10,
-                                                        color:
-                                                        ColorUtils.silver1),
-                                                  ),
+                                              ),
+                                              SizedBox(
+                                                height: 3.h,
+                                              ),
+                                              Container(
+                                                decoration: const BoxDecoration(
+                                                  shape: BoxShape.rectangle,
+                                                  borderRadius:
+                                                  BorderRadius.all(
+                                                      Radius.circular(
+                                                          30.0)),
                                                 ),
-                                                SizedBox(
-                                                  height: 3.h,
-                                                ),
-                                                Container(
-                                                  decoration: const BoxDecoration(
-                                                    shape: BoxShape.rectangle,
+                                                child: AnimatedContainer(
+                                                  duration: const Duration(
+                                                      milliseconds: 400),
+                                                  height: 6.5.h,
+                                                  //margin: EdgeInsets.symmetric(horizontal: 5.w),
+                                                  decoration: BoxDecoration(
                                                     borderRadius:
-                                                    BorderRadius.all(
-                                                        Radius.circular(
-                                                            30.0)),
+                                                    BorderRadius.circular(
+                                                        25),
+                                                    color: ColorUtils.lightBlue,
                                                   ),
-                                                  child: AnimatedContainer(
-                                                    duration: const Duration(
-                                                        milliseconds: 400),
-                                                    height: 6.5.h,
-                                                    //margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                      BorderRadius.circular(
-                                                          25),
-                                                      color: ColorUtils.lightBlue,
-                                                    ),
-                                                    child: MaterialButton(
-                                                      padding: EdgeInsets.zero,
-                                                      shape:
-                                                      RoundedRectangleBorder(
-                                                          borderRadius:
-                                                          BorderRadius
-                                                              .circular(
-                                                              25)),
-                                                      onPressed: () {
-                                                        //Navigator.pop(context);
-                                                        Navigator.push(
-                                                            context,
-                                                            PageTransition(
-                                                                type:
-                                                                PageTransitionType
-                                                                    .fade,
-                                                                child:
-                                                                MyBottomNavBar(index: 1,fromAgent: false,)));
-                                                      },
-                                                      child: Padding(
-                                                        padding:
-                                                        EdgeInsets.symmetric(
-                                                            horizontal: 12.w),
-                                                        child: Text(
-                                                          "View Bookings",
-                                                          style: TextStyle(
-                                                              fontFamily: FontUtils
-                                                                  .poppinsRegular,
-                                                              fontSize: Fontsizes
-                                                                  .size14,
-                                                              color: ColorUtils
-                                                                  .white),
-                                                        ),
+                                                  child: MaterialButton(
+                                                    padding: EdgeInsets.zero,
+                                                    shape:
+                                                    RoundedRectangleBorder(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(
+                                                            25)),
+                                                    onPressed: () {
+                                                      //Navigator.pop(context);
+                                                      Navigator.push(
+                                                          context,
+                                                          PageTransition(
+                                                              type:
+                                                              PageTransitionType
+                                                                  .fade,
+                                                              child:
+                                                              MyBottomNavBar(index: 1,fromAgent: true,)));
+                                                    },
+                                                    child: Padding(
+                                                      padding:
+                                                      EdgeInsets.symmetric(
+                                                          horizontal: 12.w),
+                                                      child: Text(
+                                                        "View Bookings",
+                                                        style: TextStyle(
+                                                            fontFamily: FontUtils
+                                                                .poppinsRegular,
+                                                            fontSize: Fontsizes
+                                                                .size14,
+                                                            color: ColorUtils
+                                                                .white),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(
-                                                  height: 2.h,
-                                                ),
-                                              ],
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    }
+                                              ),
+                                              SizedBox(
+                                                height: 2.h,
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
                                   },
                                   textValue: "Submit",
                                 ),

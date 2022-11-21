@@ -154,7 +154,7 @@ class OTPVerification extends StatelessWidget {
                         textValue: "Submit",
                         onButtonPressed: (){
                           Navigator.push(context,
-                              PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0,)));
+                              PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 0, fromAgent: false,)));
                         },
                       ),
                     ],

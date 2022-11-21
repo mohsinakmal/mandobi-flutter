@@ -493,7 +493,7 @@ class Checkout extends StatelessWidget {
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                                           onPressed: (){
                                             Navigator.push(context,
-                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 1,)));
+                                                PageTransition(type: PageTransitionType.fade, child:  MyBottomNavBar(index: 1, fromAgent: false,)));
                                           },
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(horizontal: 8.w),

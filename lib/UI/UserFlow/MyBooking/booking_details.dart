@@ -410,7 +410,7 @@ class _BookingDetailsState extends State<BookingDetails> {
                                       children: [
                                         if(model.bookingValue != "Completed" && model.bookingValue != "Cancel")
                                         Container(
-                                          margin: EdgeInsets.only(top: 15.h),
+                                          margin: EdgeInsets.only(top: 8.h),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius:
